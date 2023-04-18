@@ -10,7 +10,10 @@ import { fireBaseFunctions } from "./firebase.js"
             teamBtn.innerHTML = "Team " + i;
             teamBtn.classList.add("teamBtn");
             teamWrapper.appendChild(teamBtn);
-            teamBtn.addEventListener("click", renderChooseBackpack)
+            teamBtn.addEventListener("click", () => {
+                console.log(fireBaseFunctions.addDocumentToFirebase('Users'))
+                renderChooseBackpack()
+            })
         }
         document.getElementById("wrapper").appendChild(teamWrapper);
     })();
@@ -26,6 +29,10 @@ function renderChooseBackpack() {
         backpackWrapper.appendChild(backpackBtn);
     }
     document.getElementById("wrapper").appendChild(backpackWrapper);
+
+}
+
+function saveIdInLocalHost() {
 
 }
 
