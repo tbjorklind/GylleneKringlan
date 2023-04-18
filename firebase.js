@@ -3,7 +3,8 @@ export const fireBaseFunctions = {
   getCollectionFromFirestore,
   addDocumentToFirebase,
   updateDocumentToFirebase,
-  deleteDocumentFromFirestore
+  deleteDocumentFromFirestore,
+  addUserToBackpack
 }
 
 const db = firebase.firestore()
@@ -52,11 +53,26 @@ async function addDocumentToFirebase(collectionName) {
   return newDocumentID
 }
 
+async function addUserToBackpack(collectionName, id, backpackNr) {
+  let document = await getDocumentFromFirestore('Teams', id)
+
+  if (backpackNr == 1)
+    document.backpack1.users = [...document.backpack1.users, localStorage.getItem("userId")]
+  if (backpackNr == 2) {
+    document.backpack2.users = [...document.backpack2.users, localStorage.getItem("userId")]
+  }
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(document)
+}
+
 //console.log(addDocumentToFirebase('Users'))
 
 // --------------------- UPDATE ----------------------
 
-async function updateDocumentToFirebase(collectionName, id, data = {}) {
+async function updateDocumentToFirebase(collectionName, id, data = {},) {
   let document = await getDocumentFromFirestore('Teams', id)
   //let newUserID = await addDocumentToFirebase('Users')
   //document.users = [...document.users, newUserID]
@@ -66,8 +82,8 @@ async function updateDocumentToFirebase(collectionName, id, data = {}) {
     .doc(id)
     .update(document)
 }
-// KOLLA PÅ DETTA
-console.log(updateDocumentToFirebase('Teams', 'Team1'))
+
+//console.log(updateDocumentToFirebase('Teams', 'Team1'))
 
 // --------------------- DELETE -----------------------
 

@@ -1,24 +1,25 @@
 "use strict"
-import { fireBaseFunctions } from "./firebase.js"
+import { fireBaseFunctions } from "./firebase.js";
 
-    // INITIALIZE
-    ; (async () => {
-        let teamWrapper = document.createElement("div");
-        teamWrapper.id = "teamWrapper";
-        for (let i = 1; i <= 6; i++) {
-            let teamBtn = document.createElement("div");
-            teamBtn.innerHTML = "Team " + i;
-            teamBtn.classList.add("teamBtn");
-            teamWrapper.appendChild(teamBtn);
-            teamBtn.addEventListener("click", () => {
-                fireBaseFunctions.addDocumentToFirebase('Users');
-                renderChooseBackpack()
-            })
-        }
-        document.getElementById("wrapper").appendChild(teamWrapper);
-    })();
+// ------------------- RENDER TEAM SELECION ---------------------
+; (() => {
+    let teamWrapper = document.createElement("div");
+    teamWrapper.id = "teamWrapper";
+    for (let i = 1; i <= 6; i++) {
+        let teamBtn = document.createElement("div");
+        teamBtn.innerHTML = "Team " + i;
+        teamBtn.classList.add("teamBtn");
+        teamWrapper.appendChild(teamBtn);
+        teamBtn.addEventListener("click", () => {
+            fireBaseFunctions.addDocumentToFirebase('Users');
+            renderChooseBackpack(i)
+        })
+    }
+    document.getElementById("wrapper").appendChild(teamWrapper);
+})();
 
-function renderChooseBackpack() {
+// --------------------- RENDER BACKPACKS -----------------------
+function renderChooseBackpack(teamNumber) {
     document.getElementById("wrapper").innerHTML = "";
     let backpackWrapper = document.createElement("div");
     backpackWrapper.id = "teamWrapper";
@@ -27,13 +28,10 @@ function renderChooseBackpack() {
         backpackBtn.innerHTML = "Backpack " + i;
         backpackBtn.classList.add("teamBtn");
         backpackWrapper.appendChild(backpackBtn);
+        backpackBtn.addEventListener("click", () => {
+            fireBaseFunctions.addUserToBackpack('Teams', 'Team' + teamNumber, i)
+            document.getElementById("wrapper").innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i}`;
+        })
     }
     document.getElementById("wrapper").appendChild(backpackWrapper);
-
 }
-
-function getUserId() {
-    localStorage.setItem("userId", "Tom");
-}
-
-//console.log(fireBaseFunctions.addDocumentToFirebase('Users'))
