@@ -47,6 +47,8 @@ async function addDocumentToFirebase(collectionName) {
   let ref = await db.collection(collectionName).add({})
   let newDocumentID = await ref.id
 
+  localStorage.setItem("userId", newDocumentID);
+
   return newDocumentID
 }
 

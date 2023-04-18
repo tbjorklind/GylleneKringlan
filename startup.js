@@ -2,7 +2,7 @@
 import { fireBaseFunctions } from "./firebase.js"
 
     // INITIALIZE
-    ; (() => {
+    ; (async () => {
         let teamWrapper = document.createElement("div");
         teamWrapper.id = "teamWrapper";
         for (let i = 1; i <= 6; i++) {
@@ -11,7 +11,7 @@ import { fireBaseFunctions } from "./firebase.js"
             teamBtn.classList.add("teamBtn");
             teamWrapper.appendChild(teamBtn);
             teamBtn.addEventListener("click", () => {
-                console.log(fireBaseFunctions.addDocumentToFirebase('Users'))
+                fireBaseFunctions.addDocumentToFirebase('Users');
                 renderChooseBackpack()
             })
         }
@@ -32,8 +32,8 @@ function renderChooseBackpack() {
 
 }
 
-function saveIdInLocalHost() {
-
+function getUserId() {
+    localStorage.setItem("userId", "Tom");
 }
 
 //console.log(fireBaseFunctions.addDocumentToFirebase('Users'))
