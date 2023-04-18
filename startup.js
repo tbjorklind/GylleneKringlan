@@ -30,7 +30,7 @@ function renderChooseBackpack(teamNumber) {
         backpackWrapper.appendChild(backpackBtn);
         backpackBtn.addEventListener("click", () => {
             fireBaseFunctions.addUserToBackpack('Teams', 'Team' + teamNumber, i)
-            document.getElementById("wrapper").innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i}`;
+            document.getElementById("wrapper").innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i} <br> Rör er mot blå båten, Bobby har något viktigt att berätta...`;
         })
     }
     document.getElementById("wrapper").appendChild(backpackWrapper);
