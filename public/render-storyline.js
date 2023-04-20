@@ -1,5 +1,6 @@
 "use strict"
 import { storylines } from "./storylines.js";
+import { fireBaseFunctions } from './firebase.js'
 export default renderQuestion;
 
 // --------------------- RENDER QUESTION -----------------------
@@ -43,22 +44,27 @@ function renderAnswerResult(storyLine, storyChapter, answer) {
         document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", () => { renderBribeResult(storyLine, storyChapter) })
     }
     // If wanting to leave
-    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyChapter) })
+    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
 }
 
 // --------------------- RENDER OF BRIBE -----------------------
 function renderBribeResult(storyLine, storyChapter) {
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
     document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
-    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyChapter) })
+    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
 }
 
 // --------------------- RENDER OF GOODBYE -----------------------
-function renderFarwell(storyLine, storyChapter) {
+async function renderFarwell(storyLine, storyChapter) {
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
     document.querySelector("#wrapper > div:last-child > div").innerHTML = "Hej!"
-    // anropa update state med state + 1;
-    // anropa nån anna funtktion som går vidare till karta. och när man är inom rätt zon igen så anropas renderQuestion med state som hämtats på nytt från databasen
+
+    let nextChapter = storyChapter + 1;
+    let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
+
+    // anropa nån annan funtktion som går vidare till karta. och när man är inom rätt zon igen så anropas renderQuestion med storyChapter som hämtats på nytt från databasen
+    // OBS VIKTIGT ATT StoryChapter HÄMTAS PÅ NYTT! Annars fastnar den på 0 eller 1 
 }
 
 
