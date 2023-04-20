@@ -4,13 +4,15 @@ export const fireBaseFunctions = {
   addDocumentToFirebase,
   updateDocumentToFirebase,
   deleteDocumentFromFirestore,
-  addUserToBackpack
+  addUserToBackpack,
+  updateStoryChapter,
+  getTeamIdOfUser
 }
 
 const db = firebase.firestore()
-
+// EVENTUELLT Lägga till en get för att se vilken backpack en användare har, med userId som parameter, iställe t för att spara i localStorage?
 // --------------------- GET ----------------------
-async function getCollectionFromFirestore (collectionName) {
+async function getCollectionFromFirestore(collectionName) {
   let arr = []
   let ref = await db
     .collection(collectionName)
@@ -23,12 +25,10 @@ async function getCollectionFromFirestore (collectionName) {
       })
     })
 
-  //console.log(arr)
-
   return arr
 }
 
-async function getDocumentFromFirestore (collectionName, id) {
+async function getDocumentFromFirestore(collectionName, id) {
   let ref = await db
     .collection(collectionName)
     .doc(id)
@@ -41,19 +41,33 @@ async function getDocumentFromFirestore (collectionName, id) {
 //console.log(getCollectionFromFirestore('Teams'))
 //console.log(getDocumentFromFirestore('Teams', 'Team1'))
 
+// Getting the team ID of a user by sending their id
+async function getTeamIdOfUser(userId) {
+  let teams = await getCollectionFromFirestore('Teams')
+  for (let i = 0; i < teams.length; i++) {
+    if (teams[i].data.users.includes(userId)) {
+      let teamNr = i + 1;
+      console.log(teamNr)
+      return `Team${teamNr}`
+    }
+  }
+}
+
 // --------------------- ADD -----------------------
-async function addDocumentToFirebase (collectionName) {
+async function addDocumentToFirebase(collectionName) {
   let ref = await db.collection(collectionName).add({})
   let newDocumentID = await ref.id
 
   localStorage.setItem('userId', newDocumentID)
 
   return newDocumentID
-}
+} //console.log(addDocumentToFirebase('Users'))
 
-async function addUserToBackpack (collectionName, id, backpackNr) {
+// Adding a user to a specific backpack
+async function addUserToBackpack(collectionName, id, backpackNr) {
   let document = await getDocumentFromFirestore('Teams', id)
 
+  // Add to backpack
   if (backpackNr == 1)
     document.backpack1.users = [
       ...document.backpack1.users,
@@ -66,17 +80,18 @@ async function addUserToBackpack (collectionName, id, backpackNr) {
     ]
   }
 
+  // Add to team
+  document.users = [...document.users, localStorage.getItem('userId')];
+
   await db
     .collection(collectionName)
     .doc(id)
     .update(document)
 }
 
-//console.log(addDocumentToFirebase('Users'))
-
 // --------------------- UPDATE ----------------------
 
-async function updateDocumentToFirebase (collectionName, id, data = {}) {
+async function updateDocumentToFirebase(collectionName, id, data = {}) {
   let document = await getDocumentFromFirestore('Teams', id)
   //let newUserID = await addDocumentToFirebase('Users')
   //document.users = [...document.users, newUserID]
@@ -85,13 +100,27 @@ async function updateDocumentToFirebase (collectionName, id, data = {}) {
     .collection(collectionName)
     .doc(id)
     .update(document)
+} //console.log(updateDocumentToFirebase('Teams', 'Team1'))
+
+// Update storyChapter of a backpack
+async function updateStoryChapter(collectionName, id, backpackNr, chapter) {
+  let document = await getDocumentFromFirestore('Teams', id)
+
+  if (backpackNr == 1)
+    document.backpack1.storyChapter = chapter
+  if (backpackNr == 2)
+    document.backpack2.storyChapter = chapter
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(document)
 }
 
-//console.log(updateDocumentToFirebase('Teams', 'Team1'))
 
 // --------------------- DELETE -----------------------
 
-async function deleteDocumentFromFirestore (collectionName, id) {
+async function deleteDocumentFromFirestore(collectionName, id) {
   let ref
   try {
     ref = await db
