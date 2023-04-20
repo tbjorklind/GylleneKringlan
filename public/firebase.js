@@ -10,7 +10,7 @@ export const fireBaseFunctions = {
 }
 
 const db = firebase.firestore()
-
+// EVENTUELLT Lägga till en get för att se vilken backpack en användare har, med userId som parameter, iställe t för att spara i localStorage?
 // --------------------- GET ----------------------
 async function getCollectionFromFirestore(collectionName) {
   let arr = []
@@ -41,6 +41,7 @@ async function getDocumentFromFirestore(collectionName, id) {
 //console.log(getCollectionFromFirestore('Teams'))
 //console.log(getDocumentFromFirestore('Teams', 'Team1'))
 
+// Getting the team ID of a user by sending their id
 async function getTeamIdOfUser(userId) {
   let teams = await getCollectionFromFirestore('Teams')
   for (let i = 0; i < teams.length; i++) {
@@ -60,8 +61,9 @@ async function addDocumentToFirebase(collectionName) {
   localStorage.setItem('userId', newDocumentID)
 
   return newDocumentID
-}
+} //console.log(addDocumentToFirebase('Users'))
 
+// Adding a user to a specific backpack
 async function addUserToBackpack(collectionName, id, backpackNr) {
   let document = await getDocumentFromFirestore('Teams', id)
 
@@ -87,8 +89,6 @@ async function addUserToBackpack(collectionName, id, backpackNr) {
     .update(document)
 }
 
-//console.log(addDocumentToFirebase('Users'))
-
 // --------------------- UPDATE ----------------------
 
 async function updateDocumentToFirebase(collectionName, id, data = {}) {
@@ -100,19 +100,16 @@ async function updateDocumentToFirebase(collectionName, id, data = {}) {
     .collection(collectionName)
     .doc(id)
     .update(document)
-}
+} //console.log(updateDocumentToFirebase('Teams', 'Team1'))
 
-// Update storyChapter
+// Update storyChapter of a backpack
 async function updateStoryChapter(collectionName, id, backpackNr, chapter) {
-  console.log("oogaAAAA   ")
   let document = await getDocumentFromFirestore('Teams', id)
-
 
   if (backpackNr == 1)
     document.backpack1.storyChapter = chapter
-  if (backpackNr == 2) {
+  if (backpackNr == 2)
     document.backpack2.storyChapter = chapter
-  }
 
   await db
     .collection(collectionName)
@@ -120,7 +117,6 @@ async function updateStoryChapter(collectionName, id, backpackNr, chapter) {
     .update(document)
 }
 
-//console.log(updateDocumentToFirebase('Teams', 'Team1'))
 
 // --------------------- DELETE -----------------------
 
