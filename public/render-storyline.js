@@ -31,11 +31,15 @@ function renderQuestion(storyChapter) {
 }
 
 // --------------------- RENDER RESULT OF ANSWER -----------------------
-function renderAnswerResult(storyLine, storyChapter, answer) {
-    // If correct answer, show clue and offer to exit
+async function renderAnswerResult(storyLine, storyChapter, answer) {
+    // If correct answer, show clue, add clue to backpack and offer to exit
     if (answer) {
         document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].correctAnswerText;
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+
+        let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+        let userBackpack = localStorage.getItem('backpackNr');
+        fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].correctAnswerText)
     }
     // Else, give option to bribe or leave
     else {
@@ -51,7 +55,8 @@ function renderAnswerResult(storyLine, storyChapter, answer) {
 async function renderBribeResult(storyLine, storyChapter) {
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
-    fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
+    await fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
+    await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].bribedAnswerText)
 
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
     document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
@@ -61,7 +66,7 @@ async function renderBribeResult(storyLine, storyChapter) {
 // --------------------- RENDER OF GOODBYE -----------------------
 async function renderFarwell(storyLine, storyChapter) {
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
-    document.querySelector("#wrapper > div:last-child > div").innerHTML = "Hej!"
+    document.querySelector("#wrapper > div:last-child > div").innerHTML = "Hejdå!"
 
     let nextChapter = storyChapter + 1;
     let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
