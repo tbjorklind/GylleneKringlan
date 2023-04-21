@@ -155,8 +155,6 @@ async function updateCoins(collectionName, id, backpackNr) {
     document.backpack2.coins = newAmount;
   }
 
-  console.log(document.backpack2.coins)
-
   await db
     .collection(collectionName)
     .doc(id)

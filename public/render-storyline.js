@@ -39,7 +39,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer) {
 
         let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
         let userBackpack = localStorage.getItem('backpackNr');
-        fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].correctAnswerText)
+        await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].correctAnswerText)
     }
     // Else, give option to bribe or leave
     else {
@@ -66,11 +66,11 @@ async function renderBribeResult(storyLine, storyChapter) {
 // --------------------- RENDER OF GOODBYE -----------------------
 async function renderFarwell(storyLine, storyChapter) {
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
-    document.querySelector("#wrapper > div:last-child > div").innerHTML = "Hejdå!"
+    document.querySelector("#wrapper > div:last-child").innerHTML = "<div>Hejdå!</div>"
 
     let nextChapter = storyChapter + 1;
     let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-    fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
+    await fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
 
     // anropa nån annan funtktion som går vidare till karta. och när man är inom rätt zon igen så anropas renderQuestion med storyChapter som hämtats på nytt från databasen
     // OBS VIKTIGT ATT StoryChapter HÄMTAS PÅ NYTT! Annars fastnar den på 0 eller 1 
