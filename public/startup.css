@@ -28,8 +28,8 @@ wrapper {
 .backpackBtn {
   margin: 5vw;
   background-color: gray;
-  width: 30vw;
-  height: 30vw;
+  width: 40%;
+  height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;

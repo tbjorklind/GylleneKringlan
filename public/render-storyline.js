@@ -40,7 +40,7 @@ function renderAnswerResult(storyLine, storyChapter, answer) {
     // Else, give option to bribe or leave
     else {
         document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].wrongAnswerText;
-        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
+        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA (20 mynt)</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", () => { renderBribeResult(storyLine, storyChapter) })
     }
     // If wanting to leave
@@ -48,7 +48,11 @@ function renderAnswerResult(storyLine, storyChapter, answer) {
 }
 
 // --------------------- RENDER OF BRIBE -----------------------
-function renderBribeResult(storyLine, storyChapter) {
+async function renderBribeResult(storyLine, storyChapter) {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
+
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
     document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
     document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
@@ -77,6 +81,17 @@ async function renderFarwell(storyLine, storyChapter) {
     4. TextEnding rendreras med info om vart man ska härnäst
     5. QuestionId + 1 stoppas i staten i db för att kunna användas som parameter när man kommer till nästa zon.
     6. Man uppmanas att gå vidare och återgår till kompassen, eller vad det nu är vi har där.
+*/
+
+
+/*
+TO DO
+
+- Lägga till två team till i document (team5, team6)
+- Svarens påverkan på DB, ex:
+    - Spara gåtor
+    - Minska pengarna vid mutning
+
 */
 
 

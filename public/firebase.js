@@ -6,7 +6,8 @@ export const fireBaseFunctions = {
   deleteDocumentFromFirestore,
   addUserToBackpack,
   updateStoryChapter,
-  getTeamIdOfUser
+  getTeamIdOfUser,
+  updateCoins
 }
 
 const db = firebase.firestore()
@@ -47,7 +48,6 @@ async function getTeamIdOfUser(userId) {
   for (let i = 0; i < teams.length; i++) {
     if (teams[i].data.users.includes(userId)) {
       let teamNr = i + 1;
-      console.log(teamNr)
       return `Team${teamNr}`
     }
   }
@@ -117,6 +117,25 @@ async function updateStoryChapter(collectionName, id, backpackNr, chapter) {
     .update(document)
 }
 
+// Update coins of a backpack
+async function updateCoins(collectionName, id, backpackNr) {
+  let document = await getDocumentFromFirestore('Teams', id)
+
+  // 20 kan ändras till vilken mängd man vill, eventuellt baserat på nån parameter
+  if (backpackNr == 1) {
+    let newAmount = document.backpack1.coins - 20;
+    document.backpack1.coins = newAmount;
+  }
+  if (backpackNr == 2) {
+    let newAmount = document.backpack2.coins - 20;
+    document.backpack2.coins = newAmount;
+  }
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(document)
+}
 
 // --------------------- DELETE -----------------------
 
