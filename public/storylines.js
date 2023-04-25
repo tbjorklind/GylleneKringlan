@@ -31,7 +31,9 @@ const storyLine1 = [
         wrongAnswerText: "Nääää... inte riktigt!",
         correctAnswerText: "Helt rätt! Nu e jag mätt! Jag åt femtio äpplen, för jag var på en femtioårsfest, Ninas fest. Jag tycker ju om henne, men om det är någon medelålsers ni letar efter... tja...",
         bribedAnswerText: "Najs cash, tack! Jag åt faktiskt 50 äpplen! För Ninas 50års fest! Jag hade nog hållit ett extra öga på henne om jag var ni...",
-        textEnding: "Min make Bob är på andra sidan kanalen, spring dit!"
+        textEnding: "Min make Bob är på andra sidan kanalen, spring dit!",
+        clue: '50arsballong',
+        nextPlace: 'kanalen'
     }
 ]
 
@@ -66,7 +68,9 @@ const storyLine2 = [
         wrongAnswerText: "Nja... om du inte vet vad han heter så litar jag nog inte riktigt på dig tillräckligt för att säga vad jag sett...",
         correctAnswerText: "Rätt! Min ledtråd till dig är... Jag såg en lång man springa förbi bageriet igår.",
         bribedAnswerText: "Okej då... han heter Barack! Och jag såg en lång man ta sig förbi bageriet igår!",
-        textEnding: "Min make Johnny är på andra sidan kanalen, spring dit!"
+        textEnding: "Min make Johnny är på andra sidan kanalen, spring dit!",
+        clue: 'fagel',
+        nextPlace: 'kanalen'
     }
 ]
 
