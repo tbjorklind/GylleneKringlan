@@ -1,6 +1,6 @@
 'use strict'
 import { fireBaseFunctions } from './firebase.js'
-import renderQuestion from './render-storyline.js'
+import renderIntroAndQuestion from './render-storyline.js'
 
   // ------------------- RENDER TEAM SELECION ---------------------
   ; (() => {
@@ -37,7 +37,7 @@ function renderChooseBackpack(teamNumber) {
         'wrapper'
       ).innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i} <br> Rör er mot blå båten, Bobby har något viktigt att berätta...`
       localStorage.setItem("backpackNr", i)
-      setTimeout(() => { renderQuestion(0) }, 2000)
+      setTimeout(() => { renderIntroAndQuestion(0) }, 2000)
     })
 
   }

@@ -1,10 +1,10 @@
 "use strict"
 import { storylines } from "./storylines.js";
 import { fireBaseFunctions } from './firebase.js'
-export default renderQuestion;
+export default renderIntroAndQuestion;
 
 // --------------------- RENDER QUESTION -----------------------
-function renderQuestion(storyChapter) {
+function renderIntroAndQuestion(storyChapter) {
 
     // Chosing storyline based on backpack
     let storyLine;
@@ -16,17 +16,26 @@ function renderQuestion(storyChapter) {
     // Initial structure and question
     document.getElementById("wrapper").innerHTML = `
     <div id="storylineTop">
-        <div>${storyLine[storyChapter].text}</div>
+        <div>${storyLine[storyChapter].intro}</div>
     </div>
     <div id="storylineBottom"></div>
     `;
 
-    // Render each possible answer
-    storyLine[storyChapter].options.forEach(option => {
-        let answerOptionBtn = document.createElement("div");
-        answerOptionBtn.innerHTML = option.text;
-        document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-        answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, option.correctAnswer) })
+
+    let continueBtn = document.createElement("div");
+    continueBtn.classList.add("arrowBtn");
+    continueBtn.style.backgroundColor = "transparent";
+    document.getElementById("storylineBottom").appendChild(continueBtn);
+    continueBtn.addEventListener("click", () => {
+        document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
+        document.getElementById("storylineBottom").innerHTML = "";
+        // Render each possible answer
+        storyLine[storyChapter].options.forEach(option => {
+            let answerOptionBtn = document.createElement("div");
+            answerOptionBtn.innerHTML = option.text;
+            document.getElementById("storylineBottom").appendChild(answerOptionBtn);
+            answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, option.correctAnswer) })
+        })
     })
 }
 
@@ -45,7 +54,11 @@ async function renderAnswerResult(storyLine, storyChapter, answer) {
     else {
         document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].wrongAnswerText;
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA (20 mynt)</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
-        document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", () => { renderBribeResult(storyLine, storyChapter) })
+        document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", function onBribeClick(e) {
+            // Förhindrar användaren från att klicka på muta-knappen tusen ggr och bli PANK
+            document.querySelector("#wrapper > div:last-child > div:first-child").removeEventListener("click", onBribeClick)
+            renderBribeResult(storyLine, storyChapter)
+        })
     }
     // If wanting to leave
     document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
