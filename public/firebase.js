@@ -1,6 +1,7 @@
 'use strict'
 export const fireBaseFunctions = {
   getCollectionFromFirestore,
+  getDocumentFromFirestore,
   addDocumentToFirebase,
   updateDocumentToFirebase,
   deleteDocumentFromFirestore,

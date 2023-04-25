@@ -53,14 +53,27 @@ async function renderAnswerResult(storyLine, storyChapter, answer) {
 
 // --------------------- RENDER OF BRIBE -----------------------
 async function renderBribeResult(storyLine, storyChapter) {
+    // Kollar hur många coins man har 
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
-    await fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
-    await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].bribedAnswerText)
+    let coinStatus = await checkCoins(userTeamId, userBackpack)
 
-    document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
-    document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
-    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
+    // Om man har tillräckligt med coins
+    if (coinStatus) {
+        // Uppdatera ens coins med ny summa och lägg till ledtråd i ryggsäcken
+        await fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
+        await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].bribedAnswerText)
+
+        // Visa karaktärens svar i stora rutan, visa en 'gå vidare'-knapp och lägg till en eventlyssnare på den
+        document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
+        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+        document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
+    }
+    // Om man har för lite coins (inte har råd att muta), visa popup
+    else {
+        document.querySelector(".popup").classList.remove("hidden")
+        document.querySelector(".popupClose").addEventListener("click", () => { document.querySelector(".popup").classList.add("hidden") })
+    }
 }
 
 // --------------------- RENDER OF GOODBYE -----------------------
@@ -76,6 +89,23 @@ async function renderFarwell(storyLine, storyChapter) {
     // OBS VIKTIGT ATT StoryChapter HÄMTAS PÅ NYTT! Annars fastnar den på 0 eller 1 
 }
 
+
+
+async function checkCoins(userTeamId, userBackpack) {
+    let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId);
+
+    if (userBackpack == 1)
+        if (doc.backpack1.coins - 20 < 0)
+            return false
+        else
+            return true
+    if (userBackpack == 2) {
+        if (doc.backpack1.coins - 20 < 0)
+            return false
+        else
+            return true
+    }
+}
 
 /*
     1. En funktion körs med statens id som parameter
