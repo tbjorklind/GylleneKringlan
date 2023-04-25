@@ -78,22 +78,28 @@ async function renderBribeResult(storyLine, storyChapter) {
 
 // --------------------- RENDER OF GOODBYE -----------------------
 async function renderFarwell(storyLine, storyChapter) {
+    // Visa karaktärens svar i stora rutan och presentera en hejdå knapp typ
     document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
     document.querySelector("#wrapper > div:last-child").innerHTML = "<div>Hejdå!</div>"
 
+    // Uppdatera storyChapter till DB
     let nextChapter = storyChapter + 1;
     let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     await fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
 
+    // HÄR GÅ VIDARE
     // anropa nån annan funtktion som går vidare till karta. och när man är inom rätt zon igen så anropas renderQuestion med storyChapter som hämtats på nytt från databasen
     // OBS VIKTIGT ATT StoryChapter HÄMTAS PÅ NYTT! Annars fastnar den på 0 eller 1 
 }
 
-
-
+// --------------------- CHECK CURRENT COINS -----------------------
 async function checkCoins(userTeamId, userBackpack) {
+    // Hämtar teamets document
     let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId);
 
+    // 20 representerar kostnaden av att muta
+    // Om den nuvarande summan minus 20 blir negativ så returneras false, man
+    // ska inte kunna muta. Annars returneras true, man kan då muta.
     if (userBackpack == 1)
         if (doc.backpack1.coins - 20 < 0)
             return false
@@ -118,15 +124,5 @@ async function checkCoins(userTeamId, userBackpack) {
     6. Man uppmanas att gå vidare och återgår till kompassen, eller vad det nu är vi har där.
 */
 
-
-/*
-TO DO
-
-- Lägga till två team till i document (team5, team6)
-- Svarens påverkan på DB, ex:
-    - Spara gåtor
-    - Minska pengarna vid mutning
-
-*/
 
 
