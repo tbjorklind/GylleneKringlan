@@ -40,3 +40,10 @@ flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.arrowBtn{
+    background-image: url(../images/arrow.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

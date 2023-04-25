@@ -5,7 +5,8 @@ const storyLine1 = [
     {
         questionId: 0,
         characterImg: "./agneta.png",
-        text: "Hej jag heter Agneta, hur många äpplen åt jag igår?",
+        intro: "Hej jag heter Agneta!",
+        question: "Hur många äpplen åt jag igår?",
         options: [
             {
                 optionId: 0,
@@ -42,7 +43,8 @@ const storyLine2 = [
     {
         questionId: 0,
         characterImg: "./bob.png",
-        text: "Hej jag heter Bob, vad heter Obama i förnamn?",
+        intro: "Hej jag heter Bob!",
+        question: "Vad heter Obama i efternamn?",
         options: [
             {
                 optionId: 0,
