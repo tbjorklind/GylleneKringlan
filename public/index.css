@@ -1,3 +1,21 @@
+:root {
+    --color1: #804911;
+    --color2: #C0AE91;
+    --color3: #D29B57;
+    --color4: #AB3319;
+    --color5: #6B4930;
+    --color6: #C64F02;
+    --color7: #93785C;
+    --color8: #CC813A;
+    --color9: #57544E;
+    --color10: #BFA36C;
+    --color11: #0E0E0F;
+    --color12: #F1EDDE;
+    --color13: #AEBCBE;
+    --color14: #817772;
+    --color15: #577A81;
+}
+
 body {
     margin: 0;
     height: 100vh;
