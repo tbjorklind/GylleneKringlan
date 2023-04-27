@@ -182,7 +182,7 @@ function initMap (position) {
   circle.setMap(map)
 
   const img = {
-    url: '../images/boll.png',
+    url: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb',
     scaledSize: new google.maps.Size(300, 300)
   }
 

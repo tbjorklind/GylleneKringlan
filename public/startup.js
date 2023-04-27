@@ -19,6 +19,16 @@ import renderIntroAndQuestion from './render-storyline.js';
 
 })();
 
+// Arrow = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=ca5376d1-1983-4452-b362-366c9c97747f
+// team1 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=71e2024a-f946-4ad1-a68a-5b72039d80ec
+// team2 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=bde2ceef-9418-4fae-9f0e-53f4b4c757f4
+// team3 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=ff221b9d-9835-430f-a3b6-b24e0dace568
+// team4 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=0d896616-996e-437e-b82f-236497074f68
+// team5 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=8ae9f5a8-26bf-487e-82d9-b87d3fa993ee
+// team6 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=8e404806-8f02-483c-9fa5-73d59445c622
+
+
+
 // ------------------- RENDER TEAM SELECION ---------------------
 function renderChooseTeam() {
   let teamWrapper = document.createElement('div')
