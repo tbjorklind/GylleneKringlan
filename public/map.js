@@ -1,21 +1,26 @@
 // Ändra locations till rätt lag, glöm ej att den för båda ska finnas på båda.
 let storylineOne = [
-  { lat: 55.6095466, lng: 12.9937084 },
-  { lat: 55.6097507, lng: 12.9962505 },
-  { lat: 55.6078666, lng: 12.9910128 },
-  { lat: 55.6026459, lng: 12.9929222 },
-  { lat: 55.6028939, lng: 13.0011858 },
-  { lat: 55.6059576, lng: 13.0010688 }
+  { lat: 55.6095466, lng: 12.9937084 }, // Badaren Anita
+  { lat: 55.6097507, lng: 12.9962505 }, // Fiskaren Hansson
+  { lat: 55.6059576, lng: 13.0010688 }, // Apotekaren Ruth
+  { lat: 55.6082255, lng: 13.0100072 }, // Dörrvakten Tor
+  { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
+  { lat: 55.6059576, lng: 13.0010688 }, // Museum-ägaren Von
+  { lat: 55.603297, lng: 13.010903 }, // Detektiven August
+  { lat: 55.598236, lng: 13.006477 }, // Hemlöse Roland
+  { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
 ]
 
 let storylineTwo = [
-  { lat: 55.6082255, lng: 13.0100072 },
-  { lat: 55.6024005, lng: 12.9853929 },
-  { lat: 55.6049379, lng: 13.0091124 },
-  { lat: 55.6002879, lng: 13.0010339 },
-  { lat: 55.600768, lng: 12.9940654 },
-  { lat: 55.5966309, lng: 12.996344 },
-  { lat: 55.5942211, lng: 13.001169 }
+  { lat: 55.6095466, lng: 12.9937084 }, //Badaren anita
+  { lat: 55.6078666, lng: 12.9910128 }, // Kötthandlaren Clemens
+  { lat: 55.6026459, lng: 12.9929222 }, // Spelaren Carl-Wilhelm
+  { lat: 55.6024005, lng: 12.9853929 }, // Paret Charlie & Freja
+  { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
+  { lat: 55.6002879, lng: 13.0010339 }, // Konditorn Hilda
+  { lat: 55.600768, lng: 12.9940654 }, // Bibliotikarie Barbro
+  { lat: 55.5966309, lng: 12.996344 }, // Operasångerskan Birgit
+  { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
 ]
 
 const styledMapType = new google.maps.StyledMapType(
@@ -139,7 +144,9 @@ var options = {
 }
 
 // LOCAL STORAGE
-let index = 0
+// Kan bytas till bone, books, magni eller meds
+let teamName = "ball";
+let index = 0;
 let storyline = storylineOne
 
 // Ska göras från render-storyline sen..
@@ -157,14 +164,11 @@ function initMap (position) {
       lat: crd.latitude,
       lng: crd.longitude
     },
-    zoom: 25,
+    zoom: 17,
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
     }
   })
-  // Hämta local
-  let index = 0
-  let storyline = storylineOne
 
   let circle = new google.maps.Circle({
     radius: 100,
@@ -200,4 +204,3 @@ function initMap (position) {
 }
 
 window.initMap = initMap
-
