@@ -1,6 +1,7 @@
 'use strict'
 import { fireBaseFunctions } from './firebase.js';
 import renderIntroAndQuestion from './render-storyline.js';
+import renderBackpackBtn from './backpack.js';
 
 // ------------------- INITIALIZE PAGE ---------------------
 ; (() => {
@@ -31,11 +32,17 @@ import renderIntroAndQuestion from './render-storyline.js';
 
 // ------------------- RENDER TEAM SELECION ---------------------
 function renderChooseTeam() {
+  let teamTitle = document.createElement('div');
+  teamTitle.innerText = "Välj ditt lag!"
+  teamTitle.style.marginTop = '5vw'
+  teamTitle.style.fontSize = '5vw'
+  document.getElementById('wrapper').appendChild(teamTitle)
+
   let teamWrapper = document.createElement('div')
   teamWrapper.id = 'teamWrapper'
   for (let i = 1; i <= 6; i++) {
-    let teamBtn = document.createElement('img')
-    teamBtn.src = `../images/team${i}.png`
+    let teamBtn = document.createElement('div')
+    teamBtn.style.backgroundImage = `url(../images/team${i}.png)`
     teamBtn.classList.add('teamBtn')
     teamWrapper.appendChild(teamBtn)
     teamBtn.addEventListener('click', () => {
@@ -94,7 +101,10 @@ function renderChooseBackpack(teamNumber) {
         'wrapper'
       ).innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i} <br> Rör er mot blå båten, Bobby har något viktigt att berätta...`
       localStorage.setItem("backpackNr", i)
-      setTimeout(() => { renderIntroAndQuestion(0) }, 2000)
+      setTimeout(() => {
+        renderIntroAndQuestion(0)
+        renderBackpackBtn()
+      }, 2000)
     })
 
   }

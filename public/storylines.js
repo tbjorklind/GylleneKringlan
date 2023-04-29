@@ -33,7 +33,7 @@ const storyLine1 = [
         correctAnswerText: "Helt rätt! Nu e jag mätt! Jag åt femtio äpplen, för jag var på en femtioårsfest, Ninas fest. Jag tycker ju om henne, men om det är någon medelålsers ni letar efter... tja...",
         bribedAnswerText: "Najs cash, tack! Jag åt faktiskt 50 äpplen! För Ninas 50års fest! Jag hade nog hållit ett extra öga på henne om jag var ni...",
         textEnding: "Min make Bob är på andra sidan kanalen, spring dit!",
-        clue: '50arsballong',
+        clue: '50ÅrsBallong',
         nextPlace: 'kanalen'
     }
 ]
