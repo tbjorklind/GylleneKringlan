@@ -14,19 +14,25 @@
     --color13: #AEBCBE;
     --color14: #817772;
     --color15: #577A81;
+
+    --app-height: 100%;
 }
 
+html,
 body {
+    padding: 0;
     margin: 0;
-    height: 100vh;
+    overflow: hidden;
     width: 100vw;
+    height: 100vh;
+    height: var(--app-height);
     font-family: 'Klee One', cursive;
     font-weight: bold;
 }
     
 wrapper {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     align-items: center;
