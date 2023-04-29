@@ -11,12 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="startup.css">
+  <link rel="stylesheet" href="backpack.css">
   <link rel="stylesheet" href="storyline.css">
 </head>
 
 <body>
   <wrapper id="wrapper">
   </wrapper>
+  <div id="backpackBtn" class="hidden"></div>
+  <div id="backpackInventory" class="hidden">
+    <div></div>
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   <script src="config.js"></script>
@@ -25,6 +31,7 @@
   <script type="module" src="startup.js"></script>
   <script type="module" src="storylines.js"></script>
   <script type="module" src="render-storyline.js"></script>
+  <script type="module" src="backpack.js"></script>
   <div class="popup hidden">
     <div>
       <div class="popupContent">Ni har inte tillräckligt <br> med mynt för att muta</div>

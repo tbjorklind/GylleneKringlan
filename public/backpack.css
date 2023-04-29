@@ -1,0 +1,54 @@
+#backpackBtn{
+    position: absolute;
+    width: 16vw;
+    height: 15vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 2vh; 
+    right: 3vw; 
+    z-index: 50;
+}
+
+#backpackInventory{
+    position: absolute;
+    background-color: #93785C;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 40;
+    padding: 15% 5% 15% 5%;
+}
+
+#backpackInventory > div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.clueItem{
+    width: 40vw;
+    height: 40vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#backpackInventory > div > div > div:first-child{
+    height: 80%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#backpackInventory > div > div > div:last-child{
+    height: 20%;
+}

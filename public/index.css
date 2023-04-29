@@ -28,6 +28,7 @@ body {
     height: var(--app-height);
     font-family: 'Klee One', cursive;
     font-weight: bold;
+    background-color: #F1EDDE;
 }
     
 wrapper {
