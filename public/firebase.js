@@ -45,7 +45,6 @@ async function getDocumentFromFirestore(collectionName, id) {
 //console.log(getDocumentFromFirestore('Teams', 'Team1'))
 
 
-// EV. ta bort denna och bara köra på local storage? Tar tid att hämta från DB ibland
 // Getting the team ID of a user by sending their id
 async function getTeamIdOfUser(userId) {
   let teams = await getCollectionFromFirestore('Teams')

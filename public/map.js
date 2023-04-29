@@ -213,3 +213,17 @@ function initMap(position) {
 }
 
 window.initMap = initMap
+
+
+
+/*
+
+NOTE!
+Skriva till en funktion som kollar: när man är i rätt zon, byt tillbaks till index.html och anropar
+renderIntroAndQuestion(storyChapter) i render-storyline.js
+
+Dock hade det nog varit bättre om man inte bytte URL utan stannade på samma URL hela tiden och
+att saker och ing bara liksom laddas in och tas bort för att undvika buggar. Isf måste vi flytta
+om så att koden från map.html ligger i index.html å sånt... vi gör det isf på plats tsm hehhehe <3 
+
+*/
