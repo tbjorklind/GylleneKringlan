@@ -100,9 +100,10 @@ async function renderFarwell(storyLine, storyChapter) {
     let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     await fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
 
-    // HÄR GÅ VIDARE
-    // anropa nån annan funtktion som går vidare till karta. och när man är inom rätt zon igen så anropas renderQuestion med storyChapter som hämtats på nytt från databasen
-    // OBS VIKTIGT ATT StoryChapter HÄMTAS PÅ NYTT! Annars fastnar den på 0 eller 1 
+    // Sätt det nuvarande kapitelnumret i local storage och byta URL till kartan
+    localStorage.setItem('storyChapter', nextChapter)
+    let url = window.location.href + "map.html";
+    window.location.href = url;
 }
 
 // --------------------- CHECK CURRENT COINS -----------------------

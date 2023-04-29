@@ -146,16 +146,25 @@ var options = {
 // LOCAL STORAGE
 // Kan bytas till bone, books, magni eller meds
 let teamName = "ball";
-let index = 0;
-let storyline = storylineOne
+let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
+let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
+let storyLine;
+
+if (backpackNr == 1) {
+  storyLine = storylineOne;
+}
+
+if (backpackNr == 2) {
+  storyLine = storylineTwo;
+}
 
 // Ska göras från render-storyline sen..
-function renderFarwel () {
+function renderFarwel() {
   navigator.geolocation.getCurrentPosition(initMap)
 }
 renderFarwel()
 
-function initMap (position) {
+function initMap(position) {
   var crd = position.coords
   var map
   // Creates a map centered on the current location
@@ -174,8 +183,8 @@ function initMap (position) {
     radius: 100,
     map: map,
     center: {
-      lat: storyline[index].lat,
-      lng: storyline[index].lng
+      lat: storyLine[index].lat,
+      lng: storyLine[index].lng
     },
     strokeColor: '#CC813A',
     strokeOpacity: 0.8,
