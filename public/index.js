@@ -57,9 +57,7 @@ let interval = setInterval(() => {
     document.getElementById('counter').innerHTML =
       hour + ':' + minute + ':' + second
   }
-}, 1)
-
-//
+}, 1000)
 
 const appHeight = () => {
   const doc = document.documentElement
