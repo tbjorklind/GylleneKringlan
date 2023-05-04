@@ -32,12 +32,12 @@ import renderBackpackBtn from './backpack.js';
 
 // ------------------- RENDER TEAM SELECION ---------------------
 function renderChooseTeam() {
-  const btns = ["https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=71e2024a-f946-4ad1-a68a-5b72039d80ec",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=bde2ceef-9418-4fae-9f0e-53f4b4c757f4",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=ff221b9d-9835-430f-a3b6-b24e0dace568",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=0d896616-996e-437e-b82f-236497074f68",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=8ae9f5a8-26bf-487e-82d9-b87d3fa993ee",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=8e404806-8f02-483c-9fa5-73d59445c622"
+  const btns = ["https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=8d083b94-f0c3-489c-8b60-360774f021cd",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=5dbddef1-46bc-46fd-add4-63861482152c",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=f1ca3423-b005-44f9-8c66-68d34f199243",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=033afc2a-07d1-439e-b8a6-08253e1fc30f",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=538fff65-7d24-4a93-9201-a7332132abdc",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=b01db7f6-4507-4d7c-8287-da31f59db047"
   ]
   let teamTitle = document.createElement('div');
   teamTitle.innerText = "Välj ditt lag!"

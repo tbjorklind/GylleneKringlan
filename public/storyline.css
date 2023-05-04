@@ -42,7 +42,7 @@ flex-direction: column;
 }
 
 .arrowBtn{
-    background-image: url(../images/arrow.png);
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=a5d15cee-800c-4587-91e7-3a45078a892c");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
