@@ -30,11 +30,15 @@
 let hour = 3
 let minute = 0
 let second = 0
+let counter = document.getElementById('counter')
+
+document.querySelector('body').style.backgroundColor = 'black'
+document.querySelector('body').style.transition = 'background-color 10800s'
 
 let interval = setInterval(() => {
   if (hour == 0 && minute == 0 && second == 0) {
-    clearInterval(interval);
-    document.getElementById('counter').innerHTML = '0:00:00'
+    clearInterval(interval)
+    counter.innerHTML = '0:00:00'
   } else {
     if (second == 0) {
       minute--
@@ -54,8 +58,7 @@ let interval = setInterval(() => {
     if (second.toString().length == 1) {
       second = '0' + second
     }
-    document.getElementById('counter').innerHTML =
-      hour + ':' + minute + ':' + second
+    counter.innerHTML = hour + ':' + minute + ':' + second
   }
 }, 1000)
 
