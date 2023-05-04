@@ -32,6 +32,13 @@ import renderBackpackBtn from './backpack.js';
 
 // ------------------- RENDER TEAM SELECION ---------------------
 function renderChooseTeam() {
+  const btns = ["https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=71e2024a-f946-4ad1-a68a-5b72039d80ec",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=bde2ceef-9418-4fae-9f0e-53f4b4c757f4",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=ff221b9d-9835-430f-a3b6-b24e0dace568",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=0d896616-996e-437e-b82f-236497074f68",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=8ae9f5a8-26bf-487e-82d9-b87d3fa993ee",
+    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=8e404806-8f02-483c-9fa5-73d59445c622"
+  ]
   let teamTitle = document.createElement('div');
   teamTitle.innerText = "Välj ditt lag!"
   teamTitle.style.marginTop = '5vw'
@@ -42,7 +49,7 @@ function renderChooseTeam() {
   teamWrapper.id = 'teamWrapper'
   for (let i = 1; i <= 6; i++) {
     let teamBtn = document.createElement('div')
-    teamBtn.style.backgroundImage = `url(../images/team${i}.png)`
+    teamBtn.style.backgroundImage = "url(" + btns[i - 1] + ")";
     teamBtn.classList.add('teamBtn')
     teamWrapper.appendChild(teamBtn)
     teamBtn.addEventListener('click', () => {
@@ -66,6 +73,7 @@ function renderChooseTeam() {
 
 // ------------------- RENDER BACKSTORY ---------------------
 function renderBackstory(teamNumber, backStoryNr) {
+
   // Backstoryn i strängar, en sträng per "sida" alltså att man kommer till nästa
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.

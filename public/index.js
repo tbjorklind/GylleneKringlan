@@ -22,7 +22,7 @@
 let hour = 2
 let minute = 59
 let second = 60
-
+/*
 setInterval(() => {
   if (minute == 0 && second == 1) {
     document.getElementById('counter').innerHTML = '0:00:00'
@@ -48,7 +48,7 @@ setInterval(() => {
       hour + ':' + minute + ':' + second
   }
 }, 1000)
-
+*/
 //
 
 const appHeight = () => {
