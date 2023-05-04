@@ -105,7 +105,7 @@ wrapper {
 #backStoryContinueBtn{
   width: 66%;
   height: 50%;
-  background-image: url(../images/arrow.png);
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=ca5376d1-1983-4452-b362-366c9c97747f");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
