@@ -14,24 +14,23 @@ flex-direction: column;
 }
 
 #storylineTop {
-    height:50%;
+    height: 60%;
     width: 100vw;
-    background-color: darkgrey;
 }
 
 #storylineBottom {
-    height: 50%;
+    height: 40%;
     width: 100vw;
-    background-color:grey;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2vw;
     box-sizing: border-box;
+    padding-bottom: 2vh;
 }
 
 #storylineBottom div {
+    /*
     margin: 2vw;
     background-color: lightgray;
     width: 40%;
@@ -39,6 +38,18 @@ flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+    */
+    margin: 2vw;
+    width: 45%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 5vw;
 }
 
 .arrowBtn{
