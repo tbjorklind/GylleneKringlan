@@ -18,24 +18,34 @@
 //   }
 // )
 
-// Timer
-let hour = 2
-let minute = 59
-let second = 60
+// Fixa så timer funkar korrekt - tanja <3
+// Lägg till att opacity sänks - tanja <3
+// Lägg till rätt bildlänkar - My <3
+// Koppla ihop "spel" med karta - tsm <3
+// Ytterligare göra appis mer lik "figma" - lägg in karaktärer, pratbubblor, använd rätt färger osv. My <3
+// Zoonerna, logga när vi är "inom zoon" - tanja förbereder, testa/justera tsm <3
+// "Gör slutet"
 
-setInterval(() => {
-  if (minute == 0 && second == 1) {
+// Timer
+let hour = 3
+let minute = 0
+let second = 0
+
+let interval = setInterval(() => {
+  if (hour == 0 && minute == 0 && second == 0) {
+    clearInterval(interval);
     document.getElementById('counter').innerHTML = '0:00:00'
   } else {
-    second--
     if (second == 0) {
       minute--
-      second = 60;
+      second = 59
 
-      if (minute == 0) {
+      if (minute < 0) {
         hour--
-        minute = minute
+        minute = 59
       }
+    } else {
+      second--
     }
 
     if (minute.toString().length == 1) {
@@ -47,7 +57,7 @@ setInterval(() => {
     document.getElementById('counter').innerHTML =
       hour + ':' + minute + ':' + second
   }
-}, 1000)
+}, 1)
 
 //
 
