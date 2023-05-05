@@ -193,22 +193,24 @@ function initMap (position) {
   })
   circle.setMap(map)
 
+  var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
+  // var origin2 = 'Malmo, Sweden'
+  // var destinationA = 'Malmo, Sweden'
+  var destinationB = new google.maps.LatLng(55.6002879, 13.0010339)
 
-
-
-
-
-  // fetch(
-  //   `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${storyLine[0].lat},${storyLine[0].lng}&origins=${crd.latitude},${crd.longitude}&units=metric&key=AIzaSyAjy3pdeoGoCGKgdZ5z7g8fNpkhRRBEJV0`
-  // )
-  fetch(
-    `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=55.6095466,12.9937084&origins=55.582060732552094,13.013696502419457&units=metric&key=AIzaSyAjy3pdeoGoCGKgdZ5z7g8fNpkhRRBEJV0`
+  var service = new google.maps.DistanceMatrixService()
+  service.getDistanceMatrix(
+    {
+      origins: [origin1],
+      destinations: [destinationB],
+      travelMode: 'WALKING'
+    },
+    callback
   )
-    .then(r => r.json())
-    .then(console.log)
 
-
-
+  function callback (response) {
+    console.log(response.rows[0].elements[0].distance)
+  }
 
   const img = {
     url:
