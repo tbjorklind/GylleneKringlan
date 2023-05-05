@@ -1,4 +1,3 @@
-// Ändra locations till rätt lag, glöm ej att den för båda ska finnas på båda.
 let storylineOne = [
   { lat: 55.6095466, lng: 12.9937084 }, // Badaren Anita
   { lat: 55.6097507, lng: 12.9962505 }, // Fiskaren Hansson
@@ -145,26 +144,26 @@ var options = {
 
 // LOCAL STORAGE
 // Kan bytas till bone, books, magni eller meds
-let teamName = "ball";
+let teamName = 'ball'
 let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
 let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
-let storyLine;
+let storyLine
 
 if (backpackNr == 1) {
-  storyLine = storylineOne;
+  storyLine = storylineOne
 }
 
 if (backpackNr == 2) {
-  storyLine = storylineTwo;
+  storyLine = storylineTwo
 }
 
 // Ska göras från render-storyline sen..
-function renderFarwel() {
+function renderFarwel () {
   navigator.geolocation.getCurrentPosition(initMap)
 }
 renderFarwel()
 
-function initMap(position) {
+function initMap (position) {
   var crd = position.coords
   var map
   // Creates a map centered on the current location
@@ -173,7 +172,7 @@ function initMap(position) {
       lat: crd.latitude,
       lng: crd.longitude
     },
-    zoom: 17,
+    zoom: 14,
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
     }
@@ -183,8 +182,8 @@ function initMap(position) {
     radius: 100,
     map: map,
     center: {
-      lat: storyLine[index].lat,
-      lng: storyLine[index].lng
+      lat: storyLine[0].lat,
+      lng: storyLine[0].lng
     },
     strokeColor: '#CC813A',
     strokeOpacity: 0.8,
@@ -194,9 +193,27 @@ function initMap(position) {
   })
   circle.setMap(map)
 
+
+
+
+
+
+  // fetch(
+  //   `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${storyLine[0].lat},${storyLine[0].lng}&origins=${crd.latitude},${crd.longitude}&units=metric&key=AIzaSyAjy3pdeoGoCGKgdZ5z7g8fNpkhRRBEJV0`
+  // )
+  fetch(
+    `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=55.6095466,12.9937084&origins=55.582060732552094,13.013696502419457&units=metric&key=AIzaSyAjy3pdeoGoCGKgdZ5z7g8fNpkhRRBEJV0`
+  )
+    .then(r => r.json())
+    .then(console.log)
+
+
+
+
   const img = {
-    url: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb',
-    scaledSize: new google.maps.Size(300, 300)
+    url:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb',
+    scaledSize: new google.maps.Size(120, 120)
   }
 
   // Creates a marker at the current location
@@ -213,8 +230,6 @@ function initMap(position) {
 }
 
 window.initMap = initMap
-
-
 
 /*
 

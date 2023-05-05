@@ -1,4 +1,18 @@
 "use strict"
+// Problem/möjligheter 
+// Vad händer om man refreshar? State handling - kolla vilka nycklar som finns i databasen 
+// Använd dessa nycklar för att visa rätt sida/info
+
+// Vad behöver vi veta för att användaren ska komma till rätt sida? 
+// ID, spara nuvarande state (det man passerat+1), 
+
+// Steg 1 - placera ID och state i DB
+// Steg 2 - hur använder vi detta för att visa rätt sida?
+// Tankar - Känn av/kolla av, kör dessa om vi är på 0, dessa om vi är på 1 tex. Tidigt i JS-koden. Var är jag?
+// Säg till om inom zon
+
+// Tips, lås svarsalternativen för alla spelarna utom en.
+
 
 // Backpack 1
 const storyLine1 = [
