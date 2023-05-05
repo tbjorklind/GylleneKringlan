@@ -26,41 +26,41 @@
 // Zoonerna, logga när vi är "inom zoon" - tanja förbereder, testa/justera tsm <3
 // "Gör slutet"
 
-// Timer
-let hour = 3
-let minute = 0
-let second = 0
-let counter = document.getElementById('counter')
+// // Timer
+// let hour = 3
+// let minute = 0
+// let second = 0
+// let counter = document.getElementById('counter')
 
-document.querySelector('body').style.backgroundColor = 'black'
-document.querySelector('body').style.transition = 'background-color 10800s'
+// document.querySelector('body').style.backgroundColor = 'black'
+// document.querySelector('body').style.transition = 'background-color 10800s'
 
-let interval = setInterval(() => {
-  if (hour == 0 && minute == 0 && second == 0) {
-    clearInterval(interval)
-    counter.innerHTML = '0:00:00'
-  } else {
-    if (second == 0) {
-      minute--
-      second = 59
+// let interval = setInterval(() => {
+//   if (hour == 0 && minute == 0 && second == 0) {
+//     clearInterval(interval)
+//     counter.innerHTML = '0:00:00'
+//   } else {
+//     if (second == 0) {
+//       minute--
+//       second = 59
 
-      if (minute < 0) {
-        hour--
-        minute = 59
-      }
-    } else {
-      second--
-    }
+//       if (minute < 0) {
+//         hour--
+//         minute = 59
+//       }
+//     } else {
+//       second--
+//     }
 
-    if (minute.toString().length == 1) {
-      minute = '0' + minute
-    }
-    if (second.toString().length == 1) {
-      second = '0' + second
-    }
-    counter.innerHTML = hour + ':' + minute + ':' + second
-  }
-}, 1000)
+//     if (minute.toString().length == 1) {
+//       minute = '0' + minute
+//     }
+//     if (second.toString().length == 1) {
+//       second = '0' + second
+//     }
+//     counter.innerHTML = hour + ':' + minute + ':' + second
+//   }
+// }, 1000)
 
 const appHeight = () => {
   const doc = document.documentElement
