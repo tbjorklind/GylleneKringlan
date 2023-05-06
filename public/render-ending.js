@@ -14,7 +14,7 @@ När man väl är framme vid slutet ska:
 const characterImages = [
   {
     img: "https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png",
-    name: "Anita"
+    name: "Charlie"
   },
   {
     img: "https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png",
@@ -84,15 +84,76 @@ function renderConfirmCharacter(character) {
   popup.innerHTML = `
   <div>
     <img src="${character.img}">
-    <div>Är du säker på att ${character.name} är tjuven?</div>
+    <div>Är ni säkra på att ${character.name} är tjuven?</div>
     <div id="confirmCharacterBtns">
-      <div>JA</div>
-      <div>NEJ</div>
+      <div id="confirmYes">JA</div>
+      <div id="confirmNo">NEJ</div>
     </div>
   </div>
   `;
 
   document.querySelector("body").appendChild(popup);
+
+  document.getElementById("confirmYes").addEventListener('click', () => {
+    checkChoice(character);
+    popup.remove();
+  })
+  document.getElementById("confirmNo").addEventListener('click', () => { popup.remove() })
+}
+
+function checkChoice(character) {
+  if (character.name.toLowerCase() == "charlie")
+    correctAnswer(character)
+  else
+    wrongAnswer(character)
+}
+
+function correctAnswer(character) {
+  document.getElementById("wrapper").innerHTML = `
+  <div id="resultTop">
+    <img src="https://www.onlygfx.com/wp-content/uploads/2018/04/busted-stamp-3.png">
+  </div>
+  <div id="resultBottom">
+    <div>Charlie är tjuven!</div>
+    <div>GRATTIS! Ni fångade tjuven och Hilda har sin kringla igen!</div>
+  </div>
+  `
+
+  // Centrera allt vertikalt
+  document.querySelector("wrapper").style.paddingTop = 0;
+  document.querySelector("wrapper").style.display = "flex";
+  document.querySelector("wrapper").style.justifyContent = "center";
+}
+
+function wrongAnswer(character) {
+  document.getElementById("wrapper").innerHTML = `
+  <div id="resultTop">
+    <img src="https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png">
+  </div>
+  <div id="resultBottom">
+    <div>${character.name} är INTE tjuven!</div>
+    <div>Den riktiga tjuven springer iväg i natten...</div>
+  </div>
+  `
+
+  // Centrera allt vertikalt
+  document.querySelector("wrapper").style.paddingTop = 0;
+  document.querySelector("wrapper").style.display = "flex";
+  document.querySelector("wrapper").style.justifyContent = "center";
 }
 
 renderCharacterAlternatives()
+
+
+
+/*
+TO DO
+- Snygga till allt
+- Lägg in rätt namn och tillhörande bilder på karaktärerna
+- Lägg till möjlighet att betala med mynt för en gissning till
+- En vy för om tiden tagit slut 
+- Ordentliga busted och failed stämplar
+- Koppla ihop med resten av spelet (ska ej vara en egen URL)
+- Se till att höjden fungerar ordentlige på mobil
+
+*/
