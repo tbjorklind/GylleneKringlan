@@ -9,9 +9,9 @@ function renderBackpackBtn() {
     backpackBtn.classList.remove("hidden");
     let backpackNr = localStorage.getItem("backpackNr");
     if (backpackNr == 1)
-        backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=32ebb912-037e-432f-beb3-cfd1398a9f5e)`
+        backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=5b63d047-dbc9-45dd-9bfd-3aa59014857a)`
     else
-        backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=94e57aaf-c465-4d69-9c0c-84a279b0f42d)`
+        backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=20551b05-1f89-4f5b-922a-f1b28413830b)`
 
     backpackBtn.addEventListener("click", () => { onBackpackClick() })
 }
@@ -21,9 +21,9 @@ function onBackpackClick() {
     // Open packpack
     if (!backpackBtn.style.backgroundImage.includes("_open")) {
         if (backpackNr == 1)
-            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1_open.png?alt=media&token=1ef62635-4921-4241-97f9-95e602a6cb02)`;
+            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1_open.png?alt=media&token=67ba499a-6aaf-4190-882a-251fb8061bd3)`;
         else
-            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2_open.png?alt=media&token=ca7ba330-f877-4367-a910-2356dc7d9646)`;
+            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2_open.png?alt=media&token=c80316fe-dacd-4f04-8001-3266abed59d2)`;
 
         document.getElementById("wrapper").classList.add("hidden")
         displayInventory();
@@ -31,9 +31,9 @@ function onBackpackClick() {
     // Close backpack
     else {
         if (backpackNr == 1)
-            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=32ebb912-037e-432f-beb3-cfd1398a9f5e)`
+            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=5b63d047-dbc9-45dd-9bfd-3aa59014857a)`
         else
-            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=94e57aaf-c465-4d69-9c0c-84a279b0f42d)`
+            backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=20551b05-1f89-4f5b-922a-f1b28413830b)`
 
         backpackInventory.classList.add("hidden");
         document.getElementById("wrapper").classList.remove("hidden")
