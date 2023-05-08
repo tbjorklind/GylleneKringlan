@@ -99,7 +99,7 @@ function renderChooseBackpack(teamNumber) {
 
   for (let i = 1; i <= 2; i++) {
     let backpackBtn = document.createElement('div')
-    backpackBtn.innerHTML = 'Backpack ' + i
+    // backpackBtn.innerHTML = 'Backpack ' + i
     backpackBtn.classList.add('teamBtn')
     backpackWrapper.appendChild(backpackBtn)
 
