@@ -118,23 +118,26 @@ function correctAnswer(character) {
     <div>GRATTIS! Ni fångade tjuven och Hilda har sin kringla igen!</div>
   </div>
   `
-
+  document.getElementById("resultTop").style.backgroundImage = `url(${character.img})`
   // Centrera allt vertikalt
   document.querySelector("wrapper").style.paddingTop = 0;
   document.querySelector("wrapper").style.display = "flex";
   document.querySelector("wrapper").style.justifyContent = "center";
 }
 
-function wrongAnswer(character) {
+async function wrongAnswer(character) {
+
   document.getElementById("wrapper").innerHTML = `
-  <div id="resultTop">
-    <img src="https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png">
-  </div>
-  <div id="resultBottom">
-    <div>${character.name} är INTE tjuven!</div>
-    <div>Den riktiga tjuven springer iväg i natten...</div>
-  </div>
-  `
+    <div id="resultTop">
+      <img src="https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png">
+    </div>
+    <div id="resultBottom">
+      <div>${character.name} är INTE tjuven!</div>
+      <div>Den riktiga tjuven springer iväg i natten...</div>
+    </div>
+    `
+
+  document.getElementById("resultTop").style.backgroundImage = `url(${character.img})`
 
   // Centrera allt vertikalt
   document.querySelector("wrapper").style.paddingTop = 0;
