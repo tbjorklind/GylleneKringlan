@@ -1,16 +1,6 @@
 "use strict"
 
-/* 
-När man väl är framme vid slutet ska:
-    - Alla karaktärer rendreras och man uppmanas att välja sin tjuv 
-      OBS!! Endast på EN av mobilerna!! Annars kan dom ju gissa två ggr, å det vill vi inte... väl?
-    – Om man gissar rätt visas det att man lyckas
-    – Om man gissar fel får man frågan om man vill muta för en till gissning 
-        – Om man gissar rätt visas samma som ovan, att man lyckats
-        – Om man gissar fel igen eller accepterar nederlaget visas det att man förlorat  
-    – Och tillsist en vy om man inte hinner klart innan tiden är slut
-*/
-
+// --------------- NAMES AND IMAGES ---------------
 const characterImages = [
   {
     img: "https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png",
@@ -50,9 +40,9 @@ const characterImages = [
   }
 ]
 
-
+// ------------- RENDER CHARACTER ALTERNATIVES ---------------
+// --------------- (START OF THE ENDING PART) ---------------
 function renderCharacterAlternatives() {
-  // Header
   let header = document.createElement("div")
   header.id = "characterHeader";
   header.style.textAlign = 'center';
@@ -78,6 +68,7 @@ function renderCharacterAlternatives() {
   })
 }
 
+// --------------- POPUP CONFIRM CHOICE ---------------
 function renderConfirmCharacter(character) {
   let popup = document.createElement("div");
   popup.id = 'confirmCharacter';
@@ -101,6 +92,7 @@ function renderConfirmCharacter(character) {
   document.getElementById("confirmNo").addEventListener('click', () => { popup.remove() })
 }
 
+// --------------- CHECKING THE CHOSEN CHARACTER ---------------
 function checkChoice(character) {
   if (character.name.toLowerCase() == "charlie")
     correctAnswer(character)
@@ -108,6 +100,7 @@ function checkChoice(character) {
     wrongAnswer(character)
 }
 
+// --------------- DISPLAY IF CORRECT CHARACTER ---------------
 function correctAnswer(character) {
   document.getElementById("wrapper").innerHTML = `
   <div id="resultTop">
@@ -125,6 +118,7 @@ function correctAnswer(character) {
   document.querySelector("wrapper").style.justifyContent = "center";
 }
 
+// --------------- DISPLAY IF INCORRECT CHARACTER ---------------
 async function wrongAnswer(character) {
 
   document.getElementById("wrapper").innerHTML = `
@@ -145,7 +139,7 @@ async function wrongAnswer(character) {
   document.querySelector("wrapper").style.justifyContent = "center";
 }
 
-// ANROPAS NÄR TIDEN TAGIT SLUT 
+// --------------- CALLED IF TIME HAS RUN OUT ---------------
 function timeIsOut() {
   document.getElementById("wrapper").innerHTML = `
     <div id="resultTop">
@@ -163,15 +157,5 @@ function timeIsOut() {
   document.querySelector("wrapper").style.justifyContent = "center";
 }
 
+// --------------- DIRECT CODE ---------------
 renderCharacterAlternatives()
-
-
-
-/*
-TO DO
-- Snygga till allt
-- Lägg in rätt namn och tillhörande bilder på karaktärerna
-- Lägg till möjlighet att betala med mynt för en gissning till
-- Ordentliga busted och failed stämplar
-- Koppla ihop med resten av spelet (ska ej vara en egen URL)
-*/
