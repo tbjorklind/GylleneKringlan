@@ -1,4 +1,6 @@
-import startup from "./startup.js"
+import startup from './startup.js'
+// KOMMENTERA TILLBAKA!!!!!!!!!!!!
+
 // const arrow = document.querySelector('.arrow')
 // const speed = document.querySelector('.speed-value')
 
@@ -28,38 +30,34 @@ import startup from "./startup.js"
 // "Gör slutet"
 
 // Timer
-let hour = 3
-let minute = 0
-let second = 0
-let counter = document.getElementById('counter')
+let startTimestamp = localStorage.getItem('startTimestamp')
+if (!startTimestamp) {
+  startTimestamp = Date.now()
+  localStorage.setItem('startTimestamp', startTimestamp)
+}
 
-document.querySelector('body').style.backgroundColor = 'black'
-document.querySelector('body').style.transition = 'background-color 10800s'
+let timeRemaining = 3 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
 
 let interval = setInterval(() => {
-  if (hour == 0 && minute == 0 && second == 0) {
+  if (timeRemaining <= 0) {
     clearInterval(interval)
     counter.innerHTML = '0:00:00'
+    localStorage.removeItem('startTimestamp')
   } else {
-    if (second == 0) {
-      minute--
-      second = 59
+    let hours = Math.floor(timeRemaining / (60 * 60 * 1000))
+    let minutes = Math.floor((timeRemaining / (60 * 1000)) % 60)
+    let seconds = Math.floor((timeRemaining / 1000) % 60)
 
-      if (minute < 0) {
-        hour--
-        minute = 59
-      }
-    } else {
-      second--
+    if (minutes.toString().length == 1) {
+      minutes = '0' + minutes
+    }
+    if (seconds.toString().length == 1) {
+      seconds = '0' + seconds
     }
 
-    if (minute.toString().length == 1) {
-      minute = '0' + minute
-    }
-    if (second.toString().length == 1) {
-      second = '0' + second
-    }
-    counter.innerHTML = hour + ':' + minute + ':' + second
+    counter.innerHTML = hours + ':' + minutes + ':' + seconds
+
+    timeRemaining -= 1000
   }
 }, 1000)
 
@@ -72,12 +70,12 @@ window.addEventListener('resize', appHeight)
 appHeight()
 
 // Initiering av app
-function onLaunch() {
+function onLaunch () {
   // If new user (no userId exists in local storage)
   if (!localStorage.getItem('userId')) {
     //startup()
   }
-  // If the user is returning 
+  // If the user is returning
   else {
     // Ladda in kartan / kolla position
     // Kör som vanligt: om INTE inom zon, visa kartan. om INOM zon, renderera storyline/karaktär/fråga
@@ -106,7 +104,6 @@ function onLaunch() {
      */
   }
   startup()
-
 }
 
 onLaunch()
