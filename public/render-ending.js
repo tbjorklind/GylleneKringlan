@@ -145,6 +145,24 @@ async function wrongAnswer(character) {
   document.querySelector("wrapper").style.justifyContent = "center";
 }
 
+// ANROPAS NÄR TIDEN TAGIT SLUT 
+function timeIsOut() {
+  document.getElementById("wrapper").innerHTML = `
+    <div id="resultTop">
+      <img src="https://cdn.pixabay.com/photo/2021/08/27/19/20/thief-6579391_1280.png">
+    </div>
+    <div id="resultBottom">
+      <div style="font-size: 8vw;">Tiden är ute!</div>
+      <div>Solen har gått ner och den riktiga tjuven springer iväg i natten...</div>
+    </div>
+    `
+
+  // Centrera allt vertikalt
+  document.querySelector("wrapper").style.paddingTop = 0;
+  document.querySelector("wrapper").style.display = "flex";
+  document.querySelector("wrapper").style.justifyContent = "center";
+}
+
 renderCharacterAlternatives()
 
 
@@ -154,9 +172,6 @@ TO DO
 - Snygga till allt
 - Lägg in rätt namn och tillhörande bilder på karaktärerna
 - Lägg till möjlighet att betala med mynt för en gissning till
-- En vy för om tiden tagit slut 
 - Ordentliga busted och failed stämplar
 - Koppla ihop med resten av spelet (ska ej vara en egen URL)
-- Se till att höjden fungerar ordentlige på mobil
-
 */
