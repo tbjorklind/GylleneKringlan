@@ -11,6 +11,8 @@ const speechBubbleDown = "https://firebasestorage.googleapis.com/v0/b/gyllende-k
 // --------------------- RENDER QUESTION -----------------------
 function renderIntroAndQuestion(storyChapter) {
 
+    document.getElementById("wrapper").style.removeProperty("display")
+
     // Chosing storyline based on backpack
     let storyLine;
     if (localStorage.getItem("backpackNr") == 1)

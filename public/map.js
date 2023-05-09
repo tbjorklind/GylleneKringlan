@@ -1,4 +1,5 @@
 import { fireBaseFunctions } from "./firebase.js";
+import renderIntroAndQuestion from './render-storyline.js';
 export default startInitMap;
 
 const styledMapType = new google.maps.StyledMapType(
@@ -213,29 +214,30 @@ async function initMap(position) {
   })
   circle.setMap(map)
 
-  // var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
-  // // var origin2 = 'Malmo, Sweden'
-  // // var destinationA = 'Malmo, Sweden'
-  // var destinationB = new google.maps.LatLng(55.6002879, 13.0010339)
+  var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
+  // var origin2 = 'Malmo, Sweden'
+  // var destinationA = 'Malmo, Sweden'
+  var destinationB = new google.maps.LatLng(storyLine[storyChapter - 1].lat, storyLine[storyChapter - 1].lng)
 
-  // var service = new google.maps.DistanceMatrixService()
-  // service.getDistanceMatrix(
-  //   {
-  //     origins: [origin1],
-  //     destinations: [destinationB],
-  //     travelMode: 'WALKING'
-  //   },
-  //   callback
-  // )
+  var service = new google.maps.DistanceMatrixService()
+  service.getDistanceMatrix(
+    {
+      origins: [origin1],
+      destinations: [destinationB],
+      travelMode: 'WALKING'
+    },
+    callback
+  )
 
-  // function callback(response) {
-  //   console.log(response.rows[0].elements[0].distance.value)
-  //   if (response.rows[0].elements[0].distance.value <= 100) {
-  //     console.log('In zone')
-  //   } else {
-  //     console.log('Out of zone')
-  //   }
-  // }
+  function callback(response) {
+    console.log(response.rows[0].elements[0].distance.value)
+    if (response.rows[0].elements[0].distance.value <= 100) {
+      console.log('In zone')
+      renderIntroAndQuestion(storyChapter)
+    } else {
+      console.log('Out of zone')
+    }
+  }
 
   const img = {
     url:
