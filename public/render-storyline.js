@@ -17,6 +17,8 @@ function renderIntroAndQuestion(storyChapter) {
     else if (localStorage.getItem("backpackNr") == 2)
         storyLine = storylines.storyLine2;
 
+    console.log(storyChapter)
+
     // Initial structure and question
     document.getElementById("wrapper").innerHTML = `
     <div id="storylineTop">

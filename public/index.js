@@ -1,4 +1,6 @@
 import startup from './startup.js'
+import renderIntroAndQuestion from './render-storyline.js'
+import { fireBaseFunctions } from './firebase.js';
 
 export default startTimer;
 // KOMMENTERA TILLBAKA!!!!!!!!!!!!
@@ -77,13 +79,30 @@ window.addEventListener('resize', appHeight)
 appHeight()
 
 // Initiering av app
-function onLaunch() {
+async function onLaunch() {
   // If new user (no userId exists in local storage)
   if (!localStorage.getItem('userId')) {
-    //startup()
+    startup()
   }
   // If the user is returning
   else {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId);
+    let storyChapter;
+
+
+    if (userBackpack == 1) {
+      storyChapter = doc.backpack1.storyChapter;
+    }
+    if (userBackpack == 2) {
+      storyChapter = doc.backpack2.storyChapter;
+    }
+
+    renderIntroAndQuestion(storyChapter - 1)
+
+
+    // GET STATE AND CALL FUNCTION <3<3<33<3<3<3<3
     // Ladda in kartan / kolla position
     // Kör som vanligt: om INTE inom zon, visa kartan. om INOM zon, renderera storyline/karaktär/fråga
     /*  PROBLEM: hur göra så att endast en mobil/person kan svara på frågorna.
