@@ -196,9 +196,6 @@ async function initMap(position) {
     }
   })
 
-  console.log(storyLine)
-  console.log(storyChapter)
-
   let circle = new google.maps.Circle({
     radius: 100,
     map: map,

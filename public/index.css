@@ -91,5 +91,10 @@ wrapper {
 .timerBox{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 3%;
+    z-index: 50;
 }
+
+#counter{
+    font-size: 5vw;
+    }

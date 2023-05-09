@@ -1,6 +1,7 @@
 import startup from './startup.js'
 import renderIntroAndQuestion from './render-storyline.js'
 import { fireBaseFunctions } from './firebase.js';
+import renderBackpackBtn from './backpack.js'
 
 export default startTimer;
 // KOMMENTERA TILLBAKA!!!!!!!!!!!!
@@ -99,8 +100,11 @@ async function onLaunch() {
       storyChapter = doc.backpack2.storyChapter;
     }
 
-    if (storyChapter)
+    if (storyChapter) {
       renderIntroAndQuestion(storyChapter - 1)
+      renderBackpackBtn()
+      startTimer()
+    }
     else
       startup()
 

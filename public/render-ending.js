@@ -1,5 +1,5 @@
 "use strict"
-
+export default renderCharacterAlternatives;
 // --------------- NAMES AND IMAGES ---------------
 const characterImages = [
   {
