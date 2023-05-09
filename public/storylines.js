@@ -46,9 +46,43 @@ const storyLine1 = [
         wrongAnswerText: "Nääää... inte riktigt!",
         correctAnswerText: "Helt rätt! Nu e jag mätt! Jag åt femtio äpplen, för jag var på en femtioårsfest, Ninas fest. Jag tycker ju om henne, men om det är någon medelålsers ni letar efter... tja...",
         bribedAnswerText: "Najs cash, tack! Jag åt faktiskt 50 äpplen! För Ninas 50års fest! Jag hade nog hållit ett extra öga på henne om jag var ni...",
-        textEnding: "Min make Bob är på andra sidan kanalen, spring dit!",
+        textEnding: "Min fru Lucy är på andra sidan kanalen, spring dit!",
         clue: '50ÅrsBallong',
         nextPlace: 'kanalen'
+    },
+    {
+        questionId: 0,
+        characterImg: "./lucy.png",
+        intro: "Hej jag heter Lucy!",
+        question: "Vad gjorde bagaren när polisen kom?",
+        options: [
+            {
+                optionId: 0,
+                text: "Fortsatte baka sina bullar",
+                correctAnswer: false
+            },
+            {
+                optionId: 1,
+                text: "Frågade 'är något fel, konstapeln?' ",
+                correctAnswer: false
+            },
+            {
+                optionId: 2,
+                text: "Gav 10% rabatt",
+                correctAnswer: false
+            },
+            {
+                optionId: 3,
+                text: "SMET",
+                correctAnswer: true
+            }
+        ],
+        wrongAnswerText: "??? nej ? wtf...",
+        correctAnswerText: "JAPP! Okej far åt helvete!",
+        bribedAnswerText: "ooooogabooooga",
+        textEnding: "hejdå!!!!!",
+        clue: 'deg',
+        nextPlace: 'andra sidan stan'
     }
 ]
 
@@ -87,6 +121,40 @@ const storyLine2 = [
         textEnding: "Min make Johnny är på andra sidan kanalen, spring dit!",
         clue: 'fagel',
         nextPlace: 'kanalen'
+    },
+    {
+        questionId: 0,
+        characterImg: "./bob.png",
+        intro: "Hej jag heter Johnny!",
+        question: "Hur många ben har en spindel?",
+        options: [
+            {
+                optionId: 0,
+                text: "5 (en extra där bak)",
+                correctAnswer: false
+            },
+            {
+                optionId: 1,
+                text: "2",
+                correctAnswer: false
+            },
+            {
+                optionId: 2,
+                text: "6",
+                correctAnswer: true
+            },
+            {
+                optionId: 3,
+                text: "8",
+                correctAnswer: false
+            }
+        ],
+        wrongAnswerText: "Eh... nääää....",
+        correctAnswerText: "Rätt! Min ledtråd till dig är... jag såg anita med åttio spindlar härrom dagen!",
+        bribedAnswerText: "Okej då... jag såg anita med åttio spindlar härrom dagen!",
+        textEnding: "Det finns en vakt borta vid eslöv, gå dit vettja!",
+        clue: 'spindel',
+        nextPlace: 'eslöv'
     }
 ]
 
