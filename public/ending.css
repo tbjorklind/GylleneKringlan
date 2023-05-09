@@ -5,8 +5,8 @@ wrapper{
 
 #characterHeader{
     height: 10%;
-    width: 100%;
-    box-shadow: 0 5px 8px 5px var(--color12);
+    width: 90%;
+    /* box-shadow: 0 5px 8px 5px var(--color12); */
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,7 @@ wrapper{
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
+    mask-image: linear-gradient(to top, black calc(100% - 50px), transparent 100%);
 }
 
 #characterWrapper::-webkit-scrollbar{
