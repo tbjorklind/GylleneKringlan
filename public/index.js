@@ -1,4 +1,6 @@
 import startup from './startup.js'
+
+export default startTimer;
 // KOMMENTERA TILLBAKA!!!!!!!!!!!!
 
 // const arrow = document.querySelector('.arrow')
@@ -30,36 +32,41 @@ import startup from './startup.js'
 // "Gör slutet"
 
 // Timer
-let startTimestamp = localStorage.getItem('startTimestamp')
-if (!startTimestamp) {
-  startTimestamp = Date.now()
-  localStorage.setItem('startTimestamp', startTimestamp)
+function startTimer() {
+  let startTimestamp = localStorage.getItem('startTimestamp')
+  if (!startTimestamp) {
+    startTimestamp = Date.now()
+    localStorage.setItem('startTimestamp', startTimestamp)
+  }
+
+
+  let timeRemaining = 3 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
+
+  let interval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(interval)
+      counter.innerHTML = '0:00:00'
+      localStorage.removeItem('startTimestamp')
+    } else {
+      let hours = Math.floor(timeRemaining / (60 * 60 * 1000))
+      let minutes = Math.floor((timeRemaining / (60 * 1000)) % 60)
+      let seconds = Math.floor((timeRemaining / 1000) % 60)
+
+      if (minutes.toString().length == 1) {
+        minutes = '0' + minutes
+      }
+      if (seconds.toString().length == 1) {
+        seconds = '0' + seconds
+      }
+
+      counter.innerHTML = hours + ':' + minutes + ':' + seconds
+
+      timeRemaining -= 1000
+    }
+  }, 1000)
 }
 
-let timeRemaining = 3 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
 
-let interval = setInterval(() => {
-  if (timeRemaining <= 0) {
-    clearInterval(interval)
-    counter.innerHTML = '0:00:00'
-    localStorage.removeItem('startTimestamp')
-  } else {
-    let hours = Math.floor(timeRemaining / (60 * 60 * 1000))
-    let minutes = Math.floor((timeRemaining / (60 * 1000)) % 60)
-    let seconds = Math.floor((timeRemaining / 1000) % 60)
-
-    if (minutes.toString().length == 1) {
-      minutes = '0' + minutes
-    }
-    if (seconds.toString().length == 1) {
-      seconds = '0' + seconds
-    }
-
-    counter.innerHTML = hours + ':' + minutes + ':' + seconds
-
-    timeRemaining -= 1000
-  }
-}, 1000)
 
 // Height
 const appHeight = () => {
@@ -70,7 +77,7 @@ window.addEventListener('resize', appHeight)
 appHeight()
 
 // Initiering av app
-function onLaunch () {
+function onLaunch() {
   // If new user (no userId exists in local storage)
   if (!localStorage.getItem('userId')) {
     //startup()

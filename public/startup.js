@@ -2,6 +2,7 @@
 import { fireBaseFunctions } from './firebase.js';
 import renderIntroAndQuestion from './render-storyline.js';
 import renderBackpackBtn from './backpack.js';
+import startTimer from './index.js';
 export default startup;
 
 // Arrow = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=ca5376d1-1983-4452-b362-366c9c97747f
@@ -112,6 +113,7 @@ function renderChooseBackpack(teamNumber) {
       setTimeout(() => {
         renderIntroAndQuestion(0)
         renderBackpackBtn()
+        startTimer()
       }, 2000)
     })
 

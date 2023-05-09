@@ -83,3 +83,9 @@ wrapper {
 .hidden{
     display: none;
 }
+
+.timerBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
