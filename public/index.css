@@ -40,6 +40,10 @@ wrapper {
     flex-direction: column;
 }
 
+#map {
+    height: 100%;
+  }
+
 .popup{
     position: absolute;
     left: 0;

@@ -99,7 +99,10 @@ async function onLaunch() {
       storyChapter = doc.backpack2.storyChapter;
     }
 
-    renderIntroAndQuestion(storyChapter - 1)
+    if (storyChapter)
+      renderIntroAndQuestion(storyChapter - 1)
+    else
+      startup()
 
 
     // GET STATE AND CALL FUNCTION <3<3<33<3<3<3<3
@@ -129,7 +132,7 @@ async function onLaunch() {
         Pilligt som fan! hihi! <3 
      */
   }
-  startup()
+  //startup()
 }
 
 onLaunch()

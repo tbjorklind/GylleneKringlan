@@ -111,7 +111,7 @@ function renderChooseBackpack(teamNumber) {
       ).innerHTML = `Du är med i team ${teamNumber}, ryggsäck ${i} <br> Rör er mot blå båten, Bobby har något viktigt att berätta...`
       localStorage.setItem("backpackNr", i)
       setTimeout(() => {
-        renderIntroAndQuestion(1)
+        renderIntroAndQuestion(0)
         renderBackpackBtn()
         startTimer()
       }, 2000)

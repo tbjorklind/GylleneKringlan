@@ -1,26 +1,5 @@
-let storylineOne = [
-  { lat: 55.6095466, lng: 12.9937084 }, // Badaren Anita
-  { lat: 55.6097507, lng: 12.9962505 }, // Fiskaren Hansson
-  { lat: 55.6059576, lng: 13.0010688 }, // Apotekaren Ruth
-  { lat: 55.6082255, lng: 13.0100072 }, // Dörrvakten Tor
-  { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
-  { lat: 55.6059576, lng: 13.0010688 }, // Museum-ägaren Von
-  { lat: 55.603297, lng: 13.010903 }, // Detektiven August
-  { lat: 55.598236, lng: 13.006477 }, // Hemlöse Roland
-  { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
-]
-
-let storylineTwo = [
-  { lat: 55.6095466, lng: 12.9937084 }, //Badaren anita
-  { lat: 55.6078666, lng: 12.9910128 }, // Kötthandlaren Clemens
-  { lat: 55.6026459, lng: 12.9929222 }, // Spelaren Carl-Wilhelm
-  { lat: 55.6024005, lng: 12.9853929 }, // Paret Charlie & Freja
-  { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
-  { lat: 55.6002879, lng: 13.0010339 }, // Konditorn Hilda
-  { lat: 55.600768, lng: 12.9940654 }, // Bibliotikarie Barbro
-  { lat: 55.5966309, lng: 12.996344 }, // Operasångerskan Birgit
-  { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
-]
+import { fireBaseFunctions } from "./firebase.js";
+export default startInitMap;
 
 const styledMapType = new google.maps.StyledMapType(
   [
@@ -145,25 +124,63 @@ var options = {
 // LOCAL STORAGE
 // Kan bytas till bone, books, magni eller meds
 let teamName = 'ball'
-let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
-let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
-let storyLine
 
-if (backpackNr == 1) {
-  storyLine = storylineOne
-}
-
-if (backpackNr == 2) {
-  storyLine = storylineTwo
-}
+// Kolla vilket team man är i.
+// Array m ikon-namnen.
+// Loopa igenom och hitta rätt ikon.
 
 // Ska göras från render-storyline sen..
-function renderFarwel () {
+function startInitMap() {
   navigator.geolocation.getCurrentPosition(initMap)
 }
-renderFarwel()
 
-function initMap (position) {
+
+async function initMap(position) {
+  let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
+  let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
+  let storyLine
+
+  if (backpackNr == 1) {
+    storyLine = [
+      { lat: 55.6095466, lng: 12.9937084 }, // Badaren Anita
+      { lat: 55.6097507, lng: 12.9962505 }, // Fiskaren Hansson
+      { lat: 55.6059576, lng: 13.0010688 }, // Apotekaren Ruth
+      { lat: 55.6082255, lng: 13.0100072 }, // Dörrvakten Tor
+      { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
+      { lat: 55.6059576, lng: 13.0010688 }, // Museum-ägaren Von
+      { lat: 55.603297, lng: 13.010903 }, // Detektiven August
+      { lat: 55.598236, lng: 13.006477 }, // Hemlöse Roland
+      { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
+    ]
+  }
+
+  if (backpackNr == 2) {
+    storyLine = [
+      { lat: 55.6095466, lng: 12.9937084 }, //Badaren anita
+      { lat: 55.6078666, lng: 12.9910128 }, // Kötthandlaren Clemens
+      { lat: 55.6026459, lng: 12.9929222 }, // Spelaren Carl-Wilhelm
+      { lat: 55.6024005, lng: 12.9853929 }, // Paret Charlie & Freja
+      { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
+      { lat: 55.6002879, lng: 13.0010339 }, // Konditorn Hilda
+      { lat: 55.600768, lng: 12.9940654 }, // Bibliotikarie Barbro
+      { lat: 55.5966309, lng: 12.996344 }, // Operasångerskan Birgit
+      { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
+    ]
+  }
+
+  let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+  let userBackpack = localStorage.getItem('backpackNr');
+  let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId);
+  let storyChapter;
+
+  if (userBackpack == 1) {
+    storyChapter = doc.backpack1.storyChapter;
+  }
+  if (userBackpack == 2) {
+    storyChapter = doc.backpack2.storyChapter;
+  }
+
+
   var crd = position.coords
   var map
   // Creates a map centered on the current location
@@ -178,12 +195,15 @@ function initMap (position) {
     }
   })
 
+  console.log(storyLine)
+  console.log(storyChapter)
+
   let circle = new google.maps.Circle({
     radius: 100,
     map: map,
     center: {
-      lat: storyLine[0].lat,
-      lng: storyLine[0].lng
+      lat: storyLine[storyChapter - 1].lat,
+      lng: storyLine[storyChapter - 1].lng
     },
     strokeColor: '#CC813A',
     strokeOpacity: 0.8,
@@ -193,29 +213,29 @@ function initMap (position) {
   })
   circle.setMap(map)
 
-  var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
-  // var origin2 = 'Malmo, Sweden'
-  // var destinationA = 'Malmo, Sweden'
-  var destinationB = new google.maps.LatLng(55.6002879, 13.0010339)
+  // var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
+  // // var origin2 = 'Malmo, Sweden'
+  // // var destinationA = 'Malmo, Sweden'
+  // var destinationB = new google.maps.LatLng(55.6002879, 13.0010339)
 
-  var service = new google.maps.DistanceMatrixService()
-  service.getDistanceMatrix(
-    {
-      origins: [origin1],
-      destinations: [destinationB],
-      travelMode: 'WALKING'
-    },
-    callback
-  )
+  // var service = new google.maps.DistanceMatrixService()
+  // service.getDistanceMatrix(
+  //   {
+  //     origins: [origin1],
+  //     destinations: [destinationB],
+  //     travelMode: 'WALKING'
+  //   },
+  //   callback
+  // )
 
-  function callback (response) {
-    console.log(response.rows[0].elements[0].distance.value)
-    if (response.rows[0].elements[0].distance.value <= 100) {
-      console.log('In zone')
-    } else {
-      console.log('Out of zone')
-    }
-  }
+  // function callback(response) {
+  //   console.log(response.rows[0].elements[0].distance.value)
+  //   if (response.rows[0].elements[0].distance.value <= 100) {
+  //     console.log('In zone')
+  //   } else {
+  //     console.log('Out of zone')
+  //   }
+  // }
 
   const img = {
     url:
@@ -237,15 +257,3 @@ function initMap (position) {
 }
 
 window.initMap = initMap
-
-/*
-
-NOTE!
-Skriva till en funktion som kollar: när man är i rätt zon, byt tillbaks till index.html och anropar
-renderIntroAndQuestion(storyChapter) i render-storyline.js
-
-Dock hade det nog varit bättre om man inte bytte URL utan stannade på samma URL hela tiden och
-att saker och ing bara liksom laddas in och tas bort för att undvika buggar. Isf måste vi flytta
-om så att koden från map.html ligger i index.html å sånt... vi gör det isf på plats tsm hehhehe <3 
-
-*/

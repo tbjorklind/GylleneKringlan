@@ -1,6 +1,7 @@
 "use strict"
 import { storylines } from "./storylines.js";
 import { fireBaseFunctions } from './firebase.js'
+import startInitMap from './map.js'
 export default renderIntroAndQuestion;
 
 // --------------------- CONSTS -----------------------
@@ -16,8 +17,6 @@ function renderIntroAndQuestion(storyChapter) {
         storyLine = storylines.storyLine1;
     else if (localStorage.getItem("backpackNr") == 2)
         storyLine = storylines.storyLine2;
-
-    console.log(storyChapter)
 
     // Initial structure and question
     document.getElementById("wrapper").innerHTML = `
@@ -125,16 +124,18 @@ async function renderFarwell(storyLine, storyChapter) {
     let background = randomizeBtnBackgrounds(1);
     document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${background[0]})`;
 
-    document.querySelector("#wrapper > div:last-child > div").addEventListener('click', async () => {
+    document.querySelector("#wrapper > div:last-child > div").addEventListener('click', async (event) => {
         // Uppdatera storyChapter till DB
         let nextChapter = storyChapter + 1;
         let idOfUser = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
         await fireBaseFunctions.updateStoryChapter('Teams', idOfUser, localStorage.getItem('backpackNr'), nextChapter)
 
         // Sätt det nuvarande kapitelnumret i local storage och byta URL till kartan
-        localStorage.setItem('storyChapter', nextChapter)
-        let url = window.location.href + "map.html";
-        window.location.href = url;
+        // localStorage.setItem('storyChapter', nextChapter)
+        // let url = window.location.href + "map.html";
+        // window.location.href = url;
+        document.getElementById("wrapper").style.display = "none";
+        startInitMap()
     })
 }
 
