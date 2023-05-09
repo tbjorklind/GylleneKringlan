@@ -67,7 +67,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer) {
     if (answer) {
         document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].correctAnswerText;
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
-        document.querySelector("#wrapper > div:last-child").style.backgroundImage = `url(${backgrounds[0]})`
+        document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${backgrounds[0]})`
 
         let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
         let userBackpack = localStorage.getItem('backpackNr');

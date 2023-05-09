@@ -87,13 +87,11 @@ wrapper {
 #backStoryTop {
   height: 80%;
   width: 100vw;
-  background-color: darkgrey;
 }
 
 #backStoryBottom {
   height: 20%;
   width: 100vw;
-  background-color: grey;
   display: flex;
   justify-content: center;
   align-items: center;
