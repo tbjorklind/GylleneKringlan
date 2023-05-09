@@ -18,8 +18,8 @@
 const storyLine1 = [
     {
         questionId: 0,
-        characterImg: "./agneta.png",
-        intro: "Hej jag heter Agneta!",
+        characterImg: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33",
+        intro: "Hej jag heter Anita!",
         question: "Hur många äpplen åt jag igår?",
         options: [
             {

@@ -2,6 +2,7 @@ import startup from './startup.js'
 import renderIntroAndQuestion from './render-storyline.js'
 import { fireBaseFunctions } from './firebase.js';
 import renderBackpackBtn from './backpack.js'
+import startInitMap from './map.js';
 
 export default startTimer;
 // KOMMENTERA TILLBAKA!!!!!!!!!!!!
@@ -101,7 +102,9 @@ async function onLaunch() {
     }
 
     if (storyChapter) {
-      renderIntroAndQuestion(storyChapter - 1)
+      // Kanske bättre att köra kartan, så den kollar: om inom zon, ladda story. Annars visa kartan.
+      //renderIntroAndQuestion(storyChapter - 1)
+      startInitMap()
       renderBackpackBtn()
       startTimer()
     }

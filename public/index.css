@@ -28,7 +28,7 @@ body {
     height: var(--app-height);
     font-family: 'Klee One', sans-serif;
     font-weight: bold;
-    background-color: var(--color12);
+    /* background-color: var(--color12); */
     background-image: 
     radial-gradient(
         #F1EDDE,

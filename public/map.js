@@ -132,6 +132,7 @@ let teamName = 'ball'
 
 // Ska göras från render-storyline sen..
 function startInitMap() {
+  document.querySelector("#wrapper").style.display = "none";
   navigator.geolocation.getCurrentPosition(initMap)
 }
 

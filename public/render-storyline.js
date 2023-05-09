@@ -4,10 +4,6 @@ import { fireBaseFunctions } from './firebase.js'
 import startInitMap from './map.js'
 export default renderIntroAndQuestion;
 
-// --------------------- CONSTS -----------------------
-const speechBubbleUp = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbubble_up.png?alt=media&token=47fc1c99-bffe-4c57-be83-d8c355f97d67";
-const speechBubbleDown = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbubble_down.png?alt=media&token=694833f6-ebe8-4de4-b9b2-e77b8b16e66e";
-
 // --------------------- RENDER QUESTION -----------------------
 function renderIntroAndQuestion(storyChapter) {
 
@@ -24,6 +20,7 @@ function renderIntroAndQuestion(storyChapter) {
     document.getElementById("wrapper").innerHTML = `
     <div id="storylineTop">
         <div>${storyLine[storyChapter].intro}</div>
+        <img src="${storyLine[storyChapter].characterImg}">
     </div>
     <div id="storylineBottom"></div>
     `;
@@ -188,18 +185,3 @@ function randomizeBtnBackgrounds(number) {
     }
     return randomizedBackgrounds;
 }
-
-
-/*
-    1. En funktion körs med statens id som parameter
-    2. Personen, frågan och svarsalternativen rendreras
-    3. Baserat på vilket alternativ man klickar på rendreras olika saker:
-        1. Om lyckat: karaktärens svar rendreras, gåtan läggs i ens backpack
-        2. Om ej lyckat: man ges alternativet att gå vidare eller muta. Om muta sker samma sak som ovan.
-    4. TextEnding rendreras med info om vart man ska härnäst
-    5. QuestionId + 1 stoppas i staten i db för att kunna användas som parameter när man kommer till nästa zon.
-    6. Man uppmanas att gå vidare och återgår till kompassen, eller vad det nu är vi har där.
-*/
-
-
-
