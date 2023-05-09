@@ -154,6 +154,8 @@ wrapper{
     font-size: 7vw;
     border-bottom: 2px solid var(--color1);
     padding: 3%;
+    max-width: 80%;
+    text-align: center;
 }
 
 #resultBottom div:last-child{
