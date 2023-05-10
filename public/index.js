@@ -43,6 +43,9 @@ function startTimer() {
     localStorage.setItem('startTimestamp', startTimestamp)
   }
 
+  let body = document.body;
+  let initialOpacity = 0;
+  let opacityStep = 1 / (3 * 60 * 60);
 
   let timeRemaining = 3 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
 
@@ -65,10 +68,14 @@ function startTimer() {
 
       counter.innerHTML = hours + ':' + minutes + ':' + seconds
 
+      body.style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
+      initialOpacity += opacityStep;
+
       timeRemaining -= 1000
     }
   }, 1000)
 }
+
 
 
 
