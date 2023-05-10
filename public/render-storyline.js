@@ -4,8 +4,36 @@ import { fireBaseFunctions } from './firebase.js'
 import startInitMap from './map.js'
 export default renderIntroAndQuestion;
 
+let questionState = {};
+
 // --------------------- RENDER QUESTION -----------------------
-function renderIntroAndQuestion(storyChapter) {
+async function renderIntroAndQuestion(storyChapter) {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+
+    let chosenBtn;
+
+    if (userBackpack == 1) {
+        questionState = doc.backpack1.questionState;
+        if (doc.backpack1.questionState.answered) {
+            chosenBtn = doc.backpack1.questionState.chosenAnswer;
+        } else {
+            chosenBtn = "";
+        }
+    }
+    if (userBackpack == 2) {
+        questionState = doc.backpack2.questionState;
+        if (doc.backpack2.questionState.answered) {
+            chosenBtn = doc.backpack2.questionState.chosenAnswer;
+        }
+        else {
+            chosenBtn = "";
+        }
+    }
+
+    console.log(questionState)
+
 
     document.getElementById("wrapper").style.removeProperty("display")
 
@@ -40,10 +68,19 @@ function renderIntroAndQuestion(storyChapter) {
         let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
         for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
             let answerOptionBtn = document.createElement("div");
+            answerOptionBtn.classList.add(`answer${i + 1}`)
+
+            if (chosenBtn != "") {
+                if (`answer${i + 1}` != chosenBtn) {
+                    answerOptionBtn.style.backgroundColor = "white";
+                    //answerOptionBtn.disabled = true;
+                }
+            }
+
             answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
             answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
             document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-            answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer) })
+            answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
         }
 
         /* F.D. Funktion, nu ändrad till for-loop för att kunna använda sig av 'i' som parameter i randomizeBtnBackground()anropet 
@@ -58,7 +95,11 @@ function renderIntroAndQuestion(storyChapter) {
 }
 
 // --------------------- RENDER RESULT OF ANSWER -----------------------
-async function renderAnswerResult(storyLine, storyChapter, answer) {
+async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer) {
+    questionState.answered = true;
+    questionState.chosenAnswer = chosenAnswer;
+    await fireBaseFunctions.updateQuestionState(questionState)
+
     let backgrounds = randomizeBtnBackgrounds(3);
     // If correct answer, show clue, add clue to backpack and offer to exit
     if (answer) {
@@ -134,6 +175,7 @@ async function renderFarwell(storyLine, storyChapter) {
         // let url = window.location.href + "map.html";
         // window.location.href = url;
         document.getElementById("wrapper").style.display = "none";
+        await fireBaseFunctions.updateQuestionState(questionState)
         startInitMap()
     })
 }
@@ -177,7 +219,6 @@ function randomizeBtnBackgrounds(number) {
     for (let i = 0; i < number; i++) {
         let randomNr = Math.floor(Math.random() * 9);
         let randomBackground = backgrounds[randomNr];
-        console.log(randomNr + " " + randomBackground);
         if (randomizedBackgrounds.includes(randomBackground))
             i--
         else

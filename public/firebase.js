@@ -9,7 +9,8 @@ export const fireBaseFunctions = {
   updateStoryChapter,
   getTeamIdOfUser,
   updateCoins,
-  addClueToBackpack
+  addClueToBackpack,
+  updateQuestionState
 }
 
 const db = firebase.firestore()
@@ -141,6 +142,30 @@ async function updateStoryChapter(collectionName, id, backpackNr, chapter) {
     .collection(collectionName)
     .doc(id)
     .update(document)
+}
+
+async function updateQuestionState(questionState) {
+  let backpackNr = localStorage.getItem('backpackNr');
+  let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+  let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+
+  console.log(questionState)
+
+  if (backpackNr == 1)
+    doc.backpack1.questionState.answered = questionState.answered
+  doc.backpack1.questionState.chosenAnswer = questionState.chosenAnswer
+  doc.backpack1.questionState.bribed = questionState.bribed
+  if (backpackNr == 2)
+    doc.backpack2.questionState.answered = questionState.answered
+  doc.backpack2.questionState.chosenAnswer = questionState.chosenAnswer
+  doc.backpack2.questionState.bribed = questionState.bribed
+
+  await db
+    .collection('Teams')
+    .doc(userTeamId)
+    .update(doc)
+
+  console.log(questionState);
 }
 
 // Update coins of a backpack
