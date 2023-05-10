@@ -231,15 +231,15 @@ async function checkCoins(userTeamId, userBackpack) {
 // --------------------- RANDOMIZE BUTTON BACKGROUNDS -----------------------
 // ---------------------- Param only 1 to 9 allowed ------------------------
 function randomizeBtnBackgrounds(number) {
-    const backgrounds = ["https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn1.png?alt=media&token=a44f6384-033c-439e-9a33-d62ee92383f6",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn2.png?alt=media&token=9513eece-4aba-4666-bb1b-9aef975b016e",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn3.png?alt=media&token=63b4381e-2cef-4f3d-984b-d6a6da3406d7",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn4.png?alt=media&token=5f7ad137-20fd-4b8a-9f4c-c31dab79ee51",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn5.png?alt=media&token=27d42458-b963-4d33-8965-8a35c9147990",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn6.png?alt=media&token=2dd49b8d-ad9b-4726-9a91-5def63aba348",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn7.png?alt=media&token=9adfa49e-1cc4-4d8a-8766-ccf2b9124fd8",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn8.png?alt=media&token=575da275-52d6-45f5-9481-03583cce49d7",
-        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn9.png?alt=media&token=82735731-c3ac-4157-b18a-e861d1c68487"]
+    const backgrounds = [
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn1.png?alt=media&token=83a2559d-173b-426f-a82f-3e7c9cc2ec4b",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn2.png?alt=media&token=92f9eca7-c491-4fee-b04f-1177b528460b",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn3.png?alt=media&token=046eddd4-6769-4a86-af36-6bcee53ecbe7",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn4.png?alt=media&token=720a8dc6-172b-4a99-b2b0-9a5c3fd51933",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn5.png?alt=media&token=ab05a8e7-12a0-47a3-9b07-1cd7ac3dc5d1",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn6.png?alt=media&token=c3ee1b57-3854-4161-a77f-29da4e40e806",
+        "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn7.png?alt=media&token=15392d47-03cd-4d89-9fbf-2a65e8267c4d"
+    ]
 
     let randomizedBackgrounds = [];
 
