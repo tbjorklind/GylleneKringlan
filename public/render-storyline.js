@@ -32,9 +32,6 @@ async function renderIntroAndQuestion(storyChapter) {
         }
     }
 
-    console.log(questionState)
-
-
     document.getElementById("wrapper").style.removeProperty("display")
 
     // Chosing storyline based on backpack
@@ -64,7 +61,6 @@ async function renderIntroAndQuestion(storyChapter) {
 
 
         // Render each possible answer
-        console.log(storyLine[storyChapter].options.length)
         let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
         for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
             let answerOptionBtn = document.createElement("div");
@@ -99,6 +95,9 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
     questionState.answered = true;
     questionState.chosenAnswer = chosenAnswer;
     await fireBaseFunctions.updateQuestionState(questionState)
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
 
     let backgrounds = randomizeBtnBackgrounds(3);
     // If correct answer, show clue, add clue to backpack and offer to exit
@@ -119,9 +118,31 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundImage = `url(${backgrounds[1]})`
         document.querySelector("#wrapper > div:last-child > div:last-child").style.backgroundImage = `url(${backgrounds[2]})`
 
-        document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", function onBribeClick(e) {
+        console.log(doc)
+        if (userBackpack == 1) {
+            if (doc.backpack1.questionState.bribed) {
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundColor = "white";
+            }
+        }
+        if (userBackpack == 2) {
+            if (doc.backpack2.questionState.bribed) {
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundColor = "white";
+            }
+        }
+
+
+        // document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", function onBribeClick(e) {
+        //     // Förhindrar användaren från att klicka på muta-knappen tusen ggr och bli PANK
+        //     questionState.bribed = true;
+        //     document.querySelector("#wrapper > div:last-child > div:first-child").removeEventListener("click", onBribeClick)
+        //     renderBribeResult(storyLine, storyChapter)
+        // })
+
+        document.querySelector("#wrapper > div:last-child > div:first-child").addEventListener("click", async function onBribeClick(e) {
             // Förhindrar användaren från att klicka på muta-knappen tusen ggr och bli PANK
+            questionState.bribed = true;
             document.querySelector("#wrapper > div:last-child > div:first-child").removeEventListener("click", onBribeClick)
+            await fireBaseFunctions.updateQuestionState(questionState)
             renderBribeResult(storyLine, storyChapter)
         })
     }
@@ -175,6 +196,10 @@ async function renderFarwell(storyLine, storyChapter) {
         // let url = window.location.href + "map.html";
         // window.location.href = url;
         document.getElementById("wrapper").style.display = "none";
+
+        questionState.answered = false;
+        questionState.chosenAnswer = "";
+        questionState.bribed = false;
         await fireBaseFunctions.updateQuestionState(questionState)
         startInitMap()
     })
