@@ -12,26 +12,35 @@ wrapper {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 #startPageWrapper div:first-child {
-  background-color: #c0ae91;
-  width: 70%;
-  height: 70%;
+  /* background-color: #c0ae91; */
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40%;
+}
+
+#startPageWrapper div:nth-child(2) {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fgyllene.png?alt=media&token=86d4f146-345b-4bf5-bbb9-a8e394264b0d);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10vw;
+  width: 90%;
+  height: 40%;
 }
 
 #startPageWrapper div:last-child {
-  position: relative;
-  top: 5%;
-  background-color: lightgrey;
-  padding: 4%;
-  border-radius: 10px;
+  margin-top: 20%;
+  background-color:  #C0AE9133;
+  padding: 6%;
+  border-radius: 200px;
 }
 
 #backpackWrapper {

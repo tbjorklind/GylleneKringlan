@@ -20,7 +20,8 @@ function startup() {
   let startPageWrapper = document.createElement('div')
   startPageWrapper.id = 'startPageWrapper';
   startPageWrapper.innerHTML = `
-  <div>GYLLENE KRINGLAN</div>
+  <div>Gyllene Kringlan</div>
+  <div></div>
   <div>STARTA ÄVENTYRET!</div>
   `
   document.getElementById('wrapper').appendChild(startPageWrapper)
