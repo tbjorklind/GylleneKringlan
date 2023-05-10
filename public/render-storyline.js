@@ -68,8 +68,8 @@ async function renderIntroAndQuestion(storyChapter) {
 
             if (chosenBtn != "") {
                 if (`answer${i + 1}` != chosenBtn) {
-                    answerOptionBtn.style.backgroundColor = "white";
-                    //answerOptionBtn.disabled = true;
+                    answerOptionBtn.style.pointerEvents = "none"
+                    answerOptionBtn.style.color = "gray"
                 }
             }
 
@@ -121,12 +121,14 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         console.log(doc)
         if (userBackpack == 1) {
             if (doc.backpack1.questionState.bribed) {
-                document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundColor = "white";
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.pointerEvents = "none";
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.color = "grey";
             }
         }
         if (userBackpack == 2) {
             if (doc.backpack2.questionState.bribed) {
-                document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundColor = "white";
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.pointerEvents = "none";
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundColor = "grey";
             }
         }
 

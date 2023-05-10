@@ -4,6 +4,10 @@ export default renderBackpackBtn;
 
 let backpackBtn = document.getElementById("backpackBtn");
 let backpackInventory = document.getElementById("backpackInventory");
+const clues = {
+    img: "",
+    name: ""
+}
 
 function renderBackpackBtn() {
     backpackBtn.classList.remove("hidden");
