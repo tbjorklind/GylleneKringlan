@@ -79,7 +79,10 @@ function renderBackstory(teamNumber, backStoryNr) {
   // Backstoryn i strängar, en sträng per "sida" alltså att man kommer till nästa
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.
-  let backStory = ["Det var en gång en kringla...", "...som gillade att mingla!"];
+  let backStory = [
+    `Den gyllene kringlan är stulen och ni måste hjälpa oss att hitta den skyldige!
+    Genom att gå genom staden för att träffa befolkningen kan du hitta ledtrådar om du lyckas ha rätt på frågorna du får på vägen. Kan ni hjälpa oss att lösa mysteriet? Välj den ryggsäck som symboliserar dig bäst! Är du den smarta? Eller är du den klurige? Dela upp er för att spara tid men tänk på att solen snart går ner!`,
+    `Klicka på den ryggsäcken som symboliserar dig bäst, ryggsäckarna kommer leda till olika platser i Malmö för att träffa olika personer i spelet, de olika vägarna kommer att möta olika personer. Den blåa ryggsäcken leder den smarta vägen, på denna väg behöver du vara lite allmänbildad eller lite mera smart för att svara rätt på frågorna. Den gröna ryggsäcken leder den kluriga vägen, på denna väg behöver du vara duktig på att svara på gåtor eller vara lite mer klurig för att svara rätt på frågorna!`];
 
   // Om backstoryn inte är klar, rendrera nästa sträng
   if (backStoryNr < backStory.length) {
