@@ -108,7 +108,7 @@ async function onLaunch() {
       storyChapter = doc.backpack2.storyChapter;
     }
 
-    if (storyChapter) {
+    if (storyChapter >= 0) {
       // Kanske bättre att köra kartan, så den kollar: om inom zon, ladda story. Annars visa kartan.
       renderIntroAndQuestion(storyChapter)
       //startInitMap()
