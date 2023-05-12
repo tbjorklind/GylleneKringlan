@@ -1,6 +1,9 @@
 "use strict"
-import renderBackpackBtn from './backpack.js'
-export default renderCharacterAlternatives;
+import renderBackpackBtn from './backpack.js';
+export const renderEnding = {
+  renderCharacterAlternatives,
+  timeIsOut
+};
 // --------------- NAMES AND IMAGES ---------------
 const characterImages = [
   {

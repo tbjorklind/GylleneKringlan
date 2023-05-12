@@ -3,6 +3,7 @@ import renderIntroAndQuestion from './render-storyline.js'
 import { fireBaseFunctions } from './firebase.js';
 import renderBackpackBtn from './backpack.js'
 import startInitMap from './map.js';
+import { renderEnding } from './render-ending.js';
 
 export default startTimer;
 // KOMMENTERA TILLBAKA!!!!!!!!!!!!
@@ -54,6 +55,7 @@ function startTimer() {
       clearInterval(interval)
       counter.innerHTML = '0:00:00'
       localStorage.removeItem('startTimestamp')
+      renderEnding.timeIsOut()
     } else {
       let hours = Math.floor(timeRemaining / (60 * 60 * 1000))
       let minutes = Math.floor((timeRemaining / (60 * 1000)) % 60)

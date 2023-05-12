@@ -2,7 +2,7 @@
 import { storylines } from "./storylines.js";
 import { fireBaseFunctions } from './firebase.js'
 import startInitMap from './map.js'
-import renderCharacterAlternatives from './render-ending.js'
+import { renderEnding } from './render-ending.js'
 export default renderIntroAndQuestion;
 
 let questionState = {};
@@ -10,7 +10,7 @@ let questionState = {};
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
     if (storyChapter == 9) {
-        renderCharacterAlternatives()
+        renderEnding.renderCharacterAlternatives()
     } else {
         console.log(storyChapter)
         let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));

@@ -1,6 +1,5 @@
 'use strict'
 import { fireBaseFunctions } from './firebase.js';
-import renderIntroAndQuestion from './render-storyline.js';
 import renderBackpackBtn from './backpack.js';
 import startTimer from './index.js';
 import startInitMap from './map.js'
