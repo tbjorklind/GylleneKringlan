@@ -5,6 +5,7 @@ margin: 0;
 display: flex;
 align-items: center;
 flex-direction: column;
+background-image: url("");
 }
 
 #storylineTop {
@@ -44,11 +45,28 @@ flex-direction: column;
     background-repeat: no-repeat;
     text-align: center;
     font-size: 5vw;
+    z-index: 2;
 }
 
 .arrowBtn{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=a5d15cee-800c-4587-91e7-3a45078a892c");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0170.PNG?alt=media&token=12a2d43a-c694-4b66-b510-95dd5c427633");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 1;
 }
+.character {
+    position: absolute;
+    bottom: -3vh;
+    left: 12vw;
+    height: 66%;
+}
+
+.bubble {
+    height: 40%;
+    position: absolute;
+    top:3vh;
+    left: -20vw;
+    z-index: 1;
+}
+

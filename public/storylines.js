@@ -19,27 +19,33 @@ const storyLine1 = [
     {
         questionId: 0,
         characterImg: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33",
-        intro: "Hej jag heter Anita!",
-        question: "Hur många äpplen åt jag igår?",
+       
+        speakingImg1: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-1.png?alt=media&token=6797cb3d-9ebf-4328-bbaa-705be2ff8d39",
+        speakingImg2:'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-2.png?alt=media&token=139ae220-e16e-4e26-ae17-7502be79a90f',
+        speakingImgRight:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-ratt.png?alt=media&token=ffd95692-ae90-471b-8f75-3eeb3f0d81a8",
+        speakingImgWrong:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992",
+        speakingImgBribe:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7",
+        // intro: "Hej jag heter Anita!",
+        // question: "Hur många äpplen åt jag igår?",
         options: [
             {
                 optionId: 0,
-                text: "Du åt femtio äpplen",
+                text: "Han har inget hår",
                 correctAnswer: true
             },
             {
                 optionId: 1,
-                text: "Du åt inga äpplen...",
+                text: "Han har på sig en badmössa",
                 correctAnswer: false
             },
             {
                 optionId: 2,
-                text: "Två!",
+                text: "Han doppar inte huvudet i vattnet",
                 correctAnswer: false
             },
             {
                 optionId: 3,
-                text: "Tre, kanske?",
+                text: "Inget av svaren stämmer",
                 correctAnswer: false
             }
         ],
@@ -52,28 +58,33 @@ const storyLine1 = [
     },
     {
         questionId: 0,
-        characterImg: "./lucy.png",
-        intro: "Hej jag heter Lucy!",
-        question: "Vad gjorde bagaren när polisen kom?",
+        characterImg: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ffiskare.png?alt=media&token=3b3f8e8e-42c4-43b5-9ce0-d8dca9306b66",
+        speakingImg1: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-1.png?alt=media&token=c3b262f6-cc96-4ad2-b557-3550a392d971",
+        speakingImg2: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-2.png?alt=media&token=29d636df-5407-4ba7-b508-648a955b8e74",
+        speakingImgRight:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-ratt.png?alt=media&token=f8717567-711d-474a-9434-d361030eac6e",
+        speakingImgWrong:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-fel.png?alt=media&token=f762f8b8-24ec-404a-8127-8937dd739bb9",
+        speakingImgBribe:"https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-muta.png?alt=media&token=e8d210fc-f685-4e13-8f1a-0810733d2009",
+        // intro: "Hej jag heter Lucy!",
+        // question: "Vad gjorde bagaren när polisen kom?",
         options: [
             {
                 optionId: 0,
-                text: "Fortsatte baka sina bullar",
+                text: "Hajen",
                 correctAnswer: false
             },
             {
                 optionId: 1,
-                text: "Frågade 'är något fel, konstapeln?' ",
+                text: "Rocka",
                 correctAnswer: false
             },
             {
                 optionId: 2,
-                text: "Gav 10% rabatt",
+                text: "Späckhuggare",
                 correctAnswer: false
             },
             {
                 optionId: 3,
-                text: "SMET",
+                text: "Svärdfisk",
                 correctAnswer: true
             }
         ],
