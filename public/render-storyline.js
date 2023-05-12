@@ -2,50 +2,54 @@
 import { storylines } from "./storylines.js";
 import { fireBaseFunctions } from './firebase.js'
 import startInitMap from './map.js'
+import renderCharacterAlternatives from './render-ending.js'
 export default renderIntroAndQuestion;
 
 let questionState = {};
 
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
-    console.log(storyChapter)
-    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-    let userBackpack = localStorage.getItem('backpackNr');
-    let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+    if (storyChapter == 9) {
+        renderCharacterAlternatives()
+    } else {
+        console.log(storyChapter)
+        let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+        let userBackpack = localStorage.getItem('backpackNr');
+        let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
 
-    let chosenBtn;
+        let chosenBtn;
 
-    if (userBackpack == 1) {
-        questionState = doc.backpack1.questionState;
-        if (doc.backpack1.questionState.answered) {
-            chosenBtn = doc.backpack1.questionState.chosenAnswer;
-        } else {
-            chosenBtn = "";
+        if (userBackpack == 1) {
+            questionState = doc.backpack1.questionState;
+            if (doc.backpack1.questionState.answered) {
+                chosenBtn = doc.backpack1.questionState.chosenAnswer;
+            } else {
+                chosenBtn = "";
+            }
         }
-    }
-    if (userBackpack == 2) {
-        questionState = doc.backpack2.questionState;
-        if (doc.backpack2.questionState.answered) {
-            chosenBtn = doc.backpack2.questionState.chosenAnswer;
+        if (userBackpack == 2) {
+            questionState = doc.backpack2.questionState;
+            if (doc.backpack2.questionState.answered) {
+                chosenBtn = doc.backpack2.questionState.chosenAnswer;
+            }
+            else {
+                chosenBtn = "";
+            }
         }
-        else {
-            chosenBtn = "";
-        }
-    }
 
-    document.getElementById("wrapper").style.removeProperty("display")
+        document.getElementById("wrapper").style.removeProperty("display")
 
-    // Chosing storyline based on backpack
-    let storyLine;
-    if (localStorage.getItem("backpackNr") == 1)
-        storyLine = storylines.storyLine1;
-    else if (localStorage.getItem("backpackNr") == 2)
-        storyLine = storylines.storyLine2;
+        // Chosing storyline based on backpack
+        let storyLine;
+        if (localStorage.getItem("backpackNr") == 1)
+            storyLine = storylines.storyLine1;
+        else if (localStorage.getItem("backpackNr") == 2)
+            storyLine = storylines.storyLine2;
 
-    console.log(storyLine)
-    console.log(storyChapter)
-    // Initial structure and question
-    document.getElementById("wrapper").innerHTML = `
+        console.log(storyLine)
+        console.log(storyChapter)
+        // Initial structure and question
+        document.getElementById("wrapper").innerHTML = `
     <div id="storylineTop">
         <img class="bubble" src="${storyLine[storyChapter].speakingImg1}">
         <img class="character" src="${storyLine[storyChapter].characterImg}">
@@ -54,46 +58,47 @@ async function renderIntroAndQuestion(storyChapter) {
     `;
 
 
-    let continueBtn = document.createElement("div");
-    continueBtn.classList.add("arrowBtn");
-    continueBtn.style.backgroundColor = "transparent";
-    document.getElementById("storylineBottom").appendChild(continueBtn);
-    continueBtn.addEventListener("click", () => {
-        // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
-        document.querySelector("#wrapper > div:first-child").innerHTML = `
+        let continueBtn = document.createElement("div");
+        continueBtn.classList.add("arrowBtn");
+        continueBtn.style.backgroundColor = "transparent";
+        document.getElementById("storylineBottom").appendChild(continueBtn);
+        continueBtn.addEventListener("click", () => {
+            // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
+            document.querySelector("#wrapper > div:first-child").innerHTML = `
         <img class="bubble" src="${storyLine[storyChapter].speakingImg2}">
         <img class="character" src="${storyLine[storyChapter].characterImg}">`;
-        document.getElementById("storylineBottom").innerHTML = "";
+            document.getElementById("storylineBottom").innerHTML = "";
 
 
-        // Render each possible answer
-        let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
-        for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
-            let answerOptionBtn = document.createElement("div");
-            answerOptionBtn.classList.add(`answer${i + 1}`)
+            // Render each possible answer
+            let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
+            for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
+                let answerOptionBtn = document.createElement("div");
+                answerOptionBtn.classList.add(`answer${i + 1}`)
 
-            if (chosenBtn != "") {
-                if (`answer${i + 1}` != chosenBtn) {
-                    answerOptionBtn.style.pointerEvents = "none"
-                    answerOptionBtn.style.color = "gray"
+                if (chosenBtn != "") {
+                    if (`answer${i + 1}` != chosenBtn) {
+                        answerOptionBtn.style.pointerEvents = "none"
+                        answerOptionBtn.style.color = "gray"
+                    }
                 }
+
+                answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
+                answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
+                document.getElementById("storylineBottom").appendChild(answerOptionBtn);
+                answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
             }
 
-            answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
-            answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
-            document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-            answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
-        }
-
-        /* F.D. Funktion, nu ändrad till for-loop för att kunna använda sig av 'i' som parameter i randomizeBtnBackground()anropet 
-        storyLine[storyChapter].options.forEach(option => {
-            let answerOptionBtn = document.createElement("div");
-            answerOptionBtn.innerHTML = option.text;
-            document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-            answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, option.correctAnswer) })
+            /* F.D. Funktion, nu ändrad till for-loop för att kunna använda sig av 'i' som parameter i randomizeBtnBackground()anropet 
+            storyLine[storyChapter].options.forEach(option => {
+                let answerOptionBtn = document.createElement("div");
+                answerOptionBtn.innerHTML = option.text;
+                document.getElementById("storylineBottom").appendChild(answerOptionBtn);
+                answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, option.correctAnswer) })
+            })
+            */
         })
-        */
-    })
+    }
 }
 
 // --------------------- RENDER RESULT OF ANSWER -----------------------

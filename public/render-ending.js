@@ -72,6 +72,7 @@ const characterImages = [
 // ------------- RENDER CHARACTER ALTERNATIVES ---------------
 // --------------- (START OF THE ENDING PART) ---------------
 function renderCharacterAlternatives() {
+  document.getElementById("wrapper").innerHTML = "";
   let header = document.createElement("div")
   header.id = "characterHeader";
   header.style.textAlign = 'center';
@@ -193,6 +194,3 @@ function randomizeBackgroundColor() {
   let nr = Math.floor(Math.random() * 5) + 1;
   return numbers[nr - 1];
 }
-
-// --------------- DIRECT CODE ---------------
-renderCharacterAlternatives()
