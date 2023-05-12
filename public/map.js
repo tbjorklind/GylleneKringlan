@@ -201,8 +201,8 @@ async function initMap(position) {
     radius: 100,
     map: map,
     center: {
-      lat: storyLine[storyChapter - 1].lat,
-      lng: storyLine[storyChapter - 1].lng
+      lat: storyLine[storyChapter].lat,
+      lng: storyLine[storyChapter].lng
     },
     strokeColor: '#CC813A',
     strokeOpacity: 0.8,
@@ -215,7 +215,7 @@ async function initMap(position) {
   var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
   // var origin2 = 'Malmo, Sweden'
   // var destinationA = 'Malmo, Sweden'
-  var destinationB = new google.maps.LatLng(storyLine[storyChapter - 1].lat, storyLine[storyChapter - 1].lng)
+  var destinationB = new google.maps.LatLng(storyLine[storyChapter].lat, storyLine[storyChapter].lng)
 
   var service = new google.maps.DistanceMatrixService()
   service.getDistanceMatrix(
