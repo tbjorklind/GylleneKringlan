@@ -77,6 +77,8 @@ wrapper {
     justify-content:space-evenly;
     align-items: center;
     color: rgb(0, 0, 0);
+    z-index: 100;
+    border-radius: 15px;
 }
 
 .popup > div > div:first-child {
@@ -89,7 +91,8 @@ wrapper {
     align-items: center;
     width: 40%;
     height: 10%;
-    background-color: rgb(123, 123, 123);
+    background-color: var(--color13);
+    border-radius: 5px;
 }
 
 .hidden{
