@@ -1,4 +1,5 @@
 "use strict"
+import renderBackpackBtn from './backpack.js'
 export default renderCharacterAlternatives;
 // --------------- NAMES AND IMAGES ---------------
 const characterImages = [
@@ -73,10 +74,11 @@ const characterImages = [
 // --------------- (START OF THE ENDING PART) ---------------
 function renderCharacterAlternatives() {
   document.getElementById("wrapper").innerHTML = "";
+  renderBackpackBtn()
   let header = document.createElement("div")
   header.id = "characterHeader";
   header.style.textAlign = 'center';
-  header.innerHTML = "<span style='font-size: 5vw'>Vem har tagit den Gyllene Kringlan?</span><br><span style='font-size: 4.5vw;'>Välj er misstänkta tjuv!</span>"
+  header.innerHTML = "<span style='font-size: 5vw'>Vem har tagit den <br> Gyllene Kringlan?</span><br><span style='font-size: 4.5vw;'>Välj er misstänkta tjuv!</span>"
   document.getElementById("wrapper").appendChild(header);
 
   let characterWrapper = document.createElement("div");
