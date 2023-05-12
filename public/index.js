@@ -110,7 +110,7 @@ async function onLaunch() {
 
     if (storyChapter) {
       // Kanske bättre att köra kartan, så den kollar: om inom zon, ladda story. Annars visa kartan.
-      renderIntroAndQuestion(storyChapter - 1)
+      renderIntroAndQuestion(storyChapter)
       //startInitMap()
       renderBackpackBtn()
       startTimer()
