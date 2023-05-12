@@ -8,6 +8,7 @@ let questionState = {};
 
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
+    console.log(storyChapter)
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
     let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
@@ -41,6 +42,8 @@ async function renderIntroAndQuestion(storyChapter) {
     else if (localStorage.getItem("backpackNr") == 2)
         storyLine = storylines.storyLine2;
 
+    console.log(storyLine)
+    console.log(storyChapter)
     // Initial structure and question
     document.getElementById("wrapper").innerHTML = `
     <div id="storylineTop">
@@ -127,7 +130,6 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundImage = `url(${backgrounds[1]})`
         document.querySelector("#wrapper > div:last-child > div:last-child").style.backgroundImage = `url(${backgrounds[2]})`
 
-        console.log(doc)
         if (userBackpack == 1) {
             if (doc.backpack1.questionState.bribed) {
                 document.querySelector("#wrapper > div:last-child > div:first-child").style.pointerEvents = "none";

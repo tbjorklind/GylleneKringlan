@@ -149,8 +149,6 @@ async function updateQuestionState(questionState) {
   let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
   let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
 
-  console.log(questionState)
-
   if (backpackNr == 1)
     doc.backpack1.questionState.answered = questionState.answered
   doc.backpack1.questionState.chosenAnswer = questionState.chosenAnswer
@@ -164,8 +162,6 @@ async function updateQuestionState(questionState) {
     .collection('Teams')
     .doc(userTeamId)
     .update(doc)
-
-  console.log(questionState);
 }
 
 // Update coins of a backpack
