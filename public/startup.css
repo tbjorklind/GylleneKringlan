@@ -82,14 +82,25 @@ wrapper {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  flex-direction: column;
+  font-size: 4vw;
 }
 
-#teamWrapper div:first-child{
+#teamWrapper > .teamBtn:first-child > div:first-child{
+  width: 100%;
+  height: 100%;
   background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=5b63d047-dbc9-45dd-9bfd-3aa59014857a);
-
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-#teamWrapper div:nth-child(2){
+#teamWrapper > .teamBtn:last-child > div:first-child{
+  width: 100%;
+  height: 100%;
   background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=20551b05-1f89-4f5b-922a-f1b28413830b);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* BACKSTORY */
