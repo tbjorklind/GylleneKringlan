@@ -9,96 +9,96 @@ let questionState = {};
 
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
-    if (storyChapter == 9) {
-        renderEnding.renderCharacterAlternatives()
-    } else {
-        console.log(storyChapter)
-        let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-        let userBackpack = localStorage.getItem('backpackNr');
-        let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
 
-        let chosenBtn;
+    // Kollar om någon redan svarar på frågan
+    let currentUserStatus = await checkCurrentUser()
+    if (currentUserStatus) {
+        if (storyChapter == 9) {
+            renderEnding.renderCharacterAlternatives()
+        } else {
+            console.log(storyChapter)
+            let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+            let userBackpack = localStorage.getItem('backpackNr');
+            let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
 
-        if (userBackpack == 1) {
-            questionState = doc.backpack1.questionState;
-            if (doc.backpack1.questionState.answered) {
-                chosenBtn = doc.backpack1.questionState.chosenAnswer;
-            } else {
-                chosenBtn = "";
-            }
-        }
-        if (userBackpack == 2) {
-            questionState = doc.backpack2.questionState;
-            if (doc.backpack2.questionState.answered) {
-                chosenBtn = doc.backpack2.questionState.chosenAnswer;
-            }
-            else {
-                chosenBtn = "";
-            }
-        }
+            let chosenBtn;
 
-        document.getElementById("wrapper").style.removeProperty("display")
-
-        // Chosing storyline based on backpack
-        let storyLine;
-        if (localStorage.getItem("backpackNr") == 1)
-            storyLine = storylines.storyLine1;
-        else if (localStorage.getItem("backpackNr") == 2)
-            storyLine = storylines.storyLine2;
-
-        console.log(storyLine)
-        console.log(storyChapter)
-        // Initial structure and question
-        document.getElementById("wrapper").innerHTML = `
-    <div id="storylineTop">
-        <img class="bubble" src="${storyLine[storyChapter].speakingImg1}">
-        <img class="character" src="${storyLine[storyChapter].characterImg}">
-    </div>
-    <div id="storylineBottom"></div>
-    `;
-
-
-        let continueBtn = document.createElement("div");
-        continueBtn.classList.add("arrowBtn");
-        continueBtn.style.backgroundColor = "transparent";
-        document.getElementById("storylineBottom").appendChild(continueBtn);
-        continueBtn.addEventListener("click", () => {
-            // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
-            document.querySelector("#wrapper > div:first-child").innerHTML = `
-        <img class="bubble" src="${storyLine[storyChapter].speakingImg2}">
-        <img class="character" src="${storyLine[storyChapter].characterImg}">`;
-            document.getElementById("storylineBottom").innerHTML = "";
-
-
-            // Render each possible answer
-            let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
-            for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
-                let answerOptionBtn = document.createElement("div");
-                answerOptionBtn.classList.add(`answer${i + 1}`)
-
-                if (chosenBtn != "") {
-                    if (`answer${i + 1}` != chosenBtn) {
-                        answerOptionBtn.style.pointerEvents = "none"
-                        answerOptionBtn.style.color = "gray"
-                    }
+            if (userBackpack == 1) {
+                questionState = doc.backpack1.questionState;
+                if (doc.backpack1.questionState.answered) {
+                    chosenBtn = doc.backpack1.questionState.chosenAnswer;
+                } else {
+                    chosenBtn = "";
                 }
-
-                answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
-                answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
-                document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-                answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
+            }
+            if (userBackpack == 2) {
+                questionState = doc.backpack2.questionState;
+                if (doc.backpack2.questionState.answered) {
+                    chosenBtn = doc.backpack2.questionState.chosenAnswer;
+                }
+                else {
+                    chosenBtn = "";
+                }
             }
 
-            /* F.D. Funktion, nu ändrad till for-loop för att kunna använda sig av 'i' som parameter i randomizeBtnBackground()anropet 
-            storyLine[storyChapter].options.forEach(option => {
-                let answerOptionBtn = document.createElement("div");
-                answerOptionBtn.innerHTML = option.text;
-                document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-                answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, option.correctAnswer) })
+            document.getElementById("wrapper").style.removeProperty("display")
+
+            // Chosing storyline based on backpack
+            let storyLine;
+            if (localStorage.getItem("backpackNr") == 1)
+                storyLine = storylines.storyLine1;
+            else if (localStorage.getItem("backpackNr") == 2)
+                storyLine = storylines.storyLine2;
+
+            console.log(storyLine)
+            console.log(storyChapter)
+            // Initial structure and question
+            document.getElementById("wrapper").innerHTML = `
+        <div id="storylineTop">
+            <img class="bubble" src="${storyLine[storyChapter].speakingImg1}">
+            <img class="character" src="${storyLine[storyChapter].characterImg}">
+        </div>
+        <div id="storylineBottom"></div>
+        `;
+
+
+            let continueBtn = document.createElement("div");
+            continueBtn.classList.add("arrowBtn");
+            continueBtn.style.backgroundColor = "transparent";
+            document.getElementById("storylineBottom").appendChild(continueBtn);
+            continueBtn.addEventListener("click", () => {
+                // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
+                document.querySelector("#wrapper > div:first-child").innerHTML = `
+            <img class="bubble" src="${storyLine[storyChapter].speakingImg2}">
+            <img class="character" src="${storyLine[storyChapter].characterImg}">`;
+                document.getElementById("storylineBottom").innerHTML = "";
+
+
+                // Render each possible answer
+                let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
+                for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
+                    let answerOptionBtn = document.createElement("div");
+                    answerOptionBtn.classList.add(`answer${i + 1}`)
+
+                    if (chosenBtn != "") {
+                        if (`answer${i + 1}` != chosenBtn) {
+                            answerOptionBtn.style.pointerEvents = "none"
+                            answerOptionBtn.style.color = "gray"
+                        }
+                    }
+
+                    answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
+                    answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
+                    document.getElementById("storylineBottom").appendChild(answerOptionBtn);
+                    answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
+                }
             })
-            */
-        })
+        }
+    } else {
+        document.querySelector(".accessDenied").classList.remove("hidden")
+        document.querySelector(".accessDenied > div:last-child").addEventListener('click', () => { location.reload() })
     }
+
 }
 
 // --------------------- RENDER RESULT OF ANSWER -----------------------
@@ -222,6 +222,7 @@ async function renderFarwell(storyLine, storyChapter) {
         questionState.chosenAnswer = "";
         questionState.bribed = false;
         await fireBaseFunctions.updateQuestionState(questionState)
+        resetCurrentUser()
         startInitMap()
     })
 }
@@ -246,6 +247,31 @@ async function checkCoins(userTeamId, userBackpack) {
             return true
     }
 }
+
+// --------------------- CHECK CURRENT USER -----------------------
+async function checkCurrentUser() {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    let user = localStorage.getItem("userId");
+    let currentUser = await fireBaseFunctions.getCurrentUser('Teams', userTeamId, userBackpack);
+
+    if (currentUser == "" || currentUser == localStorage.getItem("userId")) {
+        await fireBaseFunctions.addCurrentUser('Teams', userTeamId, userBackpack, user)
+        return true
+    } else {
+        return false
+    }
+}
+
+// --------------------- RESET CURRENT USER -----------------------
+async function resetCurrentUser() {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    let user = "";
+
+    await fireBaseFunctions.addCurrentUser('Teams', userTeamId, userBackpack, user)
+}
+
 
 // --------------------- RANDOMIZE BUTTON BACKGROUNDS -----------------------
 // ---------------------- Param only 1 to 9 allowed ------------------------

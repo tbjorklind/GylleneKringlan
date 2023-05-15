@@ -10,7 +10,9 @@ export const fireBaseFunctions = {
   getTeamIdOfUser,
   updateCoins,
   addClueToBackpack,
-  updateQuestionState
+  updateQuestionState,
+  getCurrentUser,
+  addCurrentUser
 }
 
 const db = firebase.firestore()
@@ -55,6 +57,17 @@ async function getTeamIdOfUser(userId) {
       return `Team${teamNr}`
     }
   }
+}
+
+async function getCurrentUser(collectionName, id, backpackNr) {
+  let doc = await fireBaseFunctions.getDocumentFromFirestore(collectionName, id);
+
+
+  if (backpackNr == 1)
+    return doc.backpack1.currentUser
+  if (backpackNr == 2)
+    return doc.backpack2.currentUser
+
 }
 
 // --------------------- ADD -----------------------
@@ -108,6 +121,22 @@ async function addClueToBackpack(collectionName, id, backpackNr, clue) {
       ...document.backpack1.clues,
       clue
     ]
+  }
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(document)
+}
+
+async function addCurrentUser(collectionName, id, backpackNr, user) {
+  let document = await getDocumentFromFirestore('Teams', id)
+
+  // Add to backpack
+  if (backpackNr == 1)
+    document.backpack1.currentUser = user
+  if (backpackNr == 2) {
+    document.backpack2.currentUser = user
   }
 
   await db
