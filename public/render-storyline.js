@@ -55,12 +55,11 @@ async function renderIntroAndQuestion(storyChapter) {
             // Initial structure and question
             document.getElementById("wrapper").innerHTML = `
         <div id="storylineTop">
-            <img class="bubble" src="${storyLine[storyChapter].speakingImg1}">
-            <img class="character" src="${storyLine[storyChapter].characterImg}">
+            <img class="bubble${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].speakingImg1}">
+            <img class="character${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].characterImg}">
         </div>
         <div id="storylineBottom"></div>
         `;
-
 
             let continueBtn = document.createElement("div");
             continueBtn.classList.add("arrowBtn");
@@ -69,8 +68,8 @@ async function renderIntroAndQuestion(storyChapter) {
             continueBtn.addEventListener("click", () => {
                 // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
                 document.querySelector("#wrapper > div:first-child").innerHTML = `
-            <img class="bubble" src="${storyLine[storyChapter].speakingImg2}">
-            <img class="character" src="${storyLine[storyChapter].characterImg}">`;
+            <img class="bubble${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].speakingImg2}">
+            <img class="character${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].characterImg}">`;
                 document.getElementById("storylineBottom").innerHTML = "";
 
 
@@ -116,8 +115,8 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].correctAnswerText;
         //Byt namn på bubble class!!!!!!!
         document.querySelector("#wrapper > div:first-child").innerHTML = `
-        <img class="bubble" src="${storyLine[storyChapter].speakingImgRight}">
-        <img class="character" src="${storyLine[storyChapter].characterImg}">`
+        <img class="bubble${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].speakingImgRight}">
+        <img class="character${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].characterImg}">`
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${backgrounds[0]})`
 
@@ -129,8 +128,8 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
     else {
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].wrongAnswerText;
         document.querySelector("#wrapper > div:first-child").innerHTML = `
-        <img class="bubble" src="${storyLine[storyChapter].speakingImgWrong}">
-        <img class="character" src="${storyLine[storyChapter].characterImg}">`
+        <img class="bubble${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].speakingImgWrong}">
+        <img class="character${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].characterImg}">`
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA (20 mynt)</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundImage = `url(${backgrounds[1]})`
         document.querySelector("#wrapper > div:last-child > div:last-child").style.backgroundImage = `url(${backgrounds[2]})`
@@ -184,7 +183,7 @@ async function renderBribeResult(storyLine, storyChapter) {
         // Visa karaktärens svar i stora rutan, visa en 'gå vidare'-knapp och lägg till en eventlyssnare på den
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
         document.querySelector("#wrapper > div:first-child").innerHTML = `
-        <img class="bubble" src="${storyLine[storyChapter].speakingImgBribe}">
+        <img class="bubble${storyLine[storyChapter].characterClass}" src="${storyLine[storyChapter].speakingImgBribe}">
         <img class="character" src="${storyLine[storyChapter].characterImg}">`
         document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         let background = randomizeBtnBackgrounds(1);

@@ -16,7 +16,8 @@
 // Backpack 1
 const storyLine1 = [
   {
-    questionId: 0,
+    // questionId: 0,
+    characterClass: 1,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33',
 
@@ -62,7 +63,8 @@ const storyLine1 = [
     nextPlace: 'kanalen'
   },
   {
-    questionId: 0,
+    // questionId: 0,
+    characterClass: 1,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ffiskare.png?alt=media&token=3b3f8e8e-42c4-43b5-9ce0-d8dca9306b66',
     speakingImg1:
@@ -107,7 +109,8 @@ const storyLine1 = [
     nextPlace: 'andra sidan stan'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 2,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fapotekaren.png?alt=media&token=c8946034-55a7-4a4c-91bb-7c54526d0d12',
 
@@ -149,7 +152,8 @@ const storyLine1 = [
     nextPlace: 'lalalla'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 3,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdorrvakten.png?alt=media&token=cba82460-43d5-491f-bf3c-951db9181da4',
 
@@ -233,7 +237,8 @@ const storyLine1 = [
     nextPlace: 'lalalla'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 4,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FvonAsklund.png?alt=media&token=e31020af-c174-4382-82ff-38cb3b3ab80f',
 
@@ -275,7 +280,8 @@ const storyLine1 = [
     nextPlace: 'lalalla'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 5,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Faugust_profil.png?alt=media&token=b79d6a24-adf7-4391-8294-3836a88e39a4',
 
@@ -317,7 +323,8 @@ const storyLine1 = [
     nextPlace: 'lalalla'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 6,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Froland.png?alt=media&token=c235a4f6-7f69-4bed-9132-a7fad6a9cf5e',
 
@@ -359,7 +366,8 @@ const storyLine1 = [
     nextPlace: 'lalalla'
   },
   {
-    questionId: 0, // ??? BEHÖVS?
+    // questionId: 0, // ??? BEHÖVS?
+    characterClass: 7,
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fprast.png?alt=media&token=93848911-b6ed-4c2d-9c2d-52b5615f6198',
 
