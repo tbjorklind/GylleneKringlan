@@ -99,13 +99,26 @@ function renderBackstory(teamNumber, backStoryNr) {
 // --------------------- RENDER BACKPACKS -----------------------
 function renderChooseBackpack(teamNumber) {
   document.getElementById('wrapper').innerHTML = ''
+
+  let backpackTitle = document.createElement('div');
+  backpackTitle.innerText = "Välj din ryggsäck!"
+  backpackTitle.style.marginTop = '5vw'
+  backpackTitle.style.fontSize = '5vw'
+  document.getElementById('wrapper').appendChild(backpackTitle)
+
   let backpackWrapper = document.createElement('div')
   backpackWrapper.id = 'teamWrapper'
 
   for (let i = 1; i <= 2; i++) {
+    let teamQuality;
+    if (i == 1)
+      teamQuality = "SMARTA"
+    if (i == 2)
+      teamQuality = "KLURIGA"
     let backpackBtn = document.createElement('div')
     // backpackBtn.innerHTML = 'Backpack ' + i
     backpackBtn.classList.add('teamBtn')
+    backpackBtn.innerHTML = `<div></div><div>${teamQuality}</div>`
     backpackWrapper.appendChild(backpackBtn)
 
     backpackBtn.addEventListener('click', () => {
