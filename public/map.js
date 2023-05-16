@@ -133,7 +133,7 @@ let teamName = 'ball'
 // Ska göras från render-storyline sen..
 function startInitMap() {
   document.querySelector("#wrapper").style.display = "none";
-  navigator.geolocation.getCurrentPosition(initMap)
+  navigator.geolocation.watchPosition(initMap)
 }
 
 
@@ -194,7 +194,8 @@ async function initMap(position) {
     zoom: 17,
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
-    }
+    },
+    gestureHandling: 'none'
   })
 
   let circle = new google.maps.Circle({
