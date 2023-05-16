@@ -14,7 +14,6 @@ async function renderIntroAndQuestion(storyChapter) {
     let currentUserStatus = await checkCurrentUser()
     if (currentUserStatus) {
         if (storyChapter == 9) {
-            console.log("jeppp")
             renderEnding.renderCharacterAlternatives()
         } else {
             console.log(storyChapter)

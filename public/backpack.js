@@ -47,32 +47,36 @@ function renderBackpackBtn() {
 }
 
 function onBackpackClick() {
+    console.log("ooga")
     let backpackNr = localStorage.getItem("backpackNr");
     // Open packpack
     if (!backpackBtn.style.backgroundImage.includes("_open")) {
+        console.log("whhih")
         if (backpackNr == 1)
             backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1_open.png?alt=media&token=67ba499a-6aaf-4190-882a-251fb8061bd3)`;
         else
             backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2_open.png?alt=media&token=c80316fe-dacd-4f04-8001-3266abed59d2)`;
 
-        document.getElementById("wrapper").classList.add("hidden")
+        //document.getElementById("wrapper").classList.add("hidden")
+        backpackInventory.style.display = "flex";
         displayInventory();
     }
     // Close backpack
     else {
+        console.log("dkdjkfsngsljkdnjd")
         if (backpackNr == 1)
             backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack1.png?alt=media&token=5b63d047-dbc9-45dd-9bfd-3aa59014857a)`
         else
             backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=20551b05-1f89-4f5b-922a-f1b28413830b)`
 
-        backpackInventory.classList.add("hidden");
-        document.getElementById("wrapper").classList.remove("hidden")
+        backpackInventory.style.display = "none";
+        //document.getElementById("wrapper").classList.remove("hidden")
     }
 
 }
 
 async function displayInventory() {
-    backpackInventory.classList.remove("hidden");
+    backpackInventory.style.display = "flex";
     document.querySelector("#backpackInventory > div").innerHTML = "";
     let backpackNr = localStorage.getItem("backpackNr");
 
@@ -121,11 +125,12 @@ async function displayInventory() {
             let item = document.createElement("div");
             item.classList.add("clueItem")
 
+            let clueInfo = getClueInfo(clue);
             let img = document.createElement("div");
-            img.style.backgroundImage = `url(../images/${clue}.png)`
+            img.style.backgroundImage = `url(${clueInfo.img})`
 
             let description = document.createElement("div");
-            description.innerHTML = clue;
+            description.innerHTML = clueInfo.name;
 
             document.querySelector("#backpackInventory > div").appendChild(item);
             item.appendChild(img);

@@ -76,10 +76,8 @@ const characterImages = [
 // ------------- RENDER CHARACTER ALTERNATIVES ---------------
 // --------------- (START OF THE ENDING PART) ---------------
 function renderCharacterAlternatives() {
-  console.log("pepppp")
   document.getElementById("wrapper").innerHTML = "";
   document.getElementById("wrapper").style.display = "flex";
-  renderBackpackBtn()
   let header = document.createElement("div")
   header.id = "characterHeader";
   header.style.textAlign = 'center';

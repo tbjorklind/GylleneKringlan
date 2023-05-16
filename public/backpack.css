@@ -20,6 +20,8 @@
     margin: auto;
     z-index: 40;
     padding: 15% 5% 15% 5%;
+    display: none;
+    overflow-y: scroll;
 }
 
 #backpackInventory > div {
