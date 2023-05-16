@@ -1,6 +1,6 @@
-import { fireBaseFunctions } from "./firebase.js";
-import renderIntroAndQuestion from './render-storyline.js';
-export default startInitMap;
+import { fireBaseFunctions } from './firebase.js'
+import renderIntroAndQuestion from './render-storyline.js'
+export default startInitMap
 
 const styledMapType = new google.maps.StyledMapType(
   [
@@ -122,22 +122,12 @@ var options = {
   maximumAge: 0
 }
 
-// LOCAL STORAGE
-// Kan bytas till bone, books, magni eller meds
-let teamName = 'ball'
-
-// Kolla vilket team man är i.
-// Array m ikon-namnen.
-// Loopa igenom och hitta rätt ikon.
-
-// Ska göras från render-storyline sen..
-function startInitMap() {
-  document.querySelector("#wrapper").style.display = "none";
+function startInitMap () {
+  document.querySelector('#wrapper').style.display = 'none'
   navigator.geolocation.watchPosition(initMap)
 }
 
-
-async function initMap(position) {
+async function initMap (position) {
   let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
   let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
   let storyLine
@@ -170,18 +160,22 @@ async function initMap(position) {
     ]
   }
 
-  let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-  let userBackpack = localStorage.getItem('backpackNr');
-  let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId);
-  let storyChapter;
+  let userTeamId = await fireBaseFunctions.getTeamIdOfUser(
+    localStorage.getItem('userId')
+  )
+  let userBackpack = localStorage.getItem('backpackNr')
+  let doc = await fireBaseFunctions.getDocumentFromFirestore(
+    'Teams',
+    userTeamId
+  )
+  let storyChapter
 
   if (userBackpack == 1) {
-    storyChapter = doc.backpack1.storyChapter;
+    storyChapter = doc.backpack1.storyChapter
   }
   if (userBackpack == 2) {
-    storyChapter = doc.backpack2.storyChapter;
+    storyChapter = doc.backpack2.storyChapter
   }
-
 
   var crd = position.coords
   var map
@@ -216,7 +210,10 @@ async function initMap(position) {
   var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
   // var origin2 = 'Malmo, Sweden'
   // var destinationA = 'Malmo, Sweden'
-  var destinationB = new google.maps.LatLng(storyLine[storyChapter].lat, storyLine[storyChapter].lng)
+  var destinationB = new google.maps.LatLng(
+    storyLine[storyChapter].lat,
+    storyLine[storyChapter].lng
+  )
 
   var service = new google.maps.DistanceMatrixService()
   service.getDistanceMatrix(
@@ -228,9 +225,9 @@ async function initMap(position) {
     callback
   )
 
-  function callback(response) {
+  function callback (response) {
     console.log(response.rows[0].elements[0].distance.value)
-    if (response.rows[0].elements[0].distance.value <= 3000000) {
+    if (response.rows[0].elements[0].distance.value <= 30) {
       console.log('In zone')
       renderIntroAndQuestion(storyChapter)
     } else {
@@ -238,9 +235,32 @@ async function initMap(position) {
     }
   }
 
+  let imgLink
+  switch (userTeamId) {
+    case "Team1":
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbone.PNG?alt=media&token=54c30851-c09e-4b12-960d-76ef2dedacae'
+      break
+    case "Team2":
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb'
+      break
+    case "Team3":
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmagni.PNG?alt=media&token=b33acf3f-8c3b-4383-a03b-20606bcf34b7'
+      break
+    case "Team4":
+      imgLink = ''
+      break
+    case "Team5":
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbooks.PNG?alt=media&token=7887d592-4bde-4a20-93fe-3dc6eee0d349'
+      break
+    case "Team6":
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmeds.PNG?alt=media&token=0eeb54bc-79fb-4f4a-993b-f7ea6f55e26e'
+      break
+    default:
+      break
+  }
+
   const img = {
-    url:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmagni.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb',
+    url: imgLink,
     scaledSize: new google.maps.Size(120, 120)
   }
 
