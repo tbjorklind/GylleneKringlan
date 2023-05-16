@@ -118,7 +118,7 @@ async function addClueToBackpack(collectionName, id, backpackNr, clue) {
   }
   if (backpackNr == 2) {
     document.backpack2.clues = [
-      ...document.backpack1.clues,
+      ...document.backpack2.clues,
       clue
     ]
   }
