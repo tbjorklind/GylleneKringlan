@@ -138,7 +138,7 @@ const storyLine1 = [
       }
     ],
     textEnding: 'Nu får ni gå vidare, men jag kan tänka mig att Dörrvakten sett något! Han står där man kastar silvriga kulor på en sån liten kula. Vad är det nu det heter..?',
-    clue: '',
+    clue: 'oljud',
     nextPlace: ''
   },
   {
@@ -181,7 +181,7 @@ const storyLine1 = [
       }
     ],
     textEnding: 'Nu ska ni få möta torgaren, han kan ändå veta mycket, han står och säljer blommor vid torget, du vet, Gus... Juste dina kompisar kommer nog dit, så se till att diskutera med varann!',
-    clue: 'skyffel',
+    clue: 'gris',
     nextPlace: ''
   },
   {
@@ -403,77 +403,347 @@ const storyLine1 = [
 // Backpack 2
 const storyLine2 = [
   {
-    questionId: 0,
-    characterImg: './bob.png',
-    intro: 'Hej jag heter Bob!',
-    question: 'Vad heter Obama i efternamn?',
+    // questionId: 0,
+    character: "Anita",
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33',
+
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-1.png?alt=media&token=6797cb3d-9ebf-4328-bbaa-705be2ff8d39',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-2.png?alt=media&token=139ae220-e16e-4e26-ae17-7502be79a90f',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-ratt.png?alt=media&token=ffd95692-ae90-471b-8f75-3eeb3f0d81a8',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7',
     options: [
       {
         optionId: 0,
-        text: 'Obama är hans förnamn',
-        correctAnswer: false
-      },
-      {
-        optionId: 1,
-        text: 'Barack',
+        text: 'Han har inget hår',
         correctAnswer: true
       },
       {
+        optionId: 1,
+        text: 'Han har på sig en badmössa',
+        correctAnswer: false
+      },
+      {
         optionId: 2,
-        text: 'John',
+        text: 'Han doppar inte huvudet i vattnet',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'Michelle!',
+        text: 'Inget av svaren stämmer',
         correctAnswer: false
       }
     ],
-    wrongAnswerText:
-      'Nja... om du inte vet vad han heter så litar jag nog inte riktigt på dig tillräckligt för att säga vad jag sett...',
-    correctAnswerText:
-      'Rätt! Min ledtråd till dig är... Jag såg en lång man springa förbi bageriet igår.',
-    bribedAnswerText:
-      'Okej då... han heter Barack! Och jag såg en lång man ta sig förbi bageriet igår!',
-    textEnding: 'Min make Johnny är på andra sidan kanalen, spring dit!',
-    clue: 'fagel',
-    nextPlace: 'kanalen'
+    textEnding: 'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
+    clue: 'flipflops',
+    nextPlace: ''
   },
   {
-    questionId: 0,
-    characterImg: './bob.png',
-    intro: 'Hej jag heter Johnny!',
-    question: 'Hur många ben har en spindel?',
+    // questionId: 0,
+    character: "Clemens & Kajsa",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
     options: [
       {
         optionId: 0,
-        text: '5 (en extra där bak)',
-        correctAnswer: false
+        text: 'Korv',
+        correctAnswer: true
       },
       {
         optionId: 1,
-        text: '2',
+        text: 'Köttbullar',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: '6',
+        text: 'Stek',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'Fiskpinnar',
+        correctAnswer: false
+      }
+    ],
+    textEnding: 'Lunka vidare nu till en galning, kanske mot Carl-Wilhelm. Han är nog och spelar bort alla sina pengar som vanligt!',
+    clue: 'skugga',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0,
+    character: "Spelaren",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
+    options: [
+      {
+        optionId: 0,
+        text: 'USA',
+        correctAnswer: false
+      },
+      {
+        optionId: 1,
+        text: 'Japan',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Kina',
         correctAnswer: true
       },
       {
         optionId: 3,
-        text: '8',
+        text: 'Italien',
         correctAnswer: false
       }
     ],
-    wrongAnswerText: 'Eh... nääää....',
-    correctAnswerText:
-      'Rätt! Min ledtråd till dig är... jag såg anita med åttio spindlar härrom dagen!',
-    bribedAnswerText:
-      'Okej då... jag såg anita med åttio spindlar härrom dagen!',
-    textEnding: 'Det finns en vakt borta vid eslöv, gå dit vettja!',
-    clue: 'spindel',
-    nextPlace: 'eslöv'
+    textEnding: 'Gå och kolla med Charlie och hans tjej, han brukar veta en del! De brukar ha picknick i parken här omkring, nästan vid den där restaurangen Mat & Vin.',
+    clue: 'skyffel',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0,
+    character: "Charlie & Freja",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
+    options: [
+      {
+        optionId: 0,
+        text: 'Sand',
+        correctAnswer: false
+      },
+      {
+        optionId: 1,
+        text: 'Tuggummi',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Frukt',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'Hemlighet',
+        correctAnswer: true
+      }
+    ],
+    textEnding: 'Alltså Torgaren kan nog veta en del, vet att era kompisar också är påväg dit alltså mot Gustav, så då kan ni diskutera vad ni hört av andra. Så komigen!',
+    clue: 'rotthar',
+    nextPlace: ''
+  },
+  {
+    character: "torgare",
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ftorparen.png?alt=media&token=40b6c9ed-9787-49c9-8e0a-905e8df1b73c',
+
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-1.png?alt=media&token=12440a6a-a663-4537-8604-a328735f3608',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-2.png?alt=media&token=afe7bad4-8abb-417b-9451-ee05bdf12dd2',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-ratt.png?alt=media&token=cf511287-1598-4fa7-93f5-c9234e70dbb7',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-fel.png?alt=media&token=8aafd31c-d6fe-4a03-98b6-2de94fb950ac',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-muta.png?alt=media&token=a7cabe78-0c83-4686-9c66-ead3ac607d5b',
+
+    options: [
+      {
+        optionId: 0,
+        text: 'Han väger 85kg',
+        correctAnswer: false
+      },
+      {
+        optionId: 1,
+        text: 'Han väger godis',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Fast det går ju inte att räkna ut...',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'Han väger frukt och grönt',
+        correctAnswer: true
+      }
+    ],
+    textEnding: 'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
+    clue: '',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0,
+    character: "Hilda",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
+    options: [
+      {
+        optionId: 0,
+        text: '51',
+        correctAnswer: false
+      },
+      {
+        optionId: 1,
+        text: '0, dem bakar inga bullar, dem gör ju rulltårtor',
+        correctAnswer: true
+      },
+      {
+        optionId: 2,
+        text: '33',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: '60',
+        correctAnswer: false
+      }
+    ],
+    textEnding: 'Ni får nog kolla med Barbro Bibliotikarien här i staden, hon är ju såklart vid stadens bibliotek så dit får du gå!',
+    clue: '',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0,
+    character: "Biblotikarien",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
+    options: [
+      {
+        optionId: 0,
+        text: 'Efter examen',
+        correctAnswer: true
+      },
+      {
+        optionId: 1,
+        text: 'Mellan lektion ett och två',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Eleverna är alltid på ett högre plan än lärarna',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'När de är på våningen ovanför',
+        correctAnswer: true
+      }
+    ],
+    textEnding: 'Spring till Olga, hon kanske vet! Hon är stadens bästa operasångare och är såklart på platsen man gör det, sjunger opera alltså.',
+    clue: 'slakttrad',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0,
+    character: "Operasångerskan & Greta",
+    characterImg: "",
+
+    speakingImg1: "",
+    speakingImg2: "",
+    speakingImgRight: "",
+    speakingImgWrong: "",
+    speakingImgBribe: "",
+    options: [
+      {
+        optionId: 0,
+        text: 'Andan',
+        correctAnswer: true
+      },
+      {
+        optionId: 1,
+        text: 'Luft',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Bomull',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'Fisen',
+        correctAnswer: false
+      }
+    ],
+    textEnding: 'Prästen, han borde ni kolla till, kanske dags att snabba sig dit. Till den där kyrkan han jobbar på, något namn på J var det innan och sen kyrka... Möt era vänner där också!',
+    clue: 'glitter',
+    nextPlace: ''
+  },
+  {
+    // questionId: 0, // ??? BEHÖVS?
+    character: "prast",
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fprast.png?alt=media&token=93848911-b6ed-4c2d-9c2d-52b5615f6198',
+
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-1.png?alt=media&token=ec383ff1-86a3-473c-90dc-d583aa240a8c',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-2.png?alt=media&token=56c7123f-b359-4478-8233-5325842bc32a',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-ratt.png?alt=media&token=5ea51cdb-12a3-4405-83ef-ed2ed87096b0',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-fel.png?alt=media&token=5c5bf810-e013-4b5f-9c89-e1417cb6af7b',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-muta.png?alt=media&token=35d183cf-2036-49fd-b7f8-62c8bf2c1afe',
+
+    options: [
+      {
+        optionId: 0,
+        text: 'En av dem ångrade sig',
+        correctAnswer: false
+      },
+      {
+        optionId: 1,
+        text: 'Ett äpple var kvar på baksidan av trädet',
+        correctAnswer: false
+      },
+      {
+        optionId: 2,
+        text: 'Dottern når inte äpplena',
+        correctAnswer: false
+      },
+      {
+        optionId: 3,
+        text: 'Prästens dotter är klockarens fru',
+        correctAnswer: true
+      }
+    ],
+    textEnding: 'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
+    clue: 'moped',
+    nextPlace: ''
   }
 ]
 
