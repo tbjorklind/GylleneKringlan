@@ -31,25 +31,27 @@ const storyLine1 = [
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992',
     speakingImgBribe:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7',
+    // intro: "Hej jag heter Anita!",
+    // question: "Hur många äpplen åt jag igår?",
     options: [
       {
         optionId: 0,
-        text: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanswers%2FL1P1-1.png?alt=media&token=0970e1e4-6bdd-4617-bcfa-52bd5032c33b',
+        text: 'Han har inget hår',
         correctAnswer: true
       },
       {
         optionId: 1,
-        text: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanswers%2FL1P1-2.png?alt=media&token=a33253d8-a81c-4d8a-b6c8-d35e2fe8a339',
+        text: 'Han har på sig en badmössa',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanswers%2FL1P1-3.png?alt=media&token=62a8cb28-9c8b-4a6c-95d3-b9416bae0723',
+        text: 'Han doppar inte huvudet i vattnet',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanswers%2FL1P1-4.png?alt=media&token=eefacde8-4c77-42de-ba51-dd79db2133d6',
+        text: 'Inget av svaren stämmer',
         correctAnswer: false
       }
     ],

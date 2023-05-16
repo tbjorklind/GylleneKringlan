@@ -86,7 +86,8 @@ async function renderIntroAndQuestion(storyChapter) {
                         }
                     }
 
-                    answerOptionBtn.style.backgroundImage = `url(${storyLine[storyChapter].options[i].text})`
+                    answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
+                    answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
                     document.getElementById("storylineBottom").appendChild(answerOptionBtn);
                     answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
                 }
