@@ -17,20 +17,25 @@
 const storyLine1 = [
   {
     // questionId: 0,
-    character: "anita",
+    character: 'anita',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-1.png?alt=media&token=6797cb3d-9ebf-4328-bbaa-705be2ff8d39',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-1.png?alt=media&token=6ece55fd-2b7d-4590-8cec-51d59d2eef39',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-2.png?alt=media&token=139ae220-e16e-4e26-ae17-7502be79a90f',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-2.png?alt=media&token=55fea3ad-e77b-4aa8-8ed0-e81ab77cc5dc',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-ratt.png?alt=media&token=ffd95692-ae90-471b-8f75-3eeb3f0d81a8',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ratt.png?alt=media&token=41b0f3ae-802f-4bd2-b221-6b1b9bd98233',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-fel.png?alt=media&token=b27a1fbf-e46b-455c-9e83-5dc16bbe1b61',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-muta.png?alt=media&token=71811ea3-2158-471d-89c6-80645b2afa7a',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ledtrad.png?alt=media&token=13c6217c-9b5b-4d9e-b7fe-9fc674cb2275',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-next.png?alt=media&token=8cf46a3a-ef28-4dd3-a35c-71f212ece124',
+    speakingImg4:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-4.png?alt=media&token=4f731261-1f5e-4202-b9da-4cd4da57518c',
     options: [
       {
         optionId: 0,
@@ -53,25 +58,32 @@ const storyLine1 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
+    textEnding:
+      'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
     clue: 'flipflops',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "fiskare",
+    character: 'fiskare',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ffiskare.png?alt=media&token=3b3f8e8e-42c4-43b5-9ce0-d8dca9306b66',
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-1.png?alt=media&token=c3b262f6-cc96-4ad2-b557-3550a392d971',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-1.png?alt=media&token=c4dd168a-49a2-42c6-b246-79b149a9fa94',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-2.png?alt=media&token=29d636df-5407-4ba7-b508-648a955b8e74',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-2.png?alt=media&token=eee91ba3-5d69-46fd-9c27-48de158f21d9',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-ratt.png?alt=media&token=f8717567-711d-474a-9434-d361030eac6e',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-ratt.png?alt=media&token=7b4e8a9f-1617-4074-923d-9e2de38756f3',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-fel.png?alt=media&token=f762f8b8-24ec-404a-8127-8937dd739bb9',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-fel.png?alt=media&token=607cec55-ee8e-439c-82e1-c0ca98b0c3be',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-muta.png?alt=media&token=e8d210fc-f685-4e13-8f1a-0810733d2009',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-muta.png?alt=media&token=15029ce3-172d-4434-9bfc-8f025c1e06f4',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-ledtrad.png?alt=media&token=847f2935-dcea-47df-8533-221a3615f02a',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-next.png?alt=media&token=18edcb1f-ae22-4872-8b00-c02614a33b47',
+    speakingImg4:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P2-4.png?alt=media&token=892991b9-3a3d-4cb2-b3bc-d763159b8ff9',
     options: [
       {
         optionId: 0,
@@ -94,27 +106,31 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Nu måste du springa vidare, kanske till Apotekaren? Hon hänger i alla fall vid det vackraste apoteket här finns.',
+    textEnding:
+      'Nu måste du springa vidare, kanske till Apotekaren? Hon hänger i alla fall vid det vackraste apoteket här finns.',
     clue: '',
     nextPlace: 'andra sidan stan'
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "apotekare",
+    character: 'apotekare',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fapotekaren.png?alt=media&token=c8946034-55a7-4a4c-91bb-7c54526d0d12',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P3-1.png?alt=media&token=4dadf4ce-0ea2-4b1b-9be6-404321f79e87',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-1.png?alt=media&token=4cbe32fd-8d0b-427a-9ff0-fb2ac52acc5e',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P3-2.png?alt=media&token=661ae055-1815-427c-aacc-202235cc5de6',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-2.png?alt=media&token=85036e62-56c7-47b8-9489-e8904b7df3bd',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P3-ratt.png?alt=media&token=33c964f9-d5be-434b-b8c1-6f291cd1a950',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-ratt.png?alt=media&token=2ca76d32-5150-4a6d-8dd7-7f7d68d548b4',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P3-fel.png?alt=media&token=2347a08d-f074-4115-92dc-7f8cd2ede110',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-fel.png?alt=media&token=ac5a7116-c17c-40c4-a9e2-2af8cba5eb5b',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P3-muta.png?alt=media&token=c17f02be-6bcb-41ea-b0b3-38d36861bf5e',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-muta.png?alt=media&token=cbf94b5e-a13a-433e-8c07-64f2ba753db6',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-ledtrad.png?alt=media&token=5a11b8c1-1352-4411-9509-195ccf589e40',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-next.png?alt=media&token=30d4425f-079d-4164-a126-52b439451cb8',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -137,26 +153,31 @@ const storyLine1 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Nu får ni gå vidare, men jag kan tänka mig att Dörrvakten sett något! Han står där man kastar silvriga kulor på en sån liten kula. Vad är det nu det heter..?',
+    textEnding:
+      'Nu får ni gå vidare, men jag kan tänka mig att Dörrvakten sett något! Han står där man kastar silvriga kulor på en sån liten kula. Vad är det nu det heter..?',
     clue: 'oljud',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "dorrvakt",
+    character: 'dorrvakt',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdorrvakten.png?alt=media&token=cba82460-43d5-491f-bf3c-951db9181da4',
 
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P4-1.png?alt=media&token=b7477f12-a1f4-4e69-b8be-2cf5dd216eb6',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-1.png?alt=media&token=9c19809b-338e-4874-873d-23ad4373dde0',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P4-2.png?alt=media&token=d305dff8-f933-4792-93ea-1b7bd3d85a9f',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-2.png?alt=media&token=6bf041b6-413b-43c9-89cb-bb99ae9b34d6',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P4-ratt.png?alt=media&token=fe902cb8-e413-406d-8cfd-640f1174dd5c',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-ratt.png?alt=media&token=f8ca5e53-fb0a-4d78-ac99-eb863760fd83',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P4-fel.png?alt=media&token=b48866f8-98f0-4085-b212-8edfc0dd8ecc',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-fel.png?alt=media&token=d6251ec7-298a-49c9-a44c-4d2574293362',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P4-muta.png?alt=media&token=09bda0c0-baf5-4fa9-b5e7-22664cd40dec',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-muta.png?alt=media&token=c1717bd7-939f-44aa-860c-dac542ee8b23',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-ledtrad.png?alt=media&token=918a1615-e529-40c2-a095-86c4951475e7',
+    // speakingImgNext: '',
+    // speakingImg4: '',
 
     options: [
       {
@@ -180,26 +201,30 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Nu ska ni få möta torgaren, han kan ändå veta mycket, han står och säljer blommor vid torget, du vet, Gus... Juste dina kompisar kommer nog dit, så se till att diskutera med varann!',
+    textEnding:
+      'Nu ska ni få möta torgaren, han kan ändå veta mycket, han står och säljer blommor vid torget, du vet, Gus... Juste dina kompisar kommer nog dit, så se till att diskutera med varann!',
     clue: 'gris',
     nextPlace: ''
   },
   {
-    character: "torgare",
+    character: 'torgare',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ftorparen.png?alt=media&token=40b6c9ed-9787-49c9-8e0a-905e8df1b73c',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-1.png?alt=media&token=12440a6a-a663-4537-8604-a328735f3608',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-1.png?alt=media&token=c5a3e276-c057-4576-b7f6-dadd2211a0ef',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-2.png?alt=media&token=afe7bad4-8abb-417b-9451-ee05bdf12dd2',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-2.png?alt=media&token=08d4ced8-22c6-4d59-9204-7a02c739f8a3',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-ratt.png?alt=media&token=cf511287-1598-4fa7-93f5-c9234e70dbb7',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-ratt.png?alt=media&token=5f5d721a-f066-4383-9b77-d6710cd41228',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-fel.png?alt=media&token=8aafd31c-d6fe-4a03-98b6-2de94fb950ac',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-fel.png?alt=media&token=361bb80b-129b-4d0f-b0b8-92049afbf3d1',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-muta.png?alt=media&token=a7cabe78-0c83-4686-9c66-ead3ac607d5b',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-muta.png?alt=media&token=127ad2cb-fee3-4d0e-a628-5011cea4abf1',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-ledtrad.png?alt=media&token=795b3a6d-6e0f-475b-8b6c-1bc09087d6aa',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-next.png?alt=media&token=e454f2cc-38fd-403b-bef4-06e124779a36',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -222,27 +247,31 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
+    textEnding:
+      'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
     clue: '',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "vonAsklund",
+    character: 'vonAsklund',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FvonAsklund.png?alt=media&token=e31020af-c174-4382-82ff-38cb3b3ab80f',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P6-1.png?alt=media&token=fe75a6ab-0094-4b63-a596-b295e77d7549',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-1.png?alt=media&token=299985df-abee-43fa-a99b-11aa0afd6d05',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P6-2.png?alt=media&token=96e1cc56-0cd6-484b-981c-874e26ffa066',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-2.png?alt=media&token=c3899492-c387-4178-88f8-7418bde1d0e0',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P6-ratt.png?alt=media&token=eb51509d-f6f1-4fd8-be67-d4c2e505eef2',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-ratt.png?alt=media&token=86e8d95f-f364-4cb7-9014-95f2cc72bc16',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P6-fel.png?alt=media&token=439d68c4-8c1e-4c19-bc85-56057b7c4d16',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-fel.png?alt=media&token=7cdda5ca-3842-4fea-9f72-b6c302da17ba',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P6-muta.png?alt=media&token=e75b9ede-34c6-433f-9868-f4ec9a5a25f7',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-muta.png?alt=media&token=769bdcf2-9d4b-432f-a86a-415f0e73d577',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-ledtrad.png?alt=media&token=7c155d5a-808e-42f6-8c84-cd6ef186ff34',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P6-next.png?alt=media&token=d11a2078-8e18-400a-a3b3-70ba11ef5e80',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -265,27 +294,31 @@ const storyLine1 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Har ni haft någon kontakt med Detektiven på länge? Kanske dags att prata med honom? Han hänger med sina kollegor, poliserna alltså.',
+    textEnding:
+      'Har ni haft någon kontakt med Detektiven på länge? Kanske dags att prata med honom? Han hänger med sina kollegor, poliserna alltså.',
     clue: 'tygbit',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "august",
+    character: 'august',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Faugust_profil.png?alt=media&token=b79d6a24-adf7-4391-8294-3836a88e39a4',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-1.png?alt=media&token=548f667a-b4a1-4d24-80ae-eb2b24956176',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-1.png?alt=media&token=96313990-ebbd-499b-8457-08b87d6fcf20',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-2.png?alt=media&token=81b05b50-4d4b-46f3-ade3-e35d66aebd32',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-2.png?alt=media&token=150d5099-6b95-4604-a802-f4ba12c1e155',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-ratt.png?alt=media&token=93f6953f-94ed-4fba-a3ec-9671dba076fe',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-ratt.png?alt=media&token=5147656e-b54e-4bb6-860e-a601cc69bf28',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-fek.png?alt=media&token=aafbb163-193c-4a1e-9ec6-55b79a1a0409',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-fek.png?alt=media&token=133957c6-5d59-4a79-91f3-70c74d6735d5',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-muta.png?alt=media&token=e9ac3179-5594-4bb4-9155-36cbd3d989cc',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-muta.png?alt=media&token=64da4ffc-0d38-4317-924d-6b8022622bc2',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-ledtrad.png?alt=media&token=38765834-6bfe-4352-8be8-f73e9d545f0e',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P7-next.png?alt=media&token=1500ab04-d2ef-4f32-a272-a3054234b971',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -308,27 +341,31 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Roland är speciell, han har en tendens att vara lite av en klyptoman kan man säga. Jag hade kollat med honom, han är nog och sover under bron där nere vid stadshuset.',
+    textEnding:
+      'Roland är speciell, han har en tendens att vara lite av en klyptoman kan man säga. Jag hade kollat med honom, han är nog och sover under bron där nere vid stadshuset.',
     clue: '',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "roland",
+    character: 'roland',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Froland.png?alt=media&token=c235a4f6-7f69-4bed-9132-a7fad6a9cf5e',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P8-1.png?alt=media&token=5fac1429-2020-42d8-af48-8b514822443a',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-1.png?alt=media&token=dd42edca-ee44-4ee9-909a-273225921691',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P8-2.png?alt=media&token=4a727485-b7b1-4fb2-956e-e9878395d1ef',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-2.png?alt=media&token=58079054-034c-48f0-8eee-2ee819c9df2f',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P8-ratt.png?alt=media&token=a47b67e2-029d-457b-a61a-394ca4f2a333',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-ratt.png?alt=media&token=0068f8a6-a210-4ae7-959e-b7e55b2f6fc7',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P8-fel.png?alt=media&token=59110939-53bc-445d-bdb5-fe1455049477',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-fel.png?alt=media&token=59f253c9-e5b7-4492-8b7e-2ff166baf130',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P7-muta.png?alt=media&token=e9ac3179-5594-4bb4-9155-36cbd3d989cc',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-muta.png?alt=media&token=f1f6e302-7f8c-4e60-aea6-86056eaa667b',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-ledtrad.png?alt=media&token=26b5f607-4c56-43f1-af80-d3b48b7269ef',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P8-next.png?alt=media&token=a826a705-6c76-42b7-8d5f-440922924e10',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -351,27 +388,31 @@ const storyLine1 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Prästen, han borde ni kolla till, kanske dags att snabba sig lite nu mot kyrkan han jobbar på innan det blir mörkt, något namn på J var det innan och sen kyrka... Era vänner ska också dit!',
+    textEnding:
+      'Prästen, han borde ni kolla till, kanske dags att snabba sig lite nu mot kyrkan han jobbar på innan det blir mörkt, något namn på J var det innan och sen kyrka... Era vänner ska också dit!',
     clue: 'skallande',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "prast",
+    character: 'prast',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fprast.png?alt=media&token=93848911-b6ed-4c2d-9c2d-52b5615f6198',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-1.png?alt=media&token=ec383ff1-86a3-473c-90dc-d583aa240a8c',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-1.png?alt=media&token=e67f85f4-2e39-4824-9b35-a87460e7e544',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-2.png?alt=media&token=56c7123f-b359-4478-8233-5325842bc32a',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-2.png?alt=media&token=d0b464f3-44cb-41cf-8ebd-ac315bac2c36',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-ratt.png?alt=media&token=5ea51cdb-12a3-4405-83ef-ed2ed87096b0',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-ratt.png?alt=media&token=8fc94ede-3052-4af6-9f63-44543bb3209a',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-fel.png?alt=media&token=5c5bf810-e013-4b5f-9c89-e1417cb6af7b',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-fel.png?alt=media&token=3c958247-539a-49aa-9d61-50539f712ebe',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-muta.png?alt=media&token=35d183cf-2036-49fd-b7f8-62c8bf2c1afe',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-muta.png?alt=media&token=cfc0fe2a-af4e-4e0f-9c59-77b937fe57a2',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-ledtrad.png?alt=media&token=7d833c29-31e7-4870-8cc5-20238d50facc',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-next.png?alt=media&token=fe2e75c3-396b-4ae8-8285-a14e7a5c4168',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -394,7 +435,8 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
+    textEnding:
+      'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
     clue: 'moped',
     nextPlace: ''
   }
@@ -404,20 +446,25 @@ const storyLine1 = [
 const storyLine2 = [
   {
     // questionId: 0,
-    character: "Anita",
+    character: 'anita',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fanita.png?alt=media&token=165e8055-dfc6-465b-84f7-381105097e33',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-1.png?alt=media&token=6797cb3d-9ebf-4328-bbaa-705be2ff8d39',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-1.png?alt=media&token=6ece55fd-2b7d-4590-8cec-51d59d2eef39',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-2.png?alt=media&token=139ae220-e16e-4e26-ae17-7502be79a90f',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-2.png?alt=media&token=55fea3ad-e77b-4aa8-8ed0-e81ab77cc5dc',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-ratt.png?alt=media&token=ffd95692-ae90-471b-8f75-3eeb3f0d81a8',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ratt.png?alt=media&token=41b0f3ae-802f-4bd2-b221-6b1b9bd98233',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-fel.png?alt=media&token=b27a1fbf-e46b-455c-9e83-5dc16bbe1b61',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-muta.png?alt=media&token=71811ea3-2158-471d-89c6-80645b2afa7a',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ledtrad.png?alt=media&token=13c6217c-9b5b-4d9e-b7fe-9fc674cb2275',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-next.png?alt=media&token=8cf46a3a-ef28-4dd3-a35c-71f212ece124',
+    speakingImg4:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-4.png?alt=media&token=4f731261-1f5e-4202-b9da-4cd4da57518c',
     options: [
       {
         optionId: 0,
@@ -440,20 +487,31 @@ const storyLine2 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
+    textEnding:
+      'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
     clue: 'flipflops',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Clemens & Kajsa",
-    characterImg: "",
+    character: 'clemens',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclemens.png?alt=media&token=31a1e439-941b-4e64-a44f-ef9485d78364',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-1.png?alt=media&token=5476f1bb-dd54-4f66-a4ee-e49870faad16',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-2.png?alt=media&token=45d08637-5a22-4474-a55d-7899c0931e9f',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-ratt.png?alt=media&token=0af82c87-c2ad-416a-b971-e9e9b648ffd9',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-fel.png?alt=media&token=fa32e2dc-9463-4d31-867d-a82d5783b2aa',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-muta.png?alt=media&token=f4ed04da-a261-43ba-8d2d-d264c9b6f961',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-ledtrad.png?alt=media&token=b6aed7ad-1301-4aa2-bb1f-97a5335e62d9',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-next.png?alt=media&token=bc1fa572-30b5-4f08-8da7-eed6d2efe9eb',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -476,20 +534,24 @@ const storyLine2 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Lunka vidare nu till en galning, kanske mot Carl-Wilhelm. Han är nog och spelar bort alla sina pengar som vanligt!',
+    textEnding:
+      'Lunka vidare nu till en galning, kanske mot Carl-Wilhelm. Han är nog och spelar bort alla sina pengar som vanligt!',
     clue: 'skugga',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Spelaren",
-    characterImg: "",
+    character: 'spelaren',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fcasino.png?alt=media&token=028d7d26-e165-4df4-a2f0-14230b4dcd56',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-1.png?alt=media&token=40e9489a-4ee4-4fbb-9899-2c3b9637438d',
+    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-2.png?alt=media&token=6cda8e4a-6f35-498c-b094-6f0aa1637fda',
+    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ratt.png?alt=media&token=6d5c8a81-ad1b-4a2b-8ab5-a6618fdb74d6',
+    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-fel.png?alt=media&token=68c90f4c-5129-41fe-8a2d-839003f6b007',
+    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-muta.png?alt=media&token=f499466b-2290-4527-99cd-8e0aea26024c',
+    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ledtrad.png?alt=media&token=b592d2e0-0dd2-4e3a-b9a1-3178c302456a',
+    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-next.png?alt=media&token=f87c051e-57ce-48b8-90a9-d821df9fb4da',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -512,20 +574,24 @@ const storyLine2 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Gå och kolla med Charlie och hans tjej, han brukar veta en del! De brukar ha picknick i parken här omkring, nästan vid den där restaurangen Mat & Vin.',
+    textEnding:
+      'Gå och kolla med Charlie och hans tjej, han brukar veta en del! De brukar ha picknick i parken här omkring, nästan vid den där restaurangen Mat & Vin.',
     clue: 'skyffel',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Charlie & Freja",
-    characterImg: "",
+    character: 'charlieFreja',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FcharlieFreja.png?alt=media&token=e48b6c9c-e126-4bfc-944e-4fe4cd4e8733',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-1.png?alt=media&token=22ea4027-1ef7-40a8-9ca5-a889c4747bda',
+    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-2.png?alt=media&token=afbe8945-48f2-4c74-b6fb-e1e2f589e2ac',
+    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ratt.png?alt=media&token=bdfb42c4-2ae5-4d54-8732-cc6d67df3710',
+    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-fel.png?alt=media&token=d4a57d78-4f68-4754-b242-a144c4032d2d',
+    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-muta.png?alt=media&token=ab42426b-22ca-4916-934f-d33d33f25ff7',
+    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ledtrad.png?alt=media&token=3482ddeb-5955-4ff2-9a20-7cb26f7783ea',
+    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-next.png?alt=media&token=68c699cb-1ed8-4185-b339-6c1caaefd550',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -548,26 +614,30 @@ const storyLine2 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Alltså Torgaren kan nog veta en del, vet att era kompisar också är påväg dit alltså mot Gustav, så då kan ni diskutera vad ni hört av andra. Så komigen!',
+    textEnding:
+      'Alltså Torgaren kan nog veta en del, vet att era kompisar också är påväg dit alltså mot Gustav, så då kan ni diskutera vad ni hört av andra. Så komigen!',
     clue: 'rotthar',
     nextPlace: ''
   },
   {
-    character: "torgare",
+    character: 'torgare',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Ftorparen.png?alt=media&token=40b6c9ed-9787-49c9-8e0a-905e8df1b73c',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-1.png?alt=media&token=12440a6a-a663-4537-8604-a328735f3608',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-1.png?alt=media&token=c5a3e276-c057-4576-b7f6-dadd2211a0ef',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-2.png?alt=media&token=afe7bad4-8abb-417b-9451-ee05bdf12dd2',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-2.png?alt=media&token=08d4ced8-22c6-4d59-9204-7a02c739f8a3',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-ratt.png?alt=media&token=cf511287-1598-4fa7-93f5-c9234e70dbb7',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-ratt.png?alt=media&token=5f5d721a-f066-4383-9b77-d6710cd41228',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-fel.png?alt=media&token=8aafd31c-d6fe-4a03-98b6-2de94fb950ac',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-fel.png?alt=media&token=361bb80b-129b-4d0f-b0b8-92049afbf3d1',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P5-muta.png?alt=media&token=a7cabe78-0c83-4686-9c66-ead3ac607d5b',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-muta.png?alt=media&token=127ad2cb-fee3-4d0e-a628-5011cea4abf1',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-ledtrad.png?alt=media&token=795b3a6d-6e0f-475b-8b6c-1bc09087d6aa',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P5-next.png?alt=media&token=e454f2cc-38fd-403b-bef4-06e124779a36',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -590,20 +660,24 @@ const storyLine2 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
+    textEnding:
+      'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
     clue: '',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Hilda",
-    characterImg: "",
+    character: 'hilda',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fhilda.png?alt=media&token=96f2a597-c983-452d-af70-fe29bac95904',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-1.png?alt=media&token=a7fab5d8-bcf2-4cfa-9d9f-fd3a40658ed9',
+    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-2.png?alt=media&token=a9777074-5791-41ae-a120-cd6147074f06',
+    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ratt.png?alt=media&token=18969137-8ac6-40ce-aa09-fdfd355ceaa7',
+    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-fel.png?alt=media&token=8ea728b4-b4d9-4065-b75e-32bd3646ec8f',
+    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-muta.png?alt=media&token=2d24aced-96be-4e7b-851a-ea2fb0413ae0',
+    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ledtrad.png?alt=media&token=97f90405-7e66-4191-a98a-a774af1fec58',
+    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-next.png?alt=media&token=3ee1adec-a73a-4a9e-9190-11936184e9d7',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -626,20 +700,24 @@ const storyLine2 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Ni får nog kolla med Barbro Bibliotikarien här i staden, hon är ju såklart vid stadens bibliotek så dit får du gå!',
+    textEnding:
+      'Ni får nog kolla med Barbro Bibliotikarien här i staden, hon är ju såklart vid stadens bibliotek så dit får du gå!',
     clue: '',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Biblotikarien",
-    characterImg: "",
+    character: 'biblotikarien',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbarbro.png?alt=media&token=e74c5261-4893-409e-aa37-27d93e9a0529',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-1.png?alt=media&token=198e2a4f-f48c-4f39-a12b-92bc8070a1aa',
+    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-2.png?alt=media&token=bfc68feb-5389-481f-9f81-28b65c03f2bd',
+    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ratt.png?alt=media&token=a0959a8e-f999-4e29-adb4-f19af09e1474',
+    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-fel.png?alt=media&token=81111fad-0c97-485c-aa20-c5897f40472a',
+    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-muta.png?alt=media&token=e528faa2-28eb-41cf-bef9-7abf1f1a61f2',
+    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ledtrad.png?alt=media&token=0636d5a0-e886-4573-bbd4-2c481b0b6636',
+    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-next.png?alt=media&token=88c45f93-dc72-46e0-8ee6-83e116bba31a',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -662,20 +740,24 @@ const storyLine2 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Spring till Olga, hon kanske vet! Hon är stadens bästa operasångare och är såklart på platsen man gör det, sjunger opera alltså.',
+    textEnding:
+      'Spring till Olga, hon kanske vet! Hon är stadens bästa operasångare och är såklart på platsen man gör det, sjunger opera alltså.',
     clue: 'familjetrad',
     nextPlace: ''
   },
   {
     // questionId: 0,
-    character: "Operasångerskan & Greta",
-    characterImg: "",
+    character: 'operasangerskan',
+    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fopera.png?alt=media&token=840d807c-ed23-49d1-b883-3119e1aed4d4',
 
-    speakingImg1: "",
-    speakingImg2: "",
-    speakingImgRight: "",
-    speakingImgWrong: "",
-    speakingImgBribe: "",
+    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-1.png?alt=media&token=692702ec-15fa-48e0-9df0-7492542b0530',
+    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-2.png?alt=media&token=7fcd1d29-a8a5-405a-a2c8-179dc5c80d61',
+    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ratt.png?alt=media&token=a513b320-6a10-41f1-ba8b-0059dcd0cf0e',
+    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-fel.png?alt=media&token=4140f722-a411-4951-875b-f38fcfe923db',
+    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-muta.png?alt=media&token=23b959e7-7237-4938-9de8-7bf9c352331b',
+    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ledtrad.png?alt=media&token=2df18b28-dbd0-4aaa-bf51-7a8afeb42bc2',
+    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-next.png?alt=media&token=d95da5dc-644c-428c-acf6-e775f257307b',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -698,27 +780,31 @@ const storyLine2 = [
         correctAnswer: false
       }
     ],
-    textEnding: 'Prästen, han borde ni kolla till, kanske dags att snabba sig dit. Till den där kyrkan han jobbar på, något namn på J var det innan och sen kyrka... Möt era vänner där också!',
+    textEnding:
+      'Prästen, han borde ni kolla till, kanske dags att snabba sig dit. Till den där kyrkan han jobbar på, något namn på J var det innan och sen kyrka... Möt era vänner där också!',
     clue: 'glitter',
     nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
-    character: "prast",
+    character: 'prast',
     characterImg:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fprast.png?alt=media&token=93848911-b6ed-4c2d-9c2d-52b5615f6198',
-
     speakingImg1:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-1.png?alt=media&token=ec383ff1-86a3-473c-90dc-d583aa240a8c',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-1.png?alt=media&token=e67f85f4-2e39-4824-9b35-a87460e7e544',
     speakingImg2:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-2.png?alt=media&token=56c7123f-b359-4478-8233-5325842bc32a',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-2.png?alt=media&token=d0b464f3-44cb-41cf-8ebd-ac315bac2c36',
     speakingImgRight:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-ratt.png?alt=media&token=5ea51cdb-12a3-4405-83ef-ed2ed87096b0',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-ratt.png?alt=media&token=8fc94ede-3052-4af6-9f63-44543bb3209a',
     speakingImgWrong:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-fel.png?alt=media&token=5c5bf810-e013-4b5f-9c89-e1417cb6af7b',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-fel.png?alt=media&token=3c958247-539a-49aa-9d61-50539f712ebe',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P9-muta.png?alt=media&token=35d183cf-2036-49fd-b7f8-62c8bf2c1afe',
-
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-muta.png?alt=media&token=cfc0fe2a-af4e-4e0f-9c59-77b937fe57a2',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-ledtrad.png?alt=media&token=7d833c29-31e7-4870-8cc5-20238d50facc',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P9-next.png?alt=media&token=fe2e75c3-396b-4ae8-8285-a14e7a5c4168',
+    // speakingImg4: '',
     options: [
       {
         optionId: 0,
@@ -741,7 +827,8 @@ const storyLine2 = [
         correctAnswer: true
       }
     ],
-    textEnding: 'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
+    textEnding:
+      'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
     clue: 'moped',
     nextPlace: ''
   }

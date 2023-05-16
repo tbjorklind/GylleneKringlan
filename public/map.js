@@ -227,7 +227,7 @@ async function initMap (position) {
 
   function callback (response) {
     console.log(response.rows[0].elements[0].distance.value)
-    if (response.rows[0].elements[0].distance.value <= 30) {
+    if (response.rows[0].elements[0].distance.value <= 30000) {
       console.log('In zone')
       renderIntroAndQuestion(storyChapter)
     } else {

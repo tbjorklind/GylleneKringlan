@@ -49,99 +49,82 @@ wrapper {
   z-index: 1;
 }
 
-/* -------------------------- */
+/* -------------------------------------------------- */
 .character {
   position: absolute;
-  height: 90%;
+  height: 85%;
+  left: -10vw;
+  bottom: -35vw;
 }
 .bubble {
   position: absolute;
   z-index: 1;
   height: 40%;
-}
-/* -------------------------- */
-#anita {
-  bottom: -24vh;
-  left: -2vw;
-}
-#anitaBubble {
   left: -20vw;
 }
-/* -------------------------- */
-#fiskare {
-  bottom: -20vh;
-  left: -2vw;
-}
-#fiskareBubble {
-  left: -20vw;
-}
-/* -------------------------- */
-#apotekare {
-  bottom: -16vh;
-  left: -30vw;
-  height: 110%;
-}
-#apotekareBubble {
-  height: 28%;
-  bottom: 30vh;
-}
-/* -------------------------- */
+/* -------------------------------------------------- */
+
 #dorrvakt {
-  bottom: -1vh;
-  left: -30vw;
+  height: 80%;
+  left: -20vw;
+  bottom: -35vw;
 }
-#dorrvaktBubble {
-  height: 28%;
-  bottom: 40vh;
+/* HAHAHA, ska inte se ut såhär sen. Ville bara få det att funka på alla olika <3 */
+#dorrvaktBubble,
+#torgareBubble,
+#vonAsklundBubble,
+#rolandBubble,
+#prastBubble,
+#apotekareBubble,
+#spelarenBubble,
+#charlieFrejaBubble,
+#hildaBubble,
+#biblotikarienBubble,
+#operasangerskanBubble,
+#anitaNextBubble,
+#fiskareNextBubble,
+#apotekareNextBubble,
+#torgareNextBubble,
+#vonAsklundNextBubble,
+#augustNextBubble,
+#rolandNextBubble,
+#prastNextBubble,
+#clemensNextBubble,
+#spelarenNextBubble,
+#charlieFrejaNextBubble,
+#hildaNextBubble,
+#biblotikarienNextBubble,
+#operasangerskanNextBubble {
+  height: 32%;
+  top: 7vh;
+  left: 0vw;
 }
-/* -------------------------- */
-#torgare {
-  top: 8vh;
+
+#august {
+  bottom: 0vh;
+  left: -25vw;
+  height: 70%;
+}
+
+#clemens {
+  bottom: 5vh;
+  left: -50vw;
   height: 60%;
 }
-#torgareBubble {
-  height: 30%;
-  top: 41vh;
+
+#hilda {
+  height: 90%;
+  left: 20vw;
+  bottom: -50vw;
 }
-/* -------------------------- */
-#vonAsklund {
-  top: 8vh;
-  height: 65%;
-  left: 10vw;
+
+#operasangerskan {
+  left: 23vw;
+  bottom: -14vh;
 }
-#vonAsklundBubble {
-  height: 28%;
-  bottom: 35vh;
-}
-/* -------------------------- */
-#august {
-  bottom: 10vh;
-  left: -30vw;
-  height: 75%;
-}
-#augustBubble {
-  height: 40%;
-  top: 2vh;
-  left: -20vw;
-}
-/* -------------------------- */
-#roland {
-  bottom: -22vh;
-  left: -6vw;
-}
-#rolandBubble {
-  height: 40%;
-  top: 1vh;
-  left: -20vw;
-}
-/* -------------------------- */
+
 #prast {
-  top: 8vh;
-  height: 80%;
-  left: -9vw;
+  height: 75%;
+  left: -5vw;
+  bottom: -5vh;
 }
-#prastBubble {
-  height: 35%;
-  bottom: 26vh;
-}
-/* -------------------------- */

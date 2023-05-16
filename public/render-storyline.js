@@ -197,7 +197,10 @@ async function renderBribeResult(storyLine, storyChapter) {
 // --------------------- RENDER OF GOODBYE -----------------------
 async function renderFarwell(storyLine, storyChapter) {
     // Visa karaktärens svar i stora rutan och presentera en hejdå knapp typ
-    document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
+    // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
+    document.querySelector("#wrapper > div:first-child").innerHTML = `
+    <img class="bubble" id="${storyLine[storyChapter].character}NextBubble" src="${storyLine[storyChapter].speakingImgNext}">
+    <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`
     document.querySelector("#wrapper > div:last-child").innerHTML = "<div>Hejdå!</div>"
     let background = randomizeBtnBackgrounds(1);
     document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${background[0]})`;
