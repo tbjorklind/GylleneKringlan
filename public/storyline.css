@@ -1,31 +1,31 @@
 wrapper {
-height: 100%;
-width: 100vw;
-margin: 0;
-display: flex;
-align-items: center;
-flex-direction: column;
-background-image: url("");
+  height: 100%;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('');
 }
 
 #storylineTop {
-    height: 60%;
-    width: 100vw;
+  height: 60%;
+  width: 100vw;
 }
 
 #storylineBottom {
-    height: 40%;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    padding-bottom: 2vh;
+  height: 40%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-bottom: 2vh;
 }
 
 #storylineBottom div {
-    /*
+  /*
     margin: 2vw;
     background-color: lightgray;
     width: 40%;
@@ -34,131 +34,121 @@ background-image: url("");
     justify-content: center;
     align-items: center;
     */
-    margin: 2vw;
-    width: 45%;
-    height: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    text-align: center;
-    font-size: 5vw;
-    z-index: 2;
+  margin: 2vw;
+  width: 45%;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 5vw;
+  z-index: 2;
 }
 
-.arrowBtn{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0170.PNG?alt=media&token=12a2d43a-c694-4b66-b510-95dd5c427633");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 1;
+.arrowBtn {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0170.PNG?alt=media&token=12a2d43a-c694-4b66-b510-95dd5c427633');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
-/* Anita, Fiskaren,  */
-.character1 {
-    position: absolute;
-    bottom: -24vh;
-    left: -2vw;
-    height: 90%;
+/* -------------------------- */
+.character {
+  position: absolute;
+  height: 90%;
 }
-
-.bubble1 {
-    height: 40%;
-    position: absolute;
-    top:3vh;
-    left: -20vw;
-    z-index: 1;
+.bubble {
+  position: absolute;
+  z-index: 1;
+  height: 40%;
 }
-
-/* Apotekaren */
-.character2 {
-    position: absolute;
-    bottom: -14vh;
-    left: -30vw;
-    height: 110%;
+/* -------------------------- */
+#anita {
+  bottom: -24vh;
+  left: -2vw;
 }
-
-.bubble2 {
-    height: 28%;
-    position: absolute;
-    bottom:30vh;
-    z-index: 1;
+#anitaBubble {
+  left: -20vw;
 }
-
-/* Dörrvakt */
-.character3 {
-    position: absolute;
-    bottom: -4vh;
-    left: -30vw;
-    height: 95%;
+/* -------------------------- */
+#fiskare {
+  bottom: -20vh;
+  left: -2vw;
 }
-
-.bubble3 {
-    height: 28%;
-    position: absolute;
-    bottom: 40vh;
-    z-index: 1;
+#fiskareBubble {
+  left: -20vw;
 }
-
-/* Von */
-.character4 {
-    position: absolute;
-    top: 10vh;
-    height: 75%;
+/* -------------------------- */
+#apotekare {
+  bottom: -16vh;
+  left: -30vw;
+  height: 110%;
 }
-
-.bubble4 {
-    height: 28%;
-    position: absolute;
-    bottom:28vh;
-    z-index: 1;
+#apotekareBubble {
+  height: 28%;
+  bottom: 30vh;
 }
-
-/* detektiv */
-.character5 {
-    position: absolute;
-    bottom: 10vh;
-    left: -30vw;
-    height: 75%;
+/* -------------------------- */
+#dorrvakt {
+  bottom: -1vh;
+  left: -30vw;
 }
-
-.bubble5 {
-    height: 40%;
-    position: absolute;
-    top:5vh;
-    left: -20vw;
-    z-index: 1;
+#dorrvaktBubble {
+  height: 28%;
+  bottom: 40vh;
 }
-
-/* Rolf */
-.character6 {
-    position: absolute;
-    bottom: -22vh;
-    height: 90%;
-    left: -6vw
+/* -------------------------- */
+#torgare {
+  top: 8vh;
+  height: 60%;
 }
-
-.bubble6 {
-    height: 40%;
-    position: absolute;
-    top:1vh;
-    z-index: 1;
-    left: -20vw;
+#torgareBubble {
+  height: 30%;
+  top: 41vh;
 }
-
-/* Präst */
-.character7 {
-    position: absolute;
-    top: 12vh;
-    left: -6vw;
-    height: 10%;
+/* -------------------------- */
+#vonAsklund {
+  top: 8vh;
+  height: 65%;
+  left: 10vw;
 }
-
-.bubble7 {
-    height: 35%;
-    position: absolute;
-    bottom:22vh;
-    z-index: 1;
+#vonAsklundBubble {
+  height: 28%;
+  bottom: 35vh;
 }
+/* -------------------------- */
+#august {
+  bottom: 10vh;
+  left: -30vw;
+  height: 75%;
+}
+#augustBubble {
+  height: 40%;
+  top: 2vh;
+  left: -20vw;
+}
+/* -------------------------- */
+#roland {
+  bottom: -22vh;
+  left: -6vw;
+}
+#rolandBubble {
+  height: 40%;
+  top: 1vh;
+  left: -20vw;
+}
+/* -------------------------- */
+#prast {
+  top: 8vh;
+  height: 80%;
+  left: -9vw;
+}
+#prastBubble {
+  height: 35%;
+  bottom: 26vh;
+}
+/* -------------------------- */
