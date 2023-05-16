@@ -43,8 +43,9 @@ function renderChooseTeam() {
   ]
   let teamTitle = document.createElement('div');
   teamTitle.innerText = "Välj ditt lag!"
-  teamTitle.style.marginTop = '5vw'
   teamTitle.style.fontSize = '5vw'
+  teamTitle.style.position = "absolute"
+  teamTitle.style.top = "2vh";
   document.getElementById('wrapper').appendChild(teamTitle)
 
   let teamWrapper = document.createElement('div')
@@ -102,8 +103,9 @@ function renderChooseBackpack(teamNumber) {
 
   let backpackTitle = document.createElement('div');
   backpackTitle.innerText = "Välj din ryggsäck!"
-  backpackTitle.style.marginTop = '5vw'
   backpackTitle.style.fontSize = '5vw'
+  backpackTitle.style.position = "absolute"
+  backpackTitle.style.top = "2vh";
   document.getElementById('wrapper').appendChild(backpackTitle)
 
   let backpackWrapper = document.createElement('div')
