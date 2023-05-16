@@ -30,8 +30,20 @@ const clues = [
         name: "Tygbit"
     },
     {
-        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fmoped.png?alt=media&token=194dca49-7c73-45ae-b32b-1dce57e1ef51",
-        name: "Moped"
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Ffamiljetrad.png?alt=media&token=b6616a9f-fe6d-4caa-9b9a-47558d76abb5",
+        name: "Familjeträd"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fglitter.png?alt=media&token=75fca474-6f50-45f1-93bf-fb6adab68064",
+        name: "Glitter"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Foljud.png?alt=media&token=85828391-ef4e-4ee2-85ab-6a19d63f6aa8",
+        name: "Oljud"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fgris.png?alt=media&token=ce850c65-11e3-4169-907e-a6893d1dff4b",
+        name: "Gris"
     }
 ]
 

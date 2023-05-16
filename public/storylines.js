@@ -663,7 +663,7 @@ const storyLine2 = [
       }
     ],
     textEnding: 'Spring till Olga, hon kanske vet! Hon är stadens bästa operasångare och är såklart på platsen man gör det, sjunger opera alltså.',
-    clue: 'slakttrad',
+    clue: 'familjetrad',
     nextPlace: ''
   },
   {
