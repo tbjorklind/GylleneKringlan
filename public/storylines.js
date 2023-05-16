@@ -31,8 +31,6 @@ const storyLine1 = [
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-fel.png?alt=media&token=959fc6a8-9719-49b2-8bcc-c4a9df917992',
     speakingImgBribe:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL12P1-muta.png?alt=media&token=fc769da5-ea36-4fcc-9009-5c7aee4b7ba7',
-    // intro: "Hej jag heter Anita!",
-    // question: "Hur många äpplen åt jag igår?",
     options: [
       {
         optionId: 0,
@@ -55,12 +53,9 @@ const storyLine1 = [
         correctAnswer: false
       }
     ],
-    // wrongAnswerText: "Nääää... inte riktigt!",
-    // correctAnswerText: "Helt rätt! Nu e jag mätt! Jag åt femtio äpplen, för jag var på en femtioårsfest, Ninas fest. Jag tycker ju om henne, men om det är någon medelålsers ni letar efter... tja...",
-    // bribedAnswerText: "Najs cash, tack! Jag åt faktiskt 50 äpplen! För Ninas 50års fest! Jag hade nog hållit ett extra öga på henne om jag var ni...",
-    textEnding: 'Min fru Lucy är på andra sidan kanalen, spring dit!',
-    clue: '50ÅrsBallong',
-    nextPlace: 'kanalen'
+    textEnding: 'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
+    clue: 'flipflops',
+    nextPlace: ''
   },
   {
     // questionId: 0,
@@ -77,8 +72,6 @@ const storyLine1 = [
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-fel.png?alt=media&token=f762f8b8-24ec-404a-8127-8937dd739bb9',
     speakingImgBribe:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FL1P2-muta.png?alt=media&token=e8d210fc-f685-4e13-8f1a-0810733d2009',
-    // intro: "Hej jag heter Lucy!",
-    // question: "Vad gjorde bagaren när polisen kom?",
     options: [
       {
         optionId: 0,
@@ -101,11 +94,8 @@ const storyLine1 = [
         correctAnswer: true
       }
     ],
-    // wrongAnswerText: "??? nej ? wtf...",
-    // correctAnswerText: "JAPP! Okej far åt helvete!",
-    // bribedAnswerText: "ooooogabooooga",
-    textEnding: 'hejdå!!!!!',
-    clue: 'deg',
+    textEnding: 'Nu måste du springa vidare, kanske till Apotekaren? Hon hänger i alla fall vid det vackraste apoteket här finns.',
+    clue: '',
     nextPlace: 'andra sidan stan'
   },
   {
@@ -128,28 +118,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
+        text: 'Elektron',
         correctAnswer: false
       },
       {
         optionId: 1,
-        text: 'tjena',
-        correctAnswer: false
+        text: 'Atom',
+        correctAnswer: true
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Proton',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
-        correctAnswer: true
+        text: 'Neutron',
+        correctAnswer: false
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Nu får ni gå vidare, men jag kan tänka mig att Dörrvakten sett något! Han står där man kastar silvriga kulor på en sån liten kula. Vad är det nu det heter..?',
+    clue: '',
+    nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
@@ -171,28 +161,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
-        correctAnswer: false
+        text: 'Löfte',
+        correctAnswer: true
       },
       {
         optionId: 1,
-        text: 'tjena',
+        text: 'Pinne',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Arm',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
+        text: 'Vatten',
         correctAnswer: true
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Nu ska ni få möta torgaren, han kan ändå veta mycket, han står och säljer blommor vid torget, du vet, Gus... Juste dina kompisar kommer nog dit, så se till att diskutera med varann!',
+    clue: 'skyffel',
+    nextPlace: ''
   },
   {
     character: "torgare",
@@ -213,28 +203,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
+        text: 'Han väger 85kg',
         correctAnswer: false
       },
       {
         optionId: 1,
-        text: 'tjena',
+        text: 'Han väger godis',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Fast det går ju inte att räkna ut...',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
+        text: 'Han väger frukt och grönt',
         correctAnswer: true
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Dags att dela upp er igen om ni ska hinna med! Blå ryggsäck ni kan fortsätta mot Von Asklund, hon hänger vid det där museet som alltid ska vara så in time. Gul ryggsäck kan ju kolla hur det går för Hilda, hon är ju vid hennes café, spring dit!. ',
+    clue: '',
+    nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
@@ -256,28 +246,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
+        text: '120 miljoner',
         correctAnswer: false
       },
       {
         optionId: 1,
-        text: 'tjena',
-        correctAnswer: false
+        text: 'Ovärdelig',
+        correctAnswer: true
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Man får inte köpa den',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
-        correctAnswer: true
+        text: '2 miljarder',
+        correctAnswer: false
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Har ni haft någon kontakt med Detektiven på länge? Kanske dags att prata med honom? Han hänger med sina kollegor, poliserna alltså.',
+    clue: 'tygbit',
+    nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
@@ -299,28 +289,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
-        correctAnswer: false
+        text: 'Arthur Conan Doyle',
+        correctAnswer: true
       },
       {
         optionId: 1,
-        text: 'tjena',
+        text: 'Charles Dickens',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Herman Melville',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
+        text: 'Stephen King',
         correctAnswer: true
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Roland är speciell, han har en tendens att vara lite av en klyptoman kan man säga. Jag hade kollat med honom, han är nog och sover under bron där nere vid stadshuset.',
+    clue: '',
+    nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
@@ -342,28 +332,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
+        text: 'En chomp',
         correctAnswer: false
       },
       {
         optionId: 1,
-        text: 'tjena',
+        text: 'Ett kluster',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'hejsan',
-        correctAnswer: false
+        text: 'En clowder',
+        correctAnswer: true
       },
       {
         optionId: 3,
-        text: 'hej',
-        correctAnswer: true
+        text: 'En kategori',
+        correctAnswer: false
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Prästen, han borde ni kolla till, kanske dags att snabba sig lite nu mot kyrkan han jobbar på innan det blir mörkt, något namn på J var det innan och sen kyrka... Era vänner ska också dit!',
+    clue: 'skallande',
+    nextPlace: ''
   },
   {
     // questionId: 0, // ??? BEHÖVS?
@@ -385,28 +375,28 @@ const storyLine1 = [
     options: [
       {
         optionId: 0,
-        text: 'hallå',
+        text: 'En av dem ångrade sig',
         correctAnswer: false
       },
       {
         optionId: 1,
-        text: 'tjena',
+        text: 'Ett äpple var kvar på baksidan av trädet',
         correctAnswer: false
       },
       {
         optionId: 2,
-        text: 'hejsan',
+        text: 'Dottern når inte äpplena',
         correctAnswer: false
       },
       {
         optionId: 3,
-        text: 'hej',
+        text: 'Prästens dotter är klockarens fru',
         correctAnswer: true
       }
     ],
-    textEnding: 'lalala!!!!',
-    clue: 'lala',
-    nextPlace: 'lalalla'
+    textEnding: 'Jag hoppas ni nu listat ut vem det är som har stulit kringlan, för nu har ni besökt alla som kan tyckas veta något i staden!',
+    clue: 'moped',
+    nextPlace: ''
   }
 ]
 

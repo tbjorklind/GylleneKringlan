@@ -14,6 +14,7 @@ async function renderIntroAndQuestion(storyChapter) {
     let currentUserStatus = await checkCurrentUser()
     if (currentUserStatus) {
         if (storyChapter == 9) {
+            console.log("jeppp")
             renderEnding.renderCharacterAlternatives()
         } else {
             console.log(storyChapter)
@@ -219,7 +220,11 @@ async function renderFarwell(storyLine, storyChapter) {
         questionState.bribed = false;
         await fireBaseFunctions.updateQuestionState(questionState)
         resetCurrentUser()
-        startInitMap()
+        if (nextChapter == 9) {
+            renderIntroAndQuestion(nextChapter)
+        } else {
+            startInitMap()
+        }
     })
 }
 
