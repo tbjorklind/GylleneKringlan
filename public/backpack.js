@@ -4,10 +4,36 @@ export default renderBackpackBtn;
 
 let backpackBtn = document.getElementById("backpackBtn");
 let backpackInventory = document.getElementById("backpackInventory");
-const clues = {
-    img: "",
-    name: ""
-}
+const clues = [
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fflipflop.png?alt=media&token=bf484dc1-faac-48a8-a3d2-0b86fc455103",
+        name: "Flip flops"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskugga.png?alt=media&token=5813a4b3-3b11-43b0-893c-90ac982c7775",
+        name: "Skugga"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskyffel.png?alt=media&token=b1f11ae2-5968-4f43-b9b0-a0babe44afe0",
+        name: "Skyffel"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fharstra.png?alt=media&token=48122311-b046-49aa-9165-f404c7e4b431",
+        name: "Hårstrå"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Frotthar.png?alt=media&token=9e135503-ace4-45bc-9e06-adafbd19913d",
+        name: "Rött hår"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Ftygbit.png?alt=media&token=d824b532-8875-4851-b957-4932ad6efb6f",
+        name: "Tygbit"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fmoped.png?alt=media&token=194dca49-7c73-45ae-b32b-1dce57e1ef51",
+        name: "Moped"
+    }
+]
 
 function renderBackpackBtn() {
     backpackBtn.classList.remove("hidden");
@@ -68,11 +94,12 @@ async function displayInventory() {
             let item = document.createElement("div");
             item.classList.add("clueItem")
 
+            let clueInfo = getClueInfo(clue);
             let img = document.createElement("div");
-            img.style.backgroundImage = `url(../images/${clue}.png)`
+            img.style.backgroundImage = `url(${clueInfo.img})`
 
             let description = document.createElement("div");
-            description.innerHTML = clue;
+            description.innerHTML = clueInfo.name;
 
             document.querySelector("#backpackInventory > div").appendChild(item);
             item.appendChild(img);
@@ -106,4 +133,14 @@ async function displayInventory() {
         });
 
     }
+}
+
+function getClueInfo(clue) {
+    let foundClue = "";
+    clues.forEach(c => {
+        if (c.img.includes(clue.toLowerCase())) {
+            foundClue = c;
+        }
+    })
+    return foundClue;
 }
