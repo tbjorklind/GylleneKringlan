@@ -82,12 +82,11 @@ async function renderIntroAndQuestion(storyChapter) {
                     if (chosenBtn != "") {
                         if (`answer${i + 1}` != chosenBtn) {
                             answerOptionBtn.style.pointerEvents = "none"
-                            answerOptionBtn.style.color = "gray"
+                            answerOptionBtn.style.opacity = "0.5"
                         }
                     }
 
-                    answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
-                    answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
+                    answerOptionBtn.style.backgroundImage = `url(${storyLine[storyChapter].options[i].text})`
                     document.getElementById("storylineBottom").appendChild(answerOptionBtn);
                     answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
                 }
@@ -116,7 +115,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         //Byt namn på bubble class!!!!!!!
         document.querySelector("#wrapper > div:first-child").innerHTML = `
         <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgRight}">
-        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`;        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${backgrounds[0]})`
 
         let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
@@ -128,7 +127,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].wrongAnswerText;
         document.querySelector("#wrapper > div:first-child").innerHTML = `
         <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgWrong}">
-        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`;        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA (20 mynt)</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
+        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="bribeBtn">MUTA (20 mynt)</div><div id="moveOnBtn" >GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div:first-child").style.backgroundImage = `url(${backgrounds[1]})`
         document.querySelector("#wrapper > div:last-child > div:last-child").style.backgroundImage = `url(${backgrounds[2]})`
 
@@ -182,7 +181,7 @@ async function renderBribeResult(storyLine, storyChapter) {
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
         document.querySelector("#wrapper > div:first-child").innerHTML = `
         <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgBribe}">
-        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`;        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         let background = randomizeBtnBackgrounds(1);
         document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${background[0]})`;
         document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
