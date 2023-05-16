@@ -25,18 +25,9 @@ wrapper {
 }
 
 #storylineBottom div {
-  /*
-    margin: 2vw;
-    background-color: lightgray;
-    width: 40%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    */
-  margin: 2vw;
-  width: 45%;
-  height: 45%;
+  margin: 0vw 2vw;
+  width: 40vw;
+  height: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,8 +35,10 @@ wrapper {
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
-  font-size: 5vw;
+  font-size: 4vw;
   z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .arrowBtn {
