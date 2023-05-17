@@ -46,7 +46,7 @@ wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #map {
@@ -68,9 +68,9 @@ wrapper {
     align-items: center;
 }
 
-.gmnoprint, .gm-control-active, .gm-svpc{
+/* .gmnoprint, .gm-control-active, .gm-svpc{
     display:none;
-}
+} */
 .popup > div{
     width: 75%;
     height: 60%;

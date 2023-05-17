@@ -185,11 +185,11 @@ async function initMap (position) {
       lat: crd.latitude,
       lng: crd.longitude
     },
-    zoom: 17,
+    zoom: 15,
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
     },
-    gestureHandling: 'none'
+    // gestureHandling: 'none'
   })
 
   let circle = new google.maps.Circle({

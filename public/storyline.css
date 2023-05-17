@@ -6,6 +6,8 @@ wrapper {
   align-items: center;
   flex-direction: column;
   background-image: url('');
+  position: relative;
+  overflow: hidden;
 }
 
 #storylineTop {

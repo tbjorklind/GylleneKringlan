@@ -495,7 +495,8 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'clemens',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclemens.png?alt=media&token=31a1e439-941b-4e64-a44f-ef9485d78364',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclemens.png?alt=media&token=31a1e439-941b-4e64-a44f-ef9485d78364',
 
     speakingImg1:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P2-1.png?alt=media&token=5476f1bb-dd54-4f66-a4ee-e49870faad16',
@@ -542,15 +543,23 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'spelaren',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fcasino.png?alt=media&token=028d7d26-e165-4df4-a2f0-14230b4dcd56',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fcasino.png?alt=media&token=028d7d26-e165-4df4-a2f0-14230b4dcd56',
 
-    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-1.png?alt=media&token=40e9489a-4ee4-4fbb-9899-2c3b9637438d',
-    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-2.png?alt=media&token=6cda8e4a-6f35-498c-b094-6f0aa1637fda',
-    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ratt.png?alt=media&token=6d5c8a81-ad1b-4a2b-8ab5-a6618fdb74d6',
-    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-fel.png?alt=media&token=68c90f4c-5129-41fe-8a2d-839003f6b007',
-    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-muta.png?alt=media&token=f499466b-2290-4527-99cd-8e0aea26024c',
-    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ledtrad.png?alt=media&token=b592d2e0-0dd2-4e3a-b9a1-3178c302456a',
-    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-next.png?alt=media&token=f87c051e-57ce-48b8-90a9-d821df9fb4da',
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-1.png?alt=media&token=40e9489a-4ee4-4fbb-9899-2c3b9637438d',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-2.png?alt=media&token=6cda8e4a-6f35-498c-b094-6f0aa1637fda',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ratt.png?alt=media&token=6d5c8a81-ad1b-4a2b-8ab5-a6618fdb74d6',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-fel.png?alt=media&token=68c90f4c-5129-41fe-8a2d-839003f6b007',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-muta.png?alt=media&token=f499466b-2290-4527-99cd-8e0aea26024c',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ledtrad.png?alt=media&token=b592d2e0-0dd2-4e3a-b9a1-3178c302456a',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-next.png?alt=media&token=f87c051e-57ce-48b8-90a9-d821df9fb4da',
     // speakingImg4: '',
     options: [
       {
@@ -582,15 +591,23 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'charlieFreja',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FcharlieFreja.png?alt=media&token=e48b6c9c-e126-4bfc-944e-4fe4cd4e8733',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FcharlieFreja.png?alt=media&token=e48b6c9c-e126-4bfc-944e-4fe4cd4e8733',
 
-    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-1.png?alt=media&token=22ea4027-1ef7-40a8-9ca5-a889c4747bda',
-    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-2.png?alt=media&token=afbe8945-48f2-4c74-b6fb-e1e2f589e2ac',
-    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ratt.png?alt=media&token=bdfb42c4-2ae5-4d54-8732-cc6d67df3710',
-    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-fel.png?alt=media&token=d4a57d78-4f68-4754-b242-a144c4032d2d',
-    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-muta.png?alt=media&token=ab42426b-22ca-4916-934f-d33d33f25ff7',
-    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ledtrad.png?alt=media&token=3482ddeb-5955-4ff2-9a20-7cb26f7783ea',
-    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-next.png?alt=media&token=68c699cb-1ed8-4185-b339-6c1caaefd550',
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-1.png?alt=media&token=22ea4027-1ef7-40a8-9ca5-a889c4747bda',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-2.png?alt=media&token=afbe8945-48f2-4c74-b6fb-e1e2f589e2ac',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ratt.png?alt=media&token=bdfb42c4-2ae5-4d54-8732-cc6d67df3710',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-fel.png?alt=media&token=d4a57d78-4f68-4754-b242-a144c4032d2d',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-muta.png?alt=media&token=ab42426b-22ca-4916-934f-d33d33f25ff7',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ledtrad.png?alt=media&token=3482ddeb-5955-4ff2-9a20-7cb26f7783ea',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-next.png?alt=media&token=68c699cb-1ed8-4185-b339-6c1caaefd550',
     // speakingImg4: '',
     options: [
       {
@@ -668,15 +685,23 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'hilda',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fhilda.png?alt=media&token=96f2a597-c983-452d-af70-fe29bac95904',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fhilda.png?alt=media&token=96f2a597-c983-452d-af70-fe29bac95904',
 
-    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-1.png?alt=media&token=a7fab5d8-bcf2-4cfa-9d9f-fd3a40658ed9',
-    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-2.png?alt=media&token=a9777074-5791-41ae-a120-cd6147074f06',
-    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ratt.png?alt=media&token=18969137-8ac6-40ce-aa09-fdfd355ceaa7',
-    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-fel.png?alt=media&token=8ea728b4-b4d9-4065-b75e-32bd3646ec8f',
-    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-muta.png?alt=media&token=2d24aced-96be-4e7b-851a-ea2fb0413ae0',
-    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ledtrad.png?alt=media&token=97f90405-7e66-4191-a98a-a774af1fec58',
-    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-next.png?alt=media&token=3ee1adec-a73a-4a9e-9190-11936184e9d7',
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-1.png?alt=media&token=a7fab5d8-bcf2-4cfa-9d9f-fd3a40658ed9',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-2.png?alt=media&token=a9777074-5791-41ae-a120-cd6147074f06',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ratt.png?alt=media&token=18969137-8ac6-40ce-aa09-fdfd355ceaa7',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-fel.png?alt=media&token=8ea728b4-b4d9-4065-b75e-32bd3646ec8f',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-muta.png?alt=media&token=2d24aced-96be-4e7b-851a-ea2fb0413ae0',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-ledtrad.png?alt=media&token=97f90405-7e66-4191-a98a-a774af1fec58',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P6-next.png?alt=media&token=3ee1adec-a73a-4a9e-9190-11936184e9d7',
     // speakingImg4: '',
     options: [
       {
@@ -708,15 +733,23 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'biblotikarien',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbarbro.png?alt=media&token=e74c5261-4893-409e-aa37-27d93e9a0529',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbarbro.png?alt=media&token=e74c5261-4893-409e-aa37-27d93e9a0529',
 
-    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-1.png?alt=media&token=198e2a4f-f48c-4f39-a12b-92bc8070a1aa',
-    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-2.png?alt=media&token=bfc68feb-5389-481f-9f81-28b65c03f2bd',
-    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ratt.png?alt=media&token=a0959a8e-f999-4e29-adb4-f19af09e1474',
-    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-fel.png?alt=media&token=81111fad-0c97-485c-aa20-c5897f40472a',
-    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-muta.png?alt=media&token=e528faa2-28eb-41cf-bef9-7abf1f1a61f2',
-    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ledtrad.png?alt=media&token=0636d5a0-e886-4573-bbd4-2c481b0b6636',
-    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-next.png?alt=media&token=88c45f93-dc72-46e0-8ee6-83e116bba31a',
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-1.png?alt=media&token=198e2a4f-f48c-4f39-a12b-92bc8070a1aa',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-2.png?alt=media&token=bfc68feb-5389-481f-9f81-28b65c03f2bd',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ratt.png?alt=media&token=a0959a8e-f999-4e29-adb4-f19af09e1474',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-fel.png?alt=media&token=81111fad-0c97-485c-aa20-c5897f40472a',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-muta.png?alt=media&token=e528faa2-28eb-41cf-bef9-7abf1f1a61f2',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-ledtrad.png?alt=media&token=0636d5a0-e886-4573-bbd4-2c481b0b6636',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P7-next.png?alt=media&token=88c45f93-dc72-46e0-8ee6-83e116bba31a',
     // speakingImg4: '',
     options: [
       {
@@ -748,15 +781,23 @@ const storyLine2 = [
   {
     // questionId: 0,
     character: 'operasangerskan',
-    characterImg: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fopera.png?alt=media&token=840d807c-ed23-49d1-b883-3119e1aed4d4',
+    characterImg:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fopera.png?alt=media&token=840d807c-ed23-49d1-b883-3119e1aed4d4',
 
-    speakingImg1: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-1.png?alt=media&token=692702ec-15fa-48e0-9df0-7492542b0530',
-    speakingImg2: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-2.png?alt=media&token=7fcd1d29-a8a5-405a-a2c8-179dc5c80d61',
-    speakingImgRight: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ratt.png?alt=media&token=a513b320-6a10-41f1-ba8b-0059dcd0cf0e',
-    speakingImgWrong: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-fel.png?alt=media&token=4140f722-a411-4951-875b-f38fcfe923db',
-    speakingImgBribe: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-muta.png?alt=media&token=23b959e7-7237-4938-9de8-7bf9c352331b',
-    speakingImgClue: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ledtrad.png?alt=media&token=2df18b28-dbd0-4aaa-bf51-7a8afeb42bc2',
-    speakingImgNext: 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-next.png?alt=media&token=d95da5dc-644c-428c-acf6-e775f257307b',
+    speakingImg1:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-1.png?alt=media&token=692702ec-15fa-48e0-9df0-7492542b0530',
+    speakingImg2:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-2.png?alt=media&token=7fcd1d29-a8a5-405a-a2c8-179dc5c80d61',
+    speakingImgRight:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ratt.png?alt=media&token=a513b320-6a10-41f1-ba8b-0059dcd0cf0e',
+    speakingImgWrong:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-fel.png?alt=media&token=4140f722-a411-4951-875b-f38fcfe923db',
+    speakingImgBribe:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-muta.png?alt=media&token=23b959e7-7237-4938-9de8-7bf9c352331b',
+    speakingImgClue:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-ledtrad.png?alt=media&token=2df18b28-dbd0-4aaa-bf51-7a8afeb42bc2',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P8-next.png?alt=media&token=d95da5dc-644c-428c-acf6-e775f257307b',
     // speakingImg4: '',
     options: [
       {
