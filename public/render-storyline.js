@@ -10,8 +10,17 @@ let questionState = {};
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
 
+    let currentUserStatus;
+
     // Kollar om någon redan svarar på frågan
-    let currentUserStatus = await checkCurrentUser()
+    if (storyChapter == 0 || storyChapter == 4 || storyChapter == 9) {
+        console.log("Current storychapter check: " + storyChapter)
+        currentUserStatus = await checkCurrentGlobalUser()
+    } else {
+        currentUserStatus = await checkCurrentUser()
+    }
+    console.log("Current User status check: " + currentUserStatus)
+
     if (currentUserStatus) {
         if (storyChapter == 9) {
             renderEnding.renderCharacterAlternatives()
@@ -247,7 +256,12 @@ async function renderFarwell(storyLine, storyChapter) {
         questionState.chosenAnswer = "";
         questionState.bribed = false;
         await fireBaseFunctions.updateQuestionState(questionState)
-        resetCurrentUser()
+
+        if (storyChapter == 0 || storyChapter == 4 || storyChapter == 9) {
+            resetCurrentGlobalUser(nextChapter)
+        } else {
+            resetCurrentUser()
+        }
         if (nextChapter == 9) {
             renderIntroAndQuestion(nextChapter)
         } else {
@@ -292,6 +306,22 @@ async function checkCurrentUser() {
     }
 }
 
+async function checkCurrentGlobalUser() {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let user = localStorage.getItem("userId");
+    let currentGlobalUser = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+
+    console.log(checkCurrentGlobalUser)
+    console.log(checkCurrentGlobalUser.currentGlobalUser)
+
+    if (currentGlobalUser.currentGlobalUser == "" || currentGlobalUser.currentGlobalUser == user) {
+        await fireBaseFunctions.addCurrentGlobalUser('Teams', userTeamId, user)
+        return true
+    } else {
+        return false
+    }
+}
+
 // --------------------- RESET CURRENT USER -----------------------
 async function resetCurrentUser() {
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
@@ -299,6 +329,20 @@ async function resetCurrentUser() {
     let user = "";
 
     await fireBaseFunctions.addCurrentUser('Teams', userTeamId, userBackpack, user)
+}
+
+async function resetCurrentGlobalUser(nextChapter) {
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let user = "";
+    await fireBaseFunctions.addCurrentGlobalUser('Teams', userTeamId, user)
+
+    let userBackpack = localStorage.getItem('backpackNr');
+    if (userBackpack == 1) {
+        await fireBaseFunctions.updateStoryChapter('Teams', userTeamId, 2, nextChapter)
+    }
+    if (userBackpack == 2) {
+        await fireBaseFunctions.updateStoryChapter('Teams', userTeamId, 1, nextChapter)
+    }
 }
 
 
