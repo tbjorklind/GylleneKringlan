@@ -142,7 +142,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         if (userBackpack == 1) {
             if (doc.backpack1.questionState.bribed) {
                 document.querySelector("#wrapper > div:last-child > div:first-child").style.pointerEvents = "none";
-                document.querySelector("#wrapper > div:last-child > div:first-child").style.color = "grey";
+                document.querySelector("#wrapper > div:last-child > div:first-child").style.opacity = "0.5"
             }
         }
         if (userBackpack == 2) {
@@ -178,10 +178,11 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
 
 async function renderClue(storyLine, storyChapter) {
 
+    let backgrounds = randomizeBtnBackgrounds(1);
     document.querySelector("#wrapper > div:first-child").innerHTML = `
     <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgClue}">
     <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
-    //document.querySelector("#moveOnBtn").style.backgroundImage = `url(${backgrounds[1]})` !!!!!!!!!!!!!!!!!!!!!!!!!
+    document.querySelector("#moveOnBtn").style.backgroundImage = `url(${backgrounds[0]})`
 
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
