@@ -1,5 +1,6 @@
 "use strict"
 import renderBackpackBtn from './backpack.js';
+import { fireBaseFunctions } from './firebase.js';
 export const renderEnding = {
   renderCharacterAlternatives,
   timeIsOut
@@ -139,7 +140,7 @@ function checkChoice(character) {
 }
 
 // --------------- DISPLAY IF CORRECT CHARACTER ---------------
-function correctAnswer(character) {
+async function correctAnswer(character) {
   document.getElementById("wrapper").innerHTML = `
   <div id="resultTop">
     <img src="https://www.onlygfx.com/wp-content/uploads/2018/04/busted-stamp-3.png">
@@ -154,6 +155,10 @@ function correctAnswer(character) {
   document.querySelector("wrapper").style.paddingTop = 0;
   document.querySelector("wrapper").style.display = "flex";
   document.querySelector("wrapper").style.justifyContent = "center";
+
+  // Ställ in spelet på "färdigt" – alltså chapter 10
+  let id = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+  await fireBaseFunctions.updateStoryChapter('Teams', id, localStorage.getItem('backpackNr'), 10)
 }
 
 // --------------- DISPLAY IF INCORRECT CHARACTER ---------------
@@ -175,6 +180,10 @@ async function wrongAnswer(character) {
   document.querySelector("wrapper").style.paddingTop = 0;
   document.querySelector("wrapper").style.display = "flex";
   document.querySelector("wrapper").style.justifyContent = "center";
+
+  // Ställ in spelet på "färdigt" – alltså chapter 10
+  let id = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+  await fireBaseFunctions.updateStoryChapter('Teams', id, localStorage.getItem('backpackNr'), 10)
 }
 
 // --------------- CALLED IF TIME HAS RUN OUT ---------------
