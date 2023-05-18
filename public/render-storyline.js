@@ -9,60 +9,66 @@ let questionState = {};
 
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
-
     let currentUserStatus;
 
-    // Kollar om någon redan svarar på frågan
-    if (storyChapter == 0 || storyChapter == 4 || storyChapter == 9) {
-        console.log("Current storychapter check: " + storyChapter)
-        currentUserStatus = await checkCurrentGlobalUser()
+    // Kollar om spelet är färdigtspelat
+    if (storyChapter == 10) {
+        document.querySelector(".accessDenied").classList.remove("hidden")
+        document.querySelector(".accessDenied").innerHTML = "Snipp snapp snut så var spelet slut! <br> Tack för att ni spelat! <br> /Tanja, Julia, Sofie, Sarah, My <3"
+        document.querySelector(".accessDenied").style.textAlign = "center";
     } else {
-        currentUserStatus = await checkCurrentUser()
-    }
-    console.log("Current User status check: " + currentUserStatus)
-
-    if (currentUserStatus) {
-        if (storyChapter == 9) {
-            renderEnding.renderCharacterAlternatives()
+        // Kollar om någon redan svarar på frågan
+        if (storyChapter == 0 || storyChapter == 4 || storyChapter == 9) {
+            console.log("Current storychapter check: " + storyChapter)
+            currentUserStatus = await checkCurrentGlobalUser()
         } else {
-            console.log(storyChapter)
-            let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-            let userBackpack = localStorage.getItem('backpackNr');
-            let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+            currentUserStatus = await checkCurrentUser()
+        }
+        console.log("Current User status check: " + currentUserStatus)
 
-            let chosenBtn;
+        if (currentUserStatus) {
+            if (storyChapter == 9) {
 
-            if (userBackpack == 1) {
-                questionState = doc.backpack1.questionState;
-                if (doc.backpack1.questionState.answered) {
-                    chosenBtn = doc.backpack1.questionState.chosenAnswer;
-                } else {
-                    chosenBtn = "";
+                renderEnding.renderCharacterAlternatives()
+            } else {
+                console.log(storyChapter)
+                let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+                let userBackpack = localStorage.getItem('backpackNr');
+                let doc = await fireBaseFunctions.getDocumentFromFirestore('Teams', userTeamId)
+
+                let chosenBtn;
+
+                if (userBackpack == 1) {
+                    questionState = doc.backpack1.questionState;
+                    if (doc.backpack1.questionState.answered) {
+                        chosenBtn = doc.backpack1.questionState.chosenAnswer;
+                    } else {
+                        chosenBtn = "";
+                    }
                 }
-            }
-            if (userBackpack == 2) {
-                questionState = doc.backpack2.questionState;
-                if (doc.backpack2.questionState.answered) {
-                    chosenBtn = doc.backpack2.questionState.chosenAnswer;
+                if (userBackpack == 2) {
+                    questionState = doc.backpack2.questionState;
+                    if (doc.backpack2.questionState.answered) {
+                        chosenBtn = doc.backpack2.questionState.chosenAnswer;
+                    }
+                    else {
+                        chosenBtn = "";
+                    }
                 }
-                else {
-                    chosenBtn = "";
-                }
-            }
 
-            document.getElementById("wrapper").style.removeProperty("display")
+                document.getElementById("wrapper").style.removeProperty("display")
 
-            // Chosing storyline based on backpack
-            let storyLine;
-            if (localStorage.getItem("backpackNr") == 1)
-                storyLine = storylines.storyLine1;
-            else if (localStorage.getItem("backpackNr") == 2)
-                storyLine = storylines.storyLine2;
+                // Chosing storyline based on backpack
+                let storyLine;
+                if (localStorage.getItem("backpackNr") == 1)
+                    storyLine = storylines.storyLine1;
+                else if (localStorage.getItem("backpackNr") == 2)
+                    storyLine = storylines.storyLine2;
 
-            console.log(storyLine)
-            console.log(storyChapter)
-            // Initial structure and question
-            document.getElementById("wrapper").innerHTML = `
+                console.log(storyLine)
+                console.log(storyChapter)
+                // Initial structure and question
+                document.getElementById("wrapper").innerHTML = `
         <div id="storylineTop">
             <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImg1}">
             <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">
@@ -70,41 +76,50 @@ async function renderIntroAndQuestion(storyChapter) {
         <div id="storylineBottom"></div>
         `;
 
-            let continueBtn = document.createElement("div");
-            continueBtn.classList.add("arrowBtn");
-            continueBtn.style.backgroundColor = "transparent";
-            document.getElementById("storylineBottom").appendChild(continueBtn);
-            continueBtn.addEventListener("click", () => {
-                // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
-                document.querySelector("#wrapper > div:first-child").innerHTML = `
+                let continueBtn = document.createElement("div");
+                continueBtn.classList.add("arrowBtn");
+                continueBtn.style.backgroundColor = "transparent";
+                document.getElementById("storylineBottom").appendChild(continueBtn);
+                continueBtn.addEventListener("click", () => {
+                    // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].question;
+                    document.querySelector("#wrapper > div:first-child").innerHTML = `
                 <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImg2}">
                 <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`;
-                document.getElementById("storylineBottom").innerHTML = "";
+                    document.getElementById("storylineBottom").innerHTML = "";
 
 
-                // Render each possible answer
-                let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
-                for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
-                    let answerOptionBtn = document.createElement("div");
-                    answerOptionBtn.classList.add(`answer${i + 1}`)
+                    // Render each possible answer
+                    let backgrounds = randomizeBtnBackgrounds(storyLine[storyChapter].options.length)
+                    for (let i = 0; i < storyLine[storyChapter].options.length; i++) {
+                        let answerOptionBtn = document.createElement("div");
+                        answerOptionBtn.classList.add(`answer${i + 1}`)
 
-                    if (chosenBtn != "") {
-                        if (`answer${i + 1}` != chosenBtn) {
-                            answerOptionBtn.style.pointerEvents = "none"
-                            answerOptionBtn.style.opacity = "0.5"
+                        if (chosenBtn != "") {
+                            if (`answer${i + 1}` != chosenBtn) {
+                                answerOptionBtn.style.pointerEvents = "none"
+                                answerOptionBtn.style.opacity = "0.5"
+                            }
                         }
-                    }
 
-                    answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
-                    answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
-                    document.getElementById("storylineBottom").appendChild(answerOptionBtn);
-                    answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
-                }
-            })
+                        answerOptionBtn.innerHTML = storyLine[storyChapter].options[i].text;
+                        answerOptionBtn.style.backgroundImage = `url(${backgrounds[i]})`
+                        document.getElementById("storylineBottom").appendChild(answerOptionBtn);
+                        answerOptionBtn.addEventListener("click", () => { renderAnswerResult(storyLine, storyChapter, storyLine[storyChapter].options[i].correctAnswer, `answer${i + 1}`) })
+                    }
+                })
+            }
+        } else {
+
+            if (storyChapter == 9) {
+                document.querySelector(".accessDenied").classList.remove("hidden")
+                document.querySelector(".accessDenied").innerHTML = "Nu är slutet nära! Någon annan i teamet har valen framför sig, kika på dennes mobil och utse tjuven tillsammans!"
+                document.querySelector(".accessDenied").style.textAlign = "center";
+            } else {
+                document.querySelector(".accessDenied").classList.remove("hidden")
+                document.querySelector(".accessDenied > div:last-child").addEventListener('click', () => { location.reload() })
+            }
         }
-    } else {
-        document.querySelector(".accessDenied").classList.remove("hidden")
-        document.querySelector(".accessDenied > div:last-child").addEventListener('click', () => { location.reload() })
+
     }
 
 }
