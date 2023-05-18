@@ -202,7 +202,6 @@ async function renderClue(storyLine, storyChapter) {
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
     await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
-    console.log("HHHHHHH")
 
     // If wanting to leave
     document.getElementById("moveOnBtn").addEventListener("click", (e) => {

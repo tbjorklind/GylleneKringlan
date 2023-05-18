@@ -176,7 +176,8 @@ const storyLine1 = [
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-muta.png?alt=media&token=c1717bd7-939f-44aa-860c-dac542ee8b23',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-ledtrad.png?alt=media&token=918a1615-e529-40c2-a095-86c4951475e7',
-    // speakingImgNext: '',
+    speakingImgNext:
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P4-next.png?alt=media&token=2c200152-deab-4c3e-9b01-6c0b2b508dff',
     // speakingImg4: '',
 
     options: [
