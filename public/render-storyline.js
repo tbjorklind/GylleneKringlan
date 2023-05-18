@@ -119,9 +119,7 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
         <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${backgrounds[0]})`
 
-        let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
-        let userBackpack = localStorage.getItem('backpackNr');
-        await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
+        document.getElementById("moveOnBtn").addEventListener("click", () => { renderClue(storyLine, storyChapter) })
     }
     // Else, give option to bribe or leave
     else {
@@ -160,10 +158,37 @@ async function renderAnswerResult(storyLine, storyChapter, answer, chosenAnswer)
             await fireBaseFunctions.updateQuestionState(questionState)
             renderBribeResult(storyLine, storyChapter)
         })
+
+        // If wanting to leave
+        document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
     }
-    // If wanting to leave
-    document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
+
 }
+
+
+
+async function renderClue(storyLine, storyChapter) {
+
+    document.querySelector("#wrapper > div:first-child").innerHTML = `
+    <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgClue}">
+    <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+    //document.querySelector("#moveOnBtn").style.backgroundImage = `url(${backgrounds[1]})` !!!!!!!!!!!!!!!!!!!!!!!!!
+
+    let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
+    let userBackpack = localStorage.getItem('backpackNr');
+    await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
+    console.log("HHHHHHH")
+
+    // If wanting to leave
+    document.getElementById("moveOnBtn").addEventListener("click", (e) => {
+        console.log(e)
+        renderFarwell(storyLine, storyChapter)
+    })
+
+}
+
+
+
 
 // --------------------- RENDER OF BRIBE -----------------------
 async function renderBribeResult(storyLine, storyChapter) {
@@ -182,7 +207,8 @@ async function renderBribeResult(storyLine, storyChapter) {
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
         document.querySelector("#wrapper > div:first-child").innerHTML = `
         <img class="bubble" id="${storyLine[storyChapter].character}Bubble" src="${storyLine[storyChapter].speakingImgBribe}">
-        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`; document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
+        <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}">`;
+        document.querySelector("#wrapper > div:last-child").innerHTML = `<div id="moveOnBtn">GÅ VIDARE</div>`;
         let background = randomizeBtnBackgrounds(1);
         document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${background[0]})`;
         document.getElementById("moveOnBtn").addEventListener("click", () => { renderFarwell(storyLine, storyChapter) })
@@ -197,7 +223,10 @@ async function renderBribeResult(storyLine, storyChapter) {
 // --------------------- RENDER OF GOODBYE -----------------------
 async function renderFarwell(storyLine, storyChapter) {
     // Visa karaktärens svar i stora rutan och presentera en hejdå knapp typ
-    document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
+    //document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].textEnding;
+    document.querySelector("#wrapper > div:first-child").innerHTML = `
+    <img class="bubble" id="${storyLine[storyChapter].character}NextBubble" src="${storyLine[storyChapter].speakingImgNext}">
+    <img class="character" id="${storyLine[storyChapter].character}" src="${storyLine[storyChapter].characterImg}"> `
     document.querySelector("#wrapper > div:last-child").innerHTML = "<div>Hejdå!</div>"
     let background = randomizeBtnBackgrounds(1);
     document.querySelector("#wrapper > div:last-child > div").style.backgroundImage = `url(${background[0]})`;
