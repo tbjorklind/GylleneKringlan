@@ -12,7 +12,8 @@ export const fireBaseFunctions = {
   addClueToBackpack,
   updateQuestionState,
   getCurrentUser,
-  addCurrentUser
+  addCurrentUser,
+  addCurrentGlobalUser
 }
 
 const db = firebase.firestore()
@@ -69,6 +70,7 @@ async function getCurrentUser(collectionName, id, backpackNr) {
     return doc.backpack2.currentUser
 
 }
+
 
 // --------------------- ADD -----------------------
 async function addDocumentToFirebase(collectionName) {
@@ -138,6 +140,16 @@ async function addCurrentUser(collectionName, id, backpackNr, user) {
   if (backpackNr == 2) {
     document.backpack2.currentUser = user
   }
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(document)
+}
+
+async function addCurrentGlobalUser(collectionName, id, user) {
+  let document = await getDocumentFromFirestore('Teams', id)
+  document.currentGlobalUser = user;
 
   await db
     .collection(collectionName)

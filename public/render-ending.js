@@ -73,6 +73,8 @@ const characterImages = [
 
 ]
 
+//setTimeout(renderCharacterAlternatives, 3000)
+
 // ------------- RENDER CHARACTER ALTERNATIVES ---------------
 // --------------- (START OF THE ENDING PART) ---------------
 function renderCharacterAlternatives() {

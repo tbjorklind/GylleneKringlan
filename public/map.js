@@ -122,12 +122,12 @@ var options = {
   maximumAge: 0
 }
 
-function startInitMap () {
+function startInitMap() {
   document.querySelector('#wrapper').style.display = 'none'
   navigator.geolocation.watchPosition(initMap)
 }
 
-async function initMap (position) {
+async function initMap(position) {
   let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
   let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
   let storyLine
@@ -189,7 +189,7 @@ async function initMap (position) {
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
     },
-    // gestureHandling: 'none'
+    gestureHandling: 'none'
   })
 
   let circle = new google.maps.Circle({
@@ -225,9 +225,9 @@ async function initMap (position) {
     callback
   )
 
-  function callback (response) {
+  function callback(response) {
     console.log(response.rows[0].elements[0].distance.value)
-    if (response.rows[0].elements[0].distance.value <= 30000) {
+    if (response.rows[0].elements[0].distance.value <= 300000) {
       console.log('In zone')
       renderIntroAndQuestion(storyChapter)
     } else {
