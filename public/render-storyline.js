@@ -1,14 +1,14 @@
 "use strict"
 import { storylines } from "./storylines.js";
 import { fireBaseFunctions } from './firebase.js'
-import startInitMap from './map.js'
+import { mapFunctions } from './map.js'
 import { renderEnding } from './render-ending.js'
 export default renderIntroAndQuestion;
 
 let questionState = {};
-
 // --------------------- RENDER QUESTION -----------------------
 async function renderIntroAndQuestion(storyChapter) {
+    mapFunctions.stopWatchingPosition();
     let currentUserStatus;
 
     // Kollar om spelet är färdigtspelat
@@ -280,7 +280,7 @@ async function renderFarwell(storyLine, storyChapter) {
         if (nextChapter == 9) {
             renderIntroAndQuestion(nextChapter)
         } else {
-            startInitMap()
+            mapFunctions.startInitMap()
         }
     })
 }

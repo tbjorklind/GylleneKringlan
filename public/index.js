@@ -2,7 +2,7 @@ import startup from './startup.js'
 import renderIntroAndQuestion from './render-storyline.js'
 import { fireBaseFunctions } from './firebase.js';
 import renderBackpackBtn from './backpack.js'
-import startInitMap from './map.js';
+import {mapFunctions} from './map.js';
 import { renderEnding } from './render-ending.js';
 
 export default startTimer;
