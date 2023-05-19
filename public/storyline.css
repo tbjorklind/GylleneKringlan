@@ -55,22 +55,28 @@ wrapper {
 .character {
   position: absolute;
   height: 85%;
-  left: -10vw;
+  left: 10vw;
   bottom: -35vw;
 }
 .bubble {
   position: absolute;
   z-index: 1;
-  height: 40%;
-  left: -20vw;
+  height: 60%;
+  /* left: -31vw; */
+  top: 0px;
 }
 /* -------------------------------------------------- */
 
-#dorrvakt {
-  height: 80%;
+#anitaBubble, #fiskareBubble, #augustBubble {
   left: -20vw;
-  bottom: -35vw;
+  height: 55%;
 }
+
+#dorrvakt {
+  height: 75%;
+  /* left: -20vw; */
+  bottom: -36vw;
+} 
 /* HAHAHA, ska inte se ut såhär sen. Ville bara få det att funka på alla olika <3 */
 #dorrvaktBubble,
 #torgareBubble,
@@ -98,14 +104,19 @@ wrapper {
 #biblotikarienNextBubble,
 #operasangerskanNextBubble,
 #dorrvaktNextBubble {
-  height: 32%;
+  height: 42%;
   top: 7vh;
   left: 0vw;
 }
 
+#anita {
+bottom: -30vh;
+left: 10vw;
+}
+
 #august {
   bottom: 0vh;
-  left: -25vw;
+  left: -10vw;
   height: 70%;
 }
 
@@ -117,17 +128,17 @@ wrapper {
 
 #hilda {
   height: 90%;
-  left: 20vw;
+  left: 30vw;
   bottom: -50vw;
 }
 
 #operasangerskan {
-  left: 23vw;
-  bottom: -14vh;
+  left: 36vw;
+  bottom: -18vh;
+  height: 80%;
 }
 
 #prast {
   height: 75%;
-  left: -5vw;
-  bottom: -5vh;
+  bottom: -4vh;
 }

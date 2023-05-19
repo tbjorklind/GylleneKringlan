@@ -124,7 +124,7 @@ var options = {
 
 function startInitMap() {
   document.querySelector('#wrapper').style.display = 'none'
-  navigator.geolocation.watchPosition(initMap)
+  navigator.geolocation.getCurrentPosition(initMap)
 }
 
 async function initMap(position) {
