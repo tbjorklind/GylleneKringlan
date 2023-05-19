@@ -110,8 +110,8 @@ async function onLaunch() {
 
     if (storyChapter >= 0) {
       // Kanske bättre att köra kartan, så den kollar: om inom zon, ladda story. Annars visa kartan.
-      await renderIntroAndQuestion(storyChapter)
-      //startInitMap()
+      //await renderIntroAndQuestion(storyChapter)
+      startInitMap()
       renderBackpackBtn()
       startTimer()
     }
