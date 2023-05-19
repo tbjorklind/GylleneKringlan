@@ -1,9 +1,9 @@
 'use strict'
-import { fireBaseFunctions } from './firebase.js';
-import renderBackpackBtn from './backpack.js';
-import startTimer from './index.js';
-import startInitMap from './map.js'
-export default startup;
+import { fireBaseFunctions } from './firebase.js'
+import renderBackpackBtn from './backpack.js'
+import startTimer from './index.js'
+import { mapFunctions } from './map.js'
+export default startup
 
 // Arrow = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Farrow.png?alt=media&token=ca5376d1-1983-4452-b362-366c9c97747f
 // team1 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=71e2024a-f946-4ad1-a68a-5b72039d80ec
@@ -13,12 +13,10 @@ export default startup;
 // team5 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=8ae9f5a8-26bf-487e-82d9-b87d3fa993ee
 // team6 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=8e404806-8f02-483c-9fa5-73d59445c622
 
-
-
 // ------------------- INITIALIZE PAGE ---------------------
-function startup() {
+function startup () {
   let startPageWrapper = document.createElement('div')
-  startPageWrapper.id = 'startPageWrapper';
+  startPageWrapper.id = 'startPageWrapper'
   startPageWrapper.innerHTML = `
   <div>Gyllene Kringlan</div>
   <div></div>
@@ -26,33 +24,36 @@ function startup() {
   `
   document.getElementById('wrapper').appendChild(startPageWrapper)
 
-  document.querySelector("#startPageWrapper > div:last-child").addEventListener("click", () => {
-    startPageWrapper.remove();
-    renderChooseTeam();
-  })
+  document
+    .querySelector('#startPageWrapper > div:last-child')
+    .addEventListener('click', () => {
+      startPageWrapper.remove()
+      renderChooseTeam()
+    })
 }
 
 // ------------------- RENDER TEAM SELECION ---------------------
-function renderChooseTeam() {
-  const btns = ["https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=8d083b94-f0c3-489c-8b60-360774f021cd",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=5dbddef1-46bc-46fd-add4-63861482152c",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=f1ca3423-b005-44f9-8c66-68d34f199243",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=033afc2a-07d1-439e-b8a6-08253e1fc30f",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=538fff65-7d24-4a93-9201-a7332132abdc",
-    "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=b01db7f6-4507-4d7c-8287-da31f59db047"
+function renderChooseTeam () {
+  const btns = [
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=8d083b94-f0c3-489c-8b60-360774f021cd',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=5dbddef1-46bc-46fd-add4-63861482152c',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=f1ca3423-b005-44f9-8c66-68d34f199243',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=033afc2a-07d1-439e-b8a6-08253e1fc30f',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=538fff65-7d24-4a93-9201-a7332132abdc',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=b01db7f6-4507-4d7c-8287-da31f59db047'
   ]
-  let teamTitle = document.createElement('div');
-  teamTitle.innerText = "Välj ditt lag!"
+  let teamTitle = document.createElement('div')
+  teamTitle.innerText = 'Välj ditt lag!'
   teamTitle.style.fontSize = '5vw'
-  teamTitle.style.position = "absolute"
-  teamTitle.style.top = "2vh";
+  teamTitle.style.position = 'absolute'
+  teamTitle.style.top = '2vh'
   document.getElementById('wrapper').appendChild(teamTitle)
 
   let teamWrapper = document.createElement('div')
   teamWrapper.id = 'teamWrapper'
   for (let i = 1; i <= 6; i++) {
     let teamBtn = document.createElement('div')
-    teamBtn.style.backgroundImage = "url(" + btns[i - 1] + ")";
+    teamBtn.style.backgroundImage = 'url(' + btns[i - 1] + ')'
     teamBtn.classList.add('teamBtn')
     teamWrapper.appendChild(teamBtn)
     teamBtn.addEventListener('click', () => {
@@ -65,7 +66,7 @@ function renderChooseTeam() {
         <div id="backStoryBottom">
           <div id="backStoryContinueBtn"></div>
         </div>
-      `;
+      `
 
       // Call render backstory to start backstory
       renderBackstory(i, 0)
@@ -75,20 +76,24 @@ function renderChooseTeam() {
 }
 
 // ------------------- RENDER BACKSTORY ---------------------
-function renderBackstory(teamNumber, backStoryNr) {
-
+function renderBackstory (teamNumber, backStoryNr) {
   // Backstoryn i strängar, en sträng per "sida" alltså att man kommer till nästa
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.
   let backStory = [
     `Den gyllene kringlan är stulen och ni måste hjälpa oss att hitta den skyldige!
     Genom att gå genom staden för att träffa befolkningen kan du hitta ledtrådar om du lyckas ha rätt på frågorna du får på vägen. Kan ni hjälpa oss att lösa mysteriet? Välj den ryggsäck som symboliserar dig bäst! Är du den smarta? Eller är du den klurige? Dela upp er för att spara tid men tänk på att solen snart går ner!`,
-    `Klicka på den ryggsäcken som symboliserar dig bäst, ryggsäckarna kommer leda till olika platser i Malmö för att träffa olika personer i spelet, de olika vägarna kommer att möta olika personer. Den blåa ryggsäcken leder den smarta vägen, på denna väg behöver du vara lite allmänbildad eller lite mera smart för att svara rätt på frågorna. Den gröna ryggsäcken leder den kluriga vägen, på denna väg behöver du vara duktig på att svara på gåtor eller vara lite mer klurig för att svara rätt på frågorna!`];
+    `Klicka på den ryggsäcken som symboliserar dig bäst, ryggsäckarna kommer leda till olika platser i Malmö för att träffa olika personer i spelet, de olika vägarna kommer att möta olika personer. Den blåa ryggsäcken leder den smarta vägen, på denna väg behöver du vara lite allmänbildad eller lite mera smart för att svara rätt på frågorna. Den gröna ryggsäcken leder den kluriga vägen, på denna väg behöver du vara duktig på att svara på gåtor eller vara lite mer klurig för att svara rätt på frågorna!`
+  ]
 
   // Om backstoryn inte är klar, rendrera nästa sträng
   if (backStoryNr < backStory.length) {
-    document.getElementById('backStoryTop').innerText = backStory[backStoryNr];
-    document.getElementById('backStoryContinueBtn').addEventListener("click", () => { renderBackstory(teamNumber, backStoryNr + 1) })
+    document.getElementById('backStoryTop').innerText = backStory[backStoryNr]
+    document
+      .getElementById('backStoryContinueBtn')
+      .addEventListener('click', () => {
+        renderBackstory(teamNumber, backStoryNr + 1)
+      })
   }
 
   // Om backstoryn är slut, anropa val av backpack
@@ -98,25 +103,23 @@ function renderBackstory(teamNumber, backStoryNr) {
 }
 
 // --------------------- RENDER BACKPACKS -----------------------
-function renderChooseBackpack(teamNumber) {
+function renderChooseBackpack (teamNumber) {
   document.getElementById('wrapper').innerHTML = ''
 
-  let backpackTitle = document.createElement('div');
-  backpackTitle.innerText = "Välj din ryggsäck!"
+  let backpackTitle = document.createElement('div')
+  backpackTitle.innerText = 'Välj din ryggsäck!'
   backpackTitle.style.fontSize = '5vw'
-  backpackTitle.style.position = "absolute"
-  backpackTitle.style.top = "2vh";
+  backpackTitle.style.position = 'absolute'
+  backpackTitle.style.top = '2vh'
   document.getElementById('wrapper').appendChild(backpackTitle)
 
   let backpackWrapper = document.createElement('div')
   backpackWrapper.id = 'teamWrapper'
 
   for (let i = 1; i <= 2; i++) {
-    let teamQuality;
-    if (i == 1)
-      teamQuality = "SMARTA"
-    if (i == 2)
-      teamQuality = "KLURIGA"
+    let teamQuality
+    if (i == 1) teamQuality = 'SMARTA'
+    if (i == 2) teamQuality = 'KLURIGA'
     let backpackBtn = document.createElement('div')
     // backpackBtn.innerHTML = 'Backpack ' + i
     backpackBtn.classList.add('teamBtn')
@@ -130,13 +133,15 @@ function renderChooseBackpack(teamNumber) {
       <div id="backStoryBottom">
         <div id="backStoryContinueBtn"></div>
       </div>`
-      document.getElementById("backStoryContinueBtn").addEventListener('click', () => {
-        localStorage.setItem("backpackNr", i)
-        startInitMap()
-        //renderIntroAndQuestion(0)
-        renderBackpackBtn()
-        startTimer()
-      })
+      document
+        .getElementById('backStoryContinueBtn')
+        .addEventListener('click', () => {
+          localStorage.setItem('backpackNr', i)
+          mapFunctions.startInitMap()
+          //renderIntroAndQuestion(0)
+          renderBackpackBtn()
+          startTimer()
+        })
     })
   }
 
