@@ -84,7 +84,7 @@ function renderCharacterAlternatives() {
   let header = document.createElement("div")
   header.id = "characterHeader";
   header.style.textAlign = 'center';
-  header.innerHTML = "<span style='font-size: 5vw'>Vem har tagit den <br> Gyllene Kringlan?</span><br><span style='font-size: 4.5vw;'>Välj er misstänkta tjuv!</span>"
+  header.innerHTML = "<span style='font-size: 5vw'>Vem har tagit den <br> Gyllene Kringlan?</span><span style='font-size: 4.5vw;'>Välj er misstänkta tjuv!</span>"
   document.getElementById("wrapper").appendChild(header);
 
   let characterWrapper = document.createElement("div");
