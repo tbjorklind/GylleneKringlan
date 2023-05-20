@@ -1,7 +1,22 @@
 import { fireBaseFunctions } from './firebase.js'
 import renderIntroAndQuestion from './render-storyline.js'
 export const mapFunctions = {
-  startInitMap, stopWatchingPosition
+  startInitMap,
+  stopWatchingPosition
+}
+
+let storyLine
+let watchId
+let storyChapter
+let map
+
+function renderBackpackBtn () {
+  let positionBtn = document.querySelector('#positionBtn')
+  positionBtn.innerHTML = `
+  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdistance.png?alt=media&token=e2360a1c-640f-481e-bd98-675687af32c6"</img>`
+  positionBtn.addEventListener('click', () => {
+    getDistance()
+  })
 }
 
 const styledMapType = new google.maps.StyledMapType(
@@ -124,11 +139,10 @@ var options = {
   maximumAge: 0
 }
 
-let watchId
-
 function startInitMap () {
+  renderBackpackBtn()
   document.querySelector('#wrapper').style.display = 'none'
-  watchId = navigator.geolocation.watchPosition(initMap)
+  watchId = navigator.geolocation.getCurrentPosition(initMap)
 }
 
 function stopWatchingPosition () {
@@ -138,12 +152,12 @@ function stopWatchingPosition () {
   }
 }
 
+let crd
 async function initMap (position) {
-  console.log(position);
+  console.log(position)
 
   let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
   let backpackNr = localStorage.getItem('backpackNr') // Vilken storyline (backpacknummer) man är med i
-  let storyLine
 
   if (backpackNr == 1) {
     storyLine = [
@@ -181,7 +195,6 @@ async function initMap (position) {
     'Teams',
     userTeamId
   )
-  let storyChapter
 
   if (userBackpack == 1) {
     storyChapter = doc.backpack1.storyChapter
@@ -190,8 +203,7 @@ async function initMap (position) {
     storyChapter = doc.backpack2.storyChapter
   }
 
-  var crd = position.coords
-  var map
+  crd = position.coords
   // Creates a map centered on the current location
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
@@ -201,8 +213,8 @@ async function initMap (position) {
     zoom: 15,
     mapTypeControlOptions: {
       mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
-    },
-    gestureHandling: 'none'
+    }
+    // gestureHandling: 'none'
   })
 
   let circle = new google.maps.Circle({
@@ -219,34 +231,6 @@ async function initMap (position) {
     fillOpacity: 0.35
   })
   circle.setMap(map)
-
-  var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
-  // var origin2 = 'Malmo, Sweden'
-  // var destinationA = 'Malmo, Sweden'
-  var destinationB = new google.maps.LatLng(
-    storyLine[storyChapter].lat,
-    storyLine[storyChapter].lng
-  )
-
-  var service = new google.maps.DistanceMatrixService()
-  service.getDistanceMatrix(
-    {
-      origins: [origin1],
-      destinations: [destinationB],
-      travelMode: 'WALKING'
-    },
-    callback
-  )
-
-  function callback (response) {
-    console.log(response.rows[0].elements[0].distance.value)
-    if (response.rows[0].elements[0].distance.value <= 300000) {
-      console.log('In zone')
-      renderIntroAndQuestion(storyChapter)
-    } else {
-      console.log('Out of zone')
-    }
-  }
 
   let imgLink
   switch (userTeamId) {
@@ -281,16 +265,68 @@ async function initMap (position) {
     url: imgLink,
     scaledSize: new google.maps.Size(120, 120)
   }
-
   const marker = new google.maps.Marker({
     position: { lat: crd.latitude, lng: crd.longitude },
     map: map,
     title: 'Your location',
     icon: img
   })
-
   map.mapTypes.set('styled_map', styledMapType)
   map.setMapTypeId('styled_map')
 }
+
+async function getDistance () {
+  let userTeamId = await fireBaseFunctions.getTeamIdOfUser(
+    localStorage.getItem('userId')
+  )
+  let userBackpack = localStorage.getItem('backpackNr')
+  let doc = await fireBaseFunctions.getDocumentFromFirestore(
+    'Teams',
+    userTeamId
+  )
+
+  if (userBackpack == 1) {
+    storyChapter = doc.backpack1.storyChapter
+  }
+  if (userBackpack == 2) {
+    storyChapter = doc.backpack2.storyChapter
+  }
+
+  var origin1 = new google.maps.LatLng(crd.latitude, crd.longitude)
+  // var origin2 = 'Malmo, Sweden'
+  // var destinationA = 'Malmo, Sweden'
+  var destinationB = new google.maps.LatLng(
+    storyLine[storyChapter].lat,
+    storyLine[storyChapter].lng
+  )
+
+  var service = new google.maps.DistanceMatrixService()
+  service.getDistanceMatrix(
+    {
+      origins: [origin1],
+      destinations: [destinationB],
+      travelMode: 'WALKING'
+    },
+    callback
+  )
+}
+
+function callback(response) {
+  let map = document.querySelector("#map");
+  let meterDiv = document.createElement("div");
+  meterDiv.id = "meterDiv";
+  meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value} meter kvar!`;
+  map.appendChild(meterDiv);
+
+  if (response.rows[0].elements[0].distance.value <= 30) {
+    renderIntroAndQuestion(storyChapter);
+  } else {
+    setTimeout(() => {
+      meterDiv.remove();
+
+    }, 2000);
+  }
+}
+
 
 window.initMap = initMap
