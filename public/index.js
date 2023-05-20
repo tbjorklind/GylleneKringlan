@@ -70,8 +70,7 @@ function startTimer() {
 
       counter.innerHTML = hours + ':' + minutes + ':' + seconds
 
-      document.getElementById("darkOverlay").style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
-      //body.style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
+      body.style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
       initialOpacity += opacityStep;
 
       timeRemaining -= 1000
@@ -110,8 +109,8 @@ async function onLaunch() {
 
     if (storyChapter >= 0) {
       // Kanske bättre att köra kartan, så den kollar: om inom zon, ladda story. Annars visa kartan.
-      //await renderIntroAndQuestion(storyChapter)
-      startInitMap()
+      // await renderIntroAndQuestion(storyChapter)
+      mapFunctions.startInitMap()
       renderBackpackBtn()
       startTimer()
     }
