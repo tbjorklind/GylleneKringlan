@@ -81,9 +81,11 @@ function renderBackstory(teamNumber, backStoryNr) {
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.
   let backStory = [
-    `Den gyllene kringlan är stulen och ni måste hjälpa oss att hitta den skyldige!
-    Genom att gå genom staden för att träffa befolkningen kan du hitta ledtrådar om du lyckas ha rätt på frågorna du får på vägen. Kan ni hjälpa oss att lösa mysteriet? Välj den ryggsäck som symboliserar dig bäst! Är du den smarta? Eller är du den klurige? Dela upp er för att spara tid men tänk på att solen snart går ner!`,
-    `Klicka på den ryggsäcken som symboliserar dig bäst, ryggsäckarna kommer leda till olika platser i Malmö för att träffa olika personer i spelet, de olika vägarna kommer att möta olika personer. Den blåa ryggsäcken leder den smarta vägen, på denna väg behöver du vara lite allmänbildad eller lite mera smart för att svara rätt på frågorna. Den gröna ryggsäcken leder den kluriga vägen, på denna väg behöver du vara duktig på att svara på gåtor eller vara lite mer klurig för att svara rätt på frågorna!`
+    "Den Gyllene Kringlan är stulen och ni måste hjälpa oss att hitta den skyldige! Genom att gå genom staden för att träffa befolkningen kan ni hitta ledtrådar, om ni får rätt på deras frågor. Kan ni hjälpa oss att lösa mysteriet?",
+    "Under äventyrets gång kommer en karta att presenteras med zoner för att ge ett hum om vart ni ska. För att uppdatera kartan, ladda om hemsidan. När ni tror att ni är på rätt plats, klicka på avståndsknappen intill ryggsäcken. För varje klick minskar spelets skapares antal mynt, så klicka inte allt för ofta!",
+    "(På riktigt, kartan kostar tydligen pengar?!)",
+    "Snart kommer ni få dela upp er inom gruppen. Det finns två vägar i spelet att gå, varje väg får sin egna ryggsäck. De olika vägarna kommer möta olika personer. Ni behöver vara en person (mobil) per ryggsäck.",
+    "Välj den ryggsäck som symboliserar dig bäst! Den blåa ryggsäcken leder den smarta vägen, där allmänbildning och att vara klipsk är av stor nytta. Den gröna ryggsäcken leder den kluriga vägen, på denna väg är det fördelaktigt att vara finurlig och bra på gåtor."
   ]
 
   // Om backstoryn inte är klar, rendrera nästa sträng
