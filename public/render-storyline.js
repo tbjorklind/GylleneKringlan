@@ -201,8 +201,9 @@ async function renderClue(storyLine, storyChapter) {
 
     let userTeamId = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
     let userBackpack = localStorage.getItem('backpackNr');
-    await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
-
+    if (storyLine[storyChapter].clue !== '') {
+        await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
+    }
     // If wanting to leave
     document.getElementById("moveOnBtn").addEventListener("click", (e) => {
         console.log(e)
@@ -225,7 +226,10 @@ async function renderBribeResult(storyLine, storyChapter) {
     if (coinStatus) {
         // Uppdatera ens coins med ny summa och lägg till ledtråd i ryggsäcken
         await fireBaseFunctions.updateCoins('Teams', userTeamId, userBackpack)
-        await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
+        if (storyLine[storyChapter].clue !== '') {
+            await fireBaseFunctions.addClueToBackpack('Teams', userTeamId, userBackpack, storyLine[storyChapter].clue)
+        }
+
 
         // Visa karaktärens svar i stora rutan, visa en 'gå vidare'-knapp och lägg till en eventlyssnare på den
         // document.querySelector("#wrapper > div:first-child").innerHTML = storyLine[storyChapter].bribedAnswerText;
