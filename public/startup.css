@@ -16,31 +16,24 @@ wrapper {
   flex-direction: column;
 }
 
-#startPageWrapper div:first-child {
-  /* background-color: #c0ae91; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 30px;
-  margin-top: 40%;
-}
 
-#startPageWrapper div:nth-child(2) {
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fgyllene.png?alt=media&token=86d4f146-345b-4bf5-bbb9-a8e394264b0d);
+#startPageWrapper div:first-child {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0189.PNG?alt=media&token=abfa3d87-aec3-46a9-91d4-9b07ba880fe8);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 10vw;
-  width: 90%;
-  height: 40%;
+  width: 95vw;
+  height: 95vw;
+  position: absolute;
+  top: 0;
 }
 
 #startPageWrapper div:last-child {
-  margin-top: 20%;
   background-color:  #C0AE9133;
   padding: 6%;
   border-radius: 200px;
+  position: absolute;
+  bottom: 20%;
 }
 
 #backpackWrapper {
