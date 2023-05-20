@@ -14,7 +14,7 @@ export default startup
 // team6 = https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=8e404806-8f02-483c-9fa5-73d59445c622
 
 // ------------------- INITIALIZE PAGE ---------------------
-function startup () {
+function startup() {
   let startPageWrapper = document.createElement('div')
   startPageWrapper.id = 'startPageWrapper'
   startPageWrapper.innerHTML = `
@@ -33,12 +33,12 @@ function startup () {
 }
 
 // ------------------- RENDER TEAM SELECION ---------------------
-function renderChooseTeam () {
+function renderChooseTeam() {
   const btns = [
     'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam1.png?alt=media&token=8d083b94-f0c3-489c-8b60-360774f021cd',
     'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam2.png?alt=media&token=5dbddef1-46bc-46fd-add4-63861482152c',
     'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam3.png?alt=media&token=f1ca3423-b005-44f9-8c66-68d34f199243',
-    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=033afc2a-07d1-439e-b8a6-08253e1fc30f',
+    'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam4.png?alt=media&token=d6abbf97-1ed3-499e-bc60-cae9f6df370d',
     'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam5.png?alt=media&token=538fff65-7d24-4a93-9201-a7332132abdc',
     'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fteam6.png?alt=media&token=b01db7f6-4507-4d7c-8287-da31f59db047'
   ]
@@ -76,7 +76,7 @@ function renderChooseTeam () {
 }
 
 // ------------------- RENDER BACKSTORY ---------------------
-function renderBackstory (teamNumber, backStoryNr) {
+function renderBackstory(teamNumber, backStoryNr) {
   // Backstoryn i strängar, en sträng per "sida" alltså att man kommer till nästa
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.
@@ -103,7 +103,7 @@ function renderBackstory (teamNumber, backStoryNr) {
 }
 
 // --------------------- RENDER BACKPACKS -----------------------
-function renderChooseBackpack (teamNumber) {
+function renderChooseBackpack(teamNumber) {
   document.getElementById('wrapper').innerHTML = ''
 
   let backpackTitle = document.createElement('div')
