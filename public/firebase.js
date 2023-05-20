@@ -245,3 +245,42 @@ async function deleteDocumentFromFirestore(collectionName, id) {
 //console.log(deleteDocumentFromFirestore('Teams', 'Team5'))
 
 // ------------------------------------------------------
+
+
+async function resetFirebaseDocument(collectionName, id) {
+  let doc = await getDocumentFromFirestore(collectionName, id)
+
+  doc.backpack1.clues = [];
+  doc.backpack1.coins = 100;
+  doc.backpack1.questionState.answered = false;
+  doc.backpack1.questionState.bribed = false;
+  doc.backpack1.questionState.chosenAnswer = "";
+  doc.backpack1.storyChapter = 0;
+  doc.backpack1.users = [];
+
+  doc.backpack2.clues = [];
+  doc.backpack2.coins = 100;
+  doc.backpack2.questionState.answered = false;
+  doc.backpack2.questionState.bribed = false;
+  doc.backpack2.questionState.chosenAnswer = "";
+  doc.backpack2.storyChapter = 0;
+  doc.backpack2.users = [];
+
+  doc.users = [];
+  doc.currentGlobalUser = "";
+
+  await db
+    .collection(collectionName)
+    .doc(id)
+    .update(doc)
+}
+
+async function resetFirebaseAllDocuments() {
+  for (let i = 1; i >= 6; i++) {
+    await resetFirebaseDocument('Teams', `Team${i}`)
+  }
+}
+
+// Avkommentera för att anropa/tömma databasen, glöm ej att id ska vara ex 'Team4'
+//resetFirebaseDocument('Teams', id)
+//resetFirebaseAllDocuments()
