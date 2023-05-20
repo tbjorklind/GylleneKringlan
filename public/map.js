@@ -247,7 +247,7 @@ async function initMap (position) {
         'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmagni.PNG?alt=media&token=b33acf3f-8c3b-4383-a03b-20606bcf34b7'
       break
     case 'Team4':
-      imgLink = ''
+      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fkavel.png?alt=media&token=ba8f46b6-9a13-424c-a1fb-31a09c2690e8'
       break
     case 'Team5':
       imgLink =
@@ -314,13 +314,12 @@ async function getDistance () {
 function callback(response) {
   let map = document.querySelector("#map");
   let meterDiv = document.createElement("div");
-  meterDiv.id = "meterDiv";
-  meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value} meter kvar!`;
   map.appendChild(meterDiv);
-
-  if (response.rows[0].elements[0].distance.value <= 30) {
+  if (response.rows[0].elements[0].distance.value <= 300000000) {
     renderIntroAndQuestion(storyChapter);
   } else {
+    meterDiv.id = "meterDiv";
+    meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value} meter kvar!`;
     setTimeout(() => {
       meterDiv.remove();
 
