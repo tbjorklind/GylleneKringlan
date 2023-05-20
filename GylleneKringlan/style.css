@@ -1,0 +1,83 @@
+body {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackground_2.jpg?alt=media&token=2e631acc-d44f-408f-a9db-497a13cb4db1);
+    font-family: "Klee One", cursive;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  #header {
+    width: 100%;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .tab-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    background-color: #6b4930;
+    color: #f1edde;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .tab:hover,
+  .active-tab {
+    background-color: #CC813A;
+  }
+  
+  section {
+    display: none;
+  }
+  
+  section.active-section {
+    display: block;
+  }
+  
+  #character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #character img {
+    height: 300px;
+  }
+
+  #historia img {
+    height: 300px;
+  }
+  
