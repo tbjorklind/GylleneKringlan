@@ -75,6 +75,8 @@ function onBackpackClick() {
 
         //document.getElementById("wrapper").classList.add("hidden")
         backpackInventory.style.display = "flex";
+        document.querySelector("#positionBtn").style.display = "none"
+
         displayInventory();
     }
     // Close backpack
@@ -86,6 +88,8 @@ function onBackpackClick() {
             backpackBtn.style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbackpack2.png?alt=media&token=20551b05-1f89-4f5b-922a-f1b28413830b)`
 
         backpackInventory.style.display = "none";
+        document.getElementById("positionBtn").style.removeProperty("display")
+
         //document.getElementById("wrapper").classList.remove("hidden")
     }
 

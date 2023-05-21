@@ -142,6 +142,7 @@ var options = {
 function startInitMap () {
   renderBackpackBtn()
   document.querySelector('#wrapper').style.display = 'none'
+  document.getElementById("positionBtn").style.removeProperty("display")
   watchId = navigator.geolocation.getCurrentPosition(initMap)
 }
 
@@ -236,7 +237,7 @@ async function initMap (position) {
   switch (userTeamId) {
     case 'Team1':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbone.PNG?alt=media&token=ade30909-7af2-454c-8e21-9b8a28f760dc'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbone.PNG?alt=media&token=c9bffd2a-fe49-487d-93c1-85309db5889f'
       break
     case 'Team2':
       imgLink =
@@ -248,7 +249,7 @@ async function initMap (position) {
       break
     case 'Team4':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Frollin.PNG?alt=media&token=9e251dc7-632e-4fef-9e38-e064248521d0'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Frolling.PNG?alt=media&token=7ffc36ed-eec6-40d5-ae43-7fcd0a968957'
       break
     case 'Team5':
       imgLink =

@@ -57,6 +57,8 @@ async function renderIntroAndQuestion(storyChapter) {
                 }
 
                 document.getElementById("wrapper").style.removeProperty("display")
+                document.querySelector("#positionBtn").style.display = "none"
+
 
                 // Chosing storyline based on backpack
                 let storyLine;
