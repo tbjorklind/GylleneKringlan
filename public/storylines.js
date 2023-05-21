@@ -60,7 +60,7 @@ const storyLine1 = [
     ],
     textEnding:
       'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
-    clue: 'flipflops',
+    clue: 'flipflop',
     nextPlace: ''
   },
   {
@@ -490,7 +490,7 @@ const storyLine2 = [
     ],
     textEnding:
       'Nu måste ni dela upp er om ni ska hinna! Blå ryggsäck, ni borde springa och hälsa på fiskaren vid en båt, den var någon färg men kommer inte ihåg vilken. Gul ryggsäck ni borde träffa på Clemens, han hänger vid sin restaurang!',
-    clue: 'flipflops',
+    clue: 'flipflop',
     nextPlace: ''
   },
   {

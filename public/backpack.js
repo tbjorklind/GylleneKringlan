@@ -44,6 +44,10 @@ const clues = [
     {
         img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fgris.png?alt=media&token=ce850c65-11e3-4169-907e-a6893d1dff4b",
         name: "Gris"
+    },
+    {
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskallande.png?alt=media&token=3a96173d-0d2b-43c3-85f9-0197e8381e07",
+        name: "Skällande"
     }
 ]
 

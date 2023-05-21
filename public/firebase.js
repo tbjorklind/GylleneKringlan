@@ -255,6 +255,7 @@ async function resetFirebaseDocument(collectionName, id) {
   doc.backpack1.questionState.answered = false;
   doc.backpack1.questionState.bribed = false;
   doc.backpack1.questionState.chosenAnswer = "";
+  doc.backpack1.currentUser = "";
   doc.backpack1.storyChapter = 0;
   doc.backpack1.users = [];
 
@@ -263,6 +264,7 @@ async function resetFirebaseDocument(collectionName, id) {
   doc.backpack2.questionState.answered = false;
   doc.backpack2.questionState.bribed = false;
   doc.backpack2.questionState.chosenAnswer = "";
+  doc.backpack1.currentUser = "";
   doc.backpack2.storyChapter = 0;
   doc.backpack2.users = [];
 
@@ -275,12 +277,10 @@ async function resetFirebaseDocument(collectionName, id) {
     .update(doc)
 }
 
-async function resetFirebaseAllDocuments() {
-  for (let i = 1; i >= 6; i++) {
-    await resetFirebaseDocument('Teams', `Team${i}`)
-  }
-}
 
-// Avkommentera för att anropa/tömma databasen, glöm ej att id ska vara ex 'Team4'
-//resetFirebaseDocument('Teams', id)
-//resetFirebaseAllDocuments()
+resetFirebaseDocument('Teams', 'Team1')
+resetFirebaseDocument('Teams', 'Team2')
+resetFirebaseDocument('Teams', 'Team3')
+resetFirebaseDocument('Teams', 'Team4')
+resetFirebaseDocument('Teams', 'Team5')
+resetFirebaseDocument('Teams', 'Team6')
