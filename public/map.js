@@ -236,26 +236,27 @@ async function initMap (position) {
   switch (userTeamId) {
     case 'Team1':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbone.PNG?alt=media&token=54c30851-c09e-4b12-960d-76ef2dedacae'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbone.PNG?alt=media&token=ade30909-7af2-454c-8e21-9b8a28f760dc'
       break
     case 'Team2':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=0183f1ba-3b02-4a85-91d1-6c3c910584bb'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fball.PNG?alt=media&token=d1367249-974f-42ad-9efe-6bb7172e6ea7'
       break
     case 'Team3':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmagni.PNG?alt=media&token=b33acf3f-8c3b-4383-a03b-20606bcf34b7'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmagni.PNG?alt=media&token=e60ebb0f-2f85-436b-99e9-47f7c56eadc6'
       break
     case 'Team4':
-      imgLink = 'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fkavel.png?alt=media&token=ba8f46b6-9a13-424c-a1fb-31a09c2690e8'
+      imgLink =
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Frollin.PNG?alt=media&token=9e251dc7-632e-4fef-9e38-e064248521d0'
       break
     case 'Team5':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbooks.PNG?alt=media&token=7887d592-4bde-4a20-93fe-3dc6eee0d349'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbooks.PNG?alt=media&token=672d29dc-d3bc-4ae2-9498-8038edfed939'
       break
     case 'Team6':
       imgLink =
-        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmeds.PNG?alt=media&token=0eeb54bc-79fb-4f4a-993b-f7ea6f55e26e'
+        'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fmeds.PNG?alt=media&token=e7a357ad-9a85-42c7-b50c-01102f3c5e90'
       break
     default:
       break
@@ -263,7 +264,7 @@ async function initMap (position) {
 
   const img = {
     url: imgLink,
-    scaledSize: new google.maps.Size(120, 120)
+    scaledSize: new google.maps.Size(60, 60)
   }
   const marker = new google.maps.Marker({
     position: { lat: crd.latitude, lng: crd.longitude },
@@ -311,21 +312,19 @@ async function getDistance () {
   )
 }
 
-function callback(response) {
-  let map = document.querySelector("#map");
-  let meterDiv = document.createElement("div");
-  map.appendChild(meterDiv);
-  if (response.rows[0].elements[0].distance.value <= 300000000) {
-    renderIntroAndQuestion(storyChapter);
+function callback (response) {
+  let map = document.querySelector('#map')
+  let meterDiv = document.createElement('div')
+  map.appendChild(meterDiv)
+  if (response.rows[0].elements[0].distance.value <= 30) {
+    renderIntroAndQuestion(storyChapter)
   } else {
-    meterDiv.id = "meterDiv";
-    meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value} meter kvar!`;
+    meterDiv.id = 'meterDiv'
+    meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value}<br>meter kvar!`
     setTimeout(() => {
-      meterDiv.remove();
-
-    }, 2000);
+      meterDiv.remove()
+    }, 2000)
   }
 }
-
 
 window.initMap = initMap

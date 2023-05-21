@@ -68,16 +68,18 @@ wrapper {
 
 #meterDiv {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 10vh;
+  align-items: center;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fbtn3.png?alt=media&token=046eddd4-6769-4a86-af36-6bcee53ecbe7");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 17vh;
   width: 20vh;
   position: absolute;
-  bottom: 30vh;
-  left: 50%;
-  background-color: #cc813ab4;
-  border-radius: 3px;
-  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  bottom: 62vh;
+  left: 36%;
+  text-align: center;
 }
 
 .popup {

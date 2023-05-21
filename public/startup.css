@@ -25,15 +25,18 @@ wrapper {
   width: 95vw;
   height: 95vw;
   position: absolute;
-  top: 0;
+  top: -5vh;
 }
 
 #startPageWrapper div:last-child {
-  background-color:  #C0AE9133;
-  padding: 6%;
-  border-radius: 200px;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fstarta.PNG?alt=media&token=4b9c424a-72a6-4bf9-9e63-378df1b89d04);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  bottom: 20%;
+  bottom: 10vh;
+  height: 16vh;
+  width: 100vw;
 }
 
 #backpackWrapper {
