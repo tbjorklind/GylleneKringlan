@@ -277,10 +277,10 @@ async function resetFirebaseDocument(collectionName, id) {
     .update(doc)
 }
 
-
-resetFirebaseDocument('Teams', 'Team1')
-resetFirebaseDocument('Teams', 'Team2')
-resetFirebaseDocument('Teams', 'Team3')
-resetFirebaseDocument('Teams', 'Team4')
-resetFirebaseDocument('Teams', 'Team5')
-resetFirebaseDocument('Teams', 'Team6')
+// GLÖM EJ ATT KOMMENTERA INNAN MERGE!!
+// resetFirebaseDocument('Teams', 'Team1')
+// resetFirebaseDocument('Teams', 'Team2')
+// resetFirebaseDocument('Teams', 'Team3')
+// resetFirebaseDocument('Teams', 'Team4')
+// resetFirebaseDocument('Teams', 'Team5')
+// resetFirebaseDocument('Teams', 'Team6')
