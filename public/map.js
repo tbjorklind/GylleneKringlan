@@ -321,7 +321,8 @@ function callback(response) {
   let map = document.querySelector('#map')
   let meterDiv = document.createElement('div')
   map.appendChild(meterDiv)
-  if (response.rows[0].elements[0].distance.value <= 30) {
+  // 70 tidigare 30, feedback på att radius för 'inom zon' var för liten
+  if (response.rows[0].elements[0].distance.value <= 70) {
     renderIntroAndQuestion(storyChapter)
   } else {
     meterDiv.id = 'meterDiv'
