@@ -10,13 +10,8 @@ let watchId
 let storyChapter
 let map
 
-function renderBackpackBtn () {
-  let positionBtn = document.querySelector('#positionBtn')
-  positionBtn.innerHTML = `
-  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdistance.png?alt=media&token=e2360a1c-640f-481e-bd98-675687af32c6"</img>`
-  positionBtn.addEventListener('click', () => {
-    getDistance()
-  })
+function renderBackpackBtn() {
+
 }
 
 const styledMapType = new google.maps.StyledMapType(
@@ -139,14 +134,22 @@ var options = {
   maximumAge: 0
 }
 
-function startInitMap () {
-  renderBackpackBtn()
+function startInitMap() {
+
+  let positionBtn = document.querySelector('#positionBtn')
+  positionBtn.innerHTML = `
+  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdistance.png?alt=media&token=e2360a1c-640f-481e-bd98-675687af32c6"</img>`
+  positionBtn.addEventListener('click', () => {
+    location.reload();
+  })
+
+
   document.querySelector('#wrapper').style.display = 'none'
   document.getElementById("positionBtn").style.removeProperty("display")
   watchId = navigator.geolocation.getCurrentPosition(initMap)
 }
 
-function stopWatchingPosition () {
+function stopWatchingPosition() {
   if (watchId) {
     navigator.geolocation.clearWatch(watchId)
     watchId = null
@@ -154,7 +157,7 @@ function stopWatchingPosition () {
 }
 
 let crd
-async function initMap (position) {
+async function initMap(position) {
   console.log(position)
 
   let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
@@ -275,9 +278,10 @@ async function initMap (position) {
   })
   map.mapTypes.set('styled_map', styledMapType)
   map.setMapTypeId('styled_map')
+  getDistance()
 }
 
-async function getDistance () {
+async function getDistance() {
   let userTeamId = await fireBaseFunctions.getTeamIdOfUser(
     localStorage.getItem('userId')
   )
@@ -313,7 +317,7 @@ async function getDistance () {
   )
 }
 
-function callback (response) {
+function callback(response) {
   let map = document.querySelector('#map')
   let meterDiv = document.createElement('div')
   map.appendChild(meterDiv)
