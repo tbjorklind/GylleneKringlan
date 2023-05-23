@@ -121,7 +121,7 @@ function renderChooseBackpack(teamNumber) {
     if (i == 2) teamQuality = 'KLURIGA'
     let backpackBtn = document.createElement('div')
     // backpackBtn.innerHTML = 'Backpack ' + i
-    backpackBtn.classList.add('teamBtn')
+    backpackBtn.classList.add('bpBtn')
     backpackBtn.innerHTML = `<div></div><div>${teamQuality}</div>`
     backpackWrapper.appendChild(backpackBtn)
 
