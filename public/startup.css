@@ -144,3 +144,12 @@ margin: auto;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.backstoryImg{
+  width: 90vw;
+  height: 70vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: -5%;
+}

@@ -80,16 +80,14 @@ function renderBackstory(teamNumber, backStoryNr) {
   // sträng när man klickar på vidare-pilen. Funktionen sköter sig själv så man kan
   // lägga till hur många strängar man än vill.
   let backStory = [
-    "Den Gyllene Kringlan är stulen och ni måste hjälpa oss att hitta den skyldige! Genom att gå genom staden för att träffa befolkningen kan ni hitta ledtrådar, om ni får rätt på deras frågor. Kan ni hjälpa oss att lösa mysteriet?",
-    "Under äventyrets gång kommer en karta att presenteras med zoner för att ge ett hum om vart ni ska. När ni tror att ni är på rätt plats och vill ladda om kartan, klicka på avståndsknappen intill ryggsäcken. För varje klick minskar spelets skapares antal mynt, så klicka inte allt för ofta!",
-    "(På riktigt, kartan kostar tydligen pengar?!)",
-    "Snart kommer ni få dela upp er inom gruppen. Det finns två vägar i spelet att gå, varje väg får sin egna ryggsäck. De olika vägarna kommer möta olika personer. Ni behöver vara en person (mobil) per ryggsäck.",
-    "Välj den ryggsäck som symboliserar dig bäst! Den blåa ryggsäcken leder den smarta vägen, där allmänbildning och att vara klipsk är av stor nytta. Den gröna ryggsäcken leder den kluriga vägen, på denna väg är det fördelaktigt att vara finurlig och bra på gåtor."
+    `<div class="backstoryImg" style="background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fb1.png?alt=media&token=8bc1b0b5-a128-4029-a4fe-d53cf5ef0d54)"></div>`,
+    `<div class="backstoryImg" style="background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fb2.png?alt=media&token=5dedfb78-c4ec-47ee-b723-51bad5abbc1b)"></div>`,
+    `<div class="backstoryImg" style="background-image: url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fb3.png?alt=media&token=be2c2afd-dbd0-40e2-86a7-a110285506f1)"></div>`
   ]
 
   // Om backstoryn inte är klar, rendrera nästa sträng
   if (backStoryNr < backStory.length) {
-    document.getElementById('backStoryTop').innerText = backStory[backStoryNr]
+    document.getElementById('backStoryTop').innerHTML = backStory[backStoryNr]
     document
       .getElementById('backStoryContinueBtn')
       .addEventListener('click', () => {

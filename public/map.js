@@ -139,7 +139,7 @@ function startInitMap() {
 
   let positionBtn = document.querySelector('#positionBtn')
   positionBtn.innerHTML = `
-  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0201.PNG?alt=media&token=cfeb311a-b69e-422a-95d9-a90802a62461"</img>`
+  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fplatsknapp.png?alt=media&token=5caca4bb-c452-454a-9f2b-bf40760a5687"</img>`
   positionBtn.addEventListener('click', () => {
     onDistanceClick()
   })
@@ -326,11 +326,17 @@ function callback(response) {
     renderIntroAndQuestion(storyChapter)
   } else {
     meterDiv.id = 'meterDiv'
-    meterDiv.innerHTML = `${response.rows[0].elements[0].distance.value}<br>meter kvar!`
+    meterDiv.innerHTML = randomMessage()
     setTimeout(() => {
       meterDiv.remove()
     }, 2000)
   }
+}
+
+function randomMessage() {
+  let message = ['En bit till!', 'Snart framme!', 'Lite till...', 'Snart så!'];
+  let nr = Math.floor(Math.random() * 5)
+  return message[nr]
 }
 
 window.initMap = initMap
