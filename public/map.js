@@ -10,7 +10,7 @@ let watchId
 let storyChapter
 let map
 
-function onDistanceClick() {
+function onDistanceClick () {
   watchId = navigator.geolocation.getCurrentPosition(initMap)
   setTimeout(getDistance, 1500)
 }
@@ -135,8 +135,7 @@ var options = {
   maximumAge: 0
 }
 
-function startInitMap() {
-
+function startInitMap () {
   let positionBtn = document.querySelector('#positionBtn')
   positionBtn.innerHTML = `
   <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fplatsknapp.png?alt=media&token=5caca4bb-c452-454a-9f2b-bf40760a5687"</img>`
@@ -144,13 +143,12 @@ function startInitMap() {
     onDistanceClick()
   })
 
-
   document.querySelector('#wrapper').style.display = 'none'
-  document.getElementById("positionBtn").style.removeProperty("display")
+  document.getElementById('positionBtn').style.removeProperty('display')
   watchId = navigator.geolocation.getCurrentPosition(initMap)
 }
 
-function stopWatchingPosition() {
+function stopWatchingPosition () {
   if (watchId) {
     navigator.geolocation.clearWatch(watchId)
     watchId = null
@@ -158,7 +156,7 @@ function stopWatchingPosition() {
 }
 
 let crd
-async function initMap(position) {
+async function initMap (position) {
   console.log(position)
 
   let index = localStorage.getItem('storyChapter') // Vilket kapitel i storyn man är på
@@ -171,7 +169,7 @@ async function initMap(position) {
       { lat: 55.6059576, lng: 13.0010688 }, // Apotekaren Ruth
       { lat: 55.607938, lng: 13.010062 }, // Dörrvakten Tor – tidigare: lat: 55.6082255, lng: 13.0100072
       { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
-      { lat: 55.604371, lng: 13.009306 }, // Museum-ägaren Von – tidigare: lat: 55.6059576, lng: 13.0010688 
+      { lat: 55.604371, lng: 13.009306 }, // Museum-ägaren Von – tidigare: lat: 55.6059576, lng: 13.0010688
       { lat: 55.603297, lng: 13.010903 }, // Detektiven August
       { lat: 55.598236, lng: 13.006477 }, // Hemlöse Roland
       { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
@@ -183,11 +181,11 @@ async function initMap(position) {
       { lat: 55.6095466, lng: 12.9937084 }, //Badaren anita
       { lat: 55.6078666, lng: 12.9910128 }, // Kötthandlaren Clemens
       { lat: 55.6026459, lng: 12.9929222 }, // Spelaren Carl-Wilhelm
-      { lat: 55.605159, lng: 12.998783 }, // Paret Charlie & Freja – tidigare: lat: 55.6024005, lng: 12.9853929 
+      { lat: 55.605159, lng: 12.998783 }, // Paret Charlie & Freja – tidigare: lat: 55.6024005, lng: 12.9853929
       { lat: 55.6028939, lng: 13.0011858 }, // Torgaren Tage
       { lat: 55.6002879, lng: 13.0010339 }, // Konditorn Hilda
-      { lat: 55.600747, lng: 12.995543 }, // Bibliotikarie Barbro – tidigare: lat: 55.600768, lng: 12.9940654 
-      { lat: 55.596947, lng: 12.996162 }, // Operasångerskan Birgit – tidigare: lat: 55.5966309, lng: 12.996344 
+      { lat: 55.600747, lng: 12.995543 }, // Bibliotikarie Barbro – tidigare: lat: 55.600768, lng: 12.9940654
+      { lat: 55.596947, lng: 12.996162 }, // Operasångerskan Birgit – tidigare: lat: 55.5966309, lng: 12.996344
       { lat: 55.5942211, lng: 13.001169 } // Prästen Adolfsson
     ]
   }
@@ -223,7 +221,7 @@ async function initMap(position) {
   })
 
   let circle = new google.maps.Circle({
-    radius: 100,
+    radius: 110,
     map: map,
     center: {
       lat: storyLine[storyChapter].lat,
@@ -281,7 +279,7 @@ async function initMap(position) {
   map.setMapTypeId('styled_map')
 }
 
-async function getDistance() {
+async function getDistance () {
   let userTeamId = await fireBaseFunctions.getTeamIdOfUser(
     localStorage.getItem('userId')
   )
@@ -317,26 +315,26 @@ async function getDistance() {
   )
 }
 
-function callback(response) {
+function callback (response) {
   let map = document.querySelector('#map')
   let meterDiv = document.createElement('div')
   map.appendChild(meterDiv)
   // 100 tidigare 30, feedback på att radius för 'inom zon' var för liten
-  if (response.rows[0].elements[0].distance.value <= 100) {
+  if (response.rows[0].elements[0].distance.value <= 140) {
     renderIntroAndQuestion(storyChapter)
   } else {
     meterDiv.id = 'meterDiv'
-    meterDiv.innerHTML = randomMessage()
+    meterDiv.innerHTML = distanceMessage()
     setTimeout(() => {
       meterDiv.remove()
     }, 2000)
   }
 }
 
-function randomMessage() {
-  let message = ['En bit till!', 'Snart framme!', 'Lite till...', 'Snart så!'];
+function distanceMessage () {
+  let phrases = ['En bit till!', 'Snart framme!', 'Lite till...', 'Snart så!']
   let nr = Math.floor(Math.random() * 5)
-  return message[nr]
+  return phrases[nr]
 }
 
 window.initMap = initMap
