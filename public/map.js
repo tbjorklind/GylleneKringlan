@@ -10,8 +10,9 @@ let watchId
 let storyChapter
 let map
 
-function renderBackpackBtn() {
-
+function onDistanceClick() {
+  watchId = navigator.geolocation.getCurrentPosition(initMap)
+  getDistance()
 }
 
 const styledMapType = new google.maps.StyledMapType(
@@ -140,7 +141,7 @@ function startInitMap() {
   positionBtn.innerHTML = `
   <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdistance.png?alt=media&token=e2360a1c-640f-481e-bd98-675687af32c6"</img>`
   positionBtn.addEventListener('click', () => {
-    location.reload();
+    onDistanceClick()
   })
 
 
@@ -278,7 +279,6 @@ async function initMap(position) {
   })
   map.mapTypes.set('styled_map', styledMapType)
   map.setMapTypeId('styled_map')
-  getDistance()
 }
 
 async function getDistance() {
