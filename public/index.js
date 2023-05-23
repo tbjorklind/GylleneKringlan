@@ -70,7 +70,7 @@ function startTimer() {
 
       counter.innerHTML = hours + ':' + minutes + ':' + seconds
 
-      body.style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
+      document.getElementById("darkOverlay").style.backgroundColor = `rgba(0, 0, 0, ${initialOpacity})`;
       initialOpacity += opacityStep;
 
       timeRemaining -= 1000
