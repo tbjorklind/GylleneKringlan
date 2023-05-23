@@ -139,7 +139,7 @@ function startInitMap() {
 
   let positionBtn = document.querySelector('#positionBtn')
   positionBtn.innerHTML = `
-  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fdistance.png?alt=media&token=e2360a1c-640f-481e-bd98-675687af32c6"</img>`
+  <img src = "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FIMG_0201.PNG?alt=media&token=cfeb311a-b69e-422a-95d9-a90802a62461"</img>`
   positionBtn.addEventListener('click', () => {
     onDistanceClick()
   })
