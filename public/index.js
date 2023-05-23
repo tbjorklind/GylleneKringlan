@@ -2,7 +2,7 @@ import startup from './startup.js'
 import renderIntroAndQuestion from './render-storyline.js'
 import { fireBaseFunctions } from './firebase.js';
 import renderBackpackBtn from './backpack.js'
-import {mapFunctions} from './map.js';
+import { mapFunctions } from './map.js';
 import { renderEnding } from './render-ending.js';
 
 export default startTimer;
@@ -46,9 +46,9 @@ function startTimer() {
 
   let body = document.body;
   let initialOpacity = 0;
-  let opacityStep = 1 / (3 * 60 * 60);
+  let opacityStep = 1 / (2 * 60 * 60);
 
-  let timeRemaining = 3 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
+  let timeRemaining = 2 * 60 * 60 * 1000 - (Date.now() - startTimestamp)
 
   let interval = setInterval(() => {
     if (timeRemaining <= 0) {
