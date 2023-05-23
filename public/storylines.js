@@ -29,7 +29,7 @@ const storyLine1 = [
     speakingImgWrong:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-fel.png?alt=media&token=b27a1fbf-e46b-455c-9e83-5dc16bbe1b61',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-1_nystorlek.png?alt=media&token=f87a7047-8374-4a5d-89e9-59351f3a1334',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-muta.png?alt=media&token=2673e73d-72e4-452b-b167-41a24a12447c',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ledtrad.png?alt=media&token=13c6217c-9b5b-4d9e-b7fe-9fc674cb2275',
     speakingImgNext:
@@ -125,7 +125,7 @@ const storyLine1 = [
     speakingImgWrong:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-fel.png?alt=media&token=ac5a7116-c17c-40c4-a9e2-2af8cba5eb5b',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-muta.png?alt=media&token=cbf94b5e-a13a-433e-8c07-64f2ba753db6',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-muta.png?alt=media&token=d81476bf-2866-45d3-9763-0fb69f7ce2dc',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL1P3-ledtrad.png?alt=media&token=5a11b8c1-1352-4411-9509-195ccf589e40',
     speakingImgNext:
@@ -459,7 +459,7 @@ const storyLine2 = [
     speakingImgWrong:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-fel.png?alt=media&token=b27a1fbf-e46b-455c-9e83-5dc16bbe1b61',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-1_nystorlek.png?alt=media&token=f87a7047-8374-4a5d-89e9-59351f3a1334',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-muta.png?alt=media&token=2673e73d-72e4-452b-b167-41a24a12447c',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ledtrad.png?alt=media&token=13c6217c-9b5b-4d9e-b7fe-9fc674cb2275',
     speakingImgNext:
@@ -604,7 +604,7 @@ const storyLine2 = [
     speakingImgWrong:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-fel.png?alt=media&token=d4a57d78-4f68-4754-b242-a144c4032d2d',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-muta.png?alt=media&token=ab42426b-22ca-4916-934f-d33d33f25ff7',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-muta.png?alt=media&token=bedd3dd2-48fe-4c62-adbe-d36f17b9a265',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P4-ledtrad.png?alt=media&token=3482ddeb-5955-4ff2-9a20-7cb26f7783ea',
     speakingImgNext:

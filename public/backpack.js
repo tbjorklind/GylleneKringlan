@@ -10,7 +10,7 @@ const clues = [
         name: "Flip flops"
     },
     {
-        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskugga.png?alt=media&token=5813a4b3-3b11-43b0-893c-90ac982c7775",
+        img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskugga.png?alt=media&token=fc08d436-2cb8-4798-ac28-d2feae00de8a",
         name: "Skugga"
     },
     {
