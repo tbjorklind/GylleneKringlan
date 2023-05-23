@@ -560,7 +560,7 @@ const storyLine2 = [
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-ledtrad.png?alt=media&token=b592d2e0-0dd2-4e3a-b9a1-3178c302456a',
     speakingImgNext:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-next.png?alt=media&token=f87c051e-57ce-48b8-90a9-d821df9fb4da',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL2P3-next.png?alt=media&token=fb9268f8-0bca-4cdc-867c-79fa661b02f9',
     // speakingImg4: '',
     options: [
       {
