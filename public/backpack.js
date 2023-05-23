@@ -7,7 +7,7 @@ let backpackInventory = document.getElementById("backpackInventory");
 const clues = [
     {
         img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fflipflop.png?alt=media&token=bf484dc1-faac-48a8-a3d2-0b86fc455103",
-        name: "Flip flops"
+        name: "Smack smack!"
     },
     {
         img: "https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2Fclues%2Fskugga.png?alt=media&token=fc08d436-2cb8-4798-ac28-d2feae00de8a",
