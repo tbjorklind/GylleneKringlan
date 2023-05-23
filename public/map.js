@@ -12,7 +12,7 @@ let map
 
 function onDistanceClick() {
   watchId = navigator.geolocation.getCurrentPosition(initMap)
-  getDistance()
+  setTimeout(getDistance, 1500)
 }
 
 const styledMapType = new google.maps.StyledMapType(
