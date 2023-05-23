@@ -81,3 +81,20 @@ body {
     height: 300px;
   }
   
+  #gameBtn{
+    width: 50%;
+    padding: 10px 20px;
+    background-color: #6b4930;
+    color: #f1edde;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 15px auto;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  #gameBtn:hover{
+    background-color: #CC813A;
+  }

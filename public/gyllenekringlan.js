@@ -25,3 +25,5 @@ tabs.forEach((tab) => {
     targetSection.style.display = "block";
   });
 });
+
+document.querySelector("#gameBtn").addEventListener('click', () => { window.location.href = 'https://gyllende-kringlan.web.app/' })
