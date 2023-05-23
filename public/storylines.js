@@ -29,7 +29,7 @@ const storyLine1 = [
     speakingImgWrong:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-fel.png?alt=media&token=b27a1fbf-e46b-455c-9e83-5dc16bbe1b61',
     speakingImgBribe:
-      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-muta.png?alt=media&token=71811ea3-2158-471d-89c6-80645b2afa7a',
+      'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-1_nystorlek.png?alt=media&token=f87a7047-8374-4a5d-89e9-59351f3a1334',
     speakingImgClue:
       'https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FPratbubblor%2FL12P1-ledtrad.png?alt=media&token=13c6217c-9b5b-4d9e-b7fe-9fc674cb2275',
     speakingImgNext:
