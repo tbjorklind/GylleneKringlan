@@ -150,7 +150,7 @@ async function correctAnswer(character) {
     <div>GRATTIS! Ni fångade tjuven och Hilda har sin kringla igen!</div>
   </div>
   `
-  document.getElementById("resultTop").style.backgroundImage = `url(${character.img})`
+  document.getElementById("resultTop").style.backgroundImage = `url(https://firebasestorage.googleapis.com/v0/b/gyllende-kringlan.appspot.com/o/Images%2FCharliebusted.PNG?alt=media&token=3ed34968-4a9d-4a8a-8067-7bc76eda4369)`
   // Centrera allt vertikalt
   document.querySelector("wrapper").style.paddingTop = 0;
   document.querySelector("wrapper").style.display = "flex";

@@ -712,7 +712,7 @@ const storyLine2 = [
       },
       {
         optionId: 1,
-        text: '0, dem bakar inga bullar, dem gör ju rulltårtor',
+        text: '0',
         correctAnswer: true
       },
       {
