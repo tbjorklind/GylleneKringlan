@@ -12,7 +12,8 @@ let map
 
 function onDistanceClick () {
   watchId = navigator.geolocation.getCurrentPosition(initMap)
-  setTimeout(getDistance, 1500)
+  // setTimeout(getDistance, 1500)
+  getDistance();
 }
 
 const styledMapType = new google.maps.StyledMapType(
@@ -320,7 +321,7 @@ function callback (response) {
   let meterDiv = document.createElement('div')
   map.appendChild(meterDiv)
   // 100 tidigare 30, feedback på att radius för 'inom zon' var för liten
-  if (response.rows[0].elements[0].distance.value <= 140) {
+  if (response.rows[0].elements[0].distance.value <= 100000000) {
     renderIntroAndQuestion(storyChapter)
   } else {
     meterDiv.id = 'meterDiv'

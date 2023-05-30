@@ -159,6 +159,7 @@ async function correctAnswer(character) {
   // Ställ in spelet på "färdigt" – alltså chapter 10
   let id = await fireBaseFunctions.getTeamIdOfUser(localStorage.getItem('userId'));
   await fireBaseFunctions.updateStoryChapter('Teams', id, localStorage.getItem('backpackNr'), 10)
+  
 }
 
 // --------------- DISPLAY IF INCORRECT CHARACTER ---------------

@@ -13,7 +13,8 @@ export const fireBaseFunctions = {
   updateQuestionState,
   getCurrentUser,
   addCurrentUser,
-  addCurrentGlobalUser
+  addCurrentGlobalUser,
+  resetFirebaseDocument
 }
 
 const db = firebase.firestore()
@@ -277,10 +278,9 @@ async function resetFirebaseDocument(collectionName, id) {
     .update(doc)
 }
 
-// GLÖM EJ ATT KOMMENTERA INNAN MERGE!!
-// resetFirebaseDocument('Teams', 'Team1')
-// resetFirebaseDocument('Teams', 'Team2')
-// resetFirebaseDocument('Teams', 'Team3')
-// resetFirebaseDocument('Teams', 'Team4')
-// resetFirebaseDocument('Teams', 'Team5')
-// resetFirebaseDocument('Teams', 'Team6')
+// await resetFirebaseDocument("Teams", "Team1")
+// await resetFirebaseDocument("Teams", "Team2")
+// await resetFirebaseDocument("Teams", "Team3")
+// await resetFirebaseDocument("Teams", "Team4")
+// await resetFirebaseDocument("Teams", "Team5")
+// await resetFirebaseDocument("Teams", "Team6")
